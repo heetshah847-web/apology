@@ -96,3 +96,33 @@ export function HeetuStep() {
   };
   return <PickStep stepId="heetu" onTitleTap={allOfThem} />;
 }
+
+/** Punishment menu: unlike the other pick steps, any number of penalties can be added (tap again to remove). */
+export function PunishStep() {
+  const cfg = planner.steps.punish;
+  const cart = usePlannerStore((s) => s.cart);
+  const mine = cart.filter((c) => c.stepId === 'punish');
+  return (
+    <div>
+      <StepTitle>{cfg.title}</StepTitle>
+      <p className="mb-4 mt-0 text-[length:var(--text-ui)]" style={{ color: 'var(--ink-faint)' }}>
+        {mine.length ? `${mine.length} chosen. Stack as many as he deserves.` : 'Pick as many as he deserves, Your Majesty.'}
+      </p>
+      <div className="grid gap-4 md:grid-cols-2">
+        {cfg.options!.map((o) => (
+          <OptionCard
+            key={o.id} stepId="punish" option={o} layer={`${STEP_LABEL.punish} / ${o.label}`}
+            selected={mine.some((c) => c.optionId === o.id)}
+            onSelect={() => {
+              const { add, remove } = usePlannerStore.getState();
+              if (mine.some((c) => c.optionId === o.id)) return remove('punish', o.id);
+              add(toItem('punish', o));
+              audioDirector.sfx('pop');
+            }}
+            onVenue={() => {}}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
