@@ -9,7 +9,8 @@ export interface OrderCopy {
 }
 
 export const copy = (planner as unknown as { confirmation: OrderCopy }).confirmation;
-export const whatsappNumber = String((planner as { whatsappNumber?: string }).whatsappNumber ?? '');
+// Real number lives in .env.local (gitignored); planner.json only holds a placeholder.
+export const whatsappNumber = String(import.meta.env.VITE_WHATSAPP_NUMBER ?? (planner as { whatsappNumber?: string }).whatsappNumber ?? '');
 export const web3formsAccessKey = String((planner as { web3formsAccessKey?: string }).web3formsAccessKey ?? '');
 export const closingLine = String((story as { closingLine?: string }).closingLine ?? '');
 export const herTitle = (story as { meta: { herTitle: string } }).meta.herTitle;

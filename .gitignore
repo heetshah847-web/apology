@@ -7,3 +7,7 @@ assets-drop/**
 !assets-drop/README*
 !assets-drop/**/.gitkeep
 !assets-drop/**/README*
+
+.env
+.env.*
+!.env.example
