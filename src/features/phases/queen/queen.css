@@ -1,0 +1,14 @@
+/* LANE-07 · The Queen */
+@keyframes queen-mote-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0; }
+  15%  { opacity: 0.55; }
+  85%  { opacity: 0.45; }
+  100% { transform: translate3d(14px, -140px, 0) scale(0.6); opacity: 0; }
+}
+.queen-mote {
+  position: absolute; border-radius: 9999px;
+  background: color-mix(in oklab, var(--glow) 80%, white);
+  box-shadow: 0 0 10px 2px color-mix(in oklab, var(--glow) 55%, transparent);
+  animation: queen-mote-drift linear infinite; will-change: transform, opacity;
+}
+@media (prefers-reduced-motion: reduce) { .queen-mote { display: none; } }

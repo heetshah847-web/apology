@@ -16,11 +16,14 @@ A regal, luminous admiration of Queen Tanisha, synced to `vo-0-queen`. Theme `go
 - Scenes pin and scrub with `useScene`; scrolling back reverses them exactly.
 
 ## Tasks
-- [ ] `QueenChapter.tsx` using `useChapter('queen')` (Queen is the only chapter of track t0, so localProgress = track progress)
-- [ ] Media layout: single full-bleed portrait (mobile) / portrait + soft mirrored blur fill (desktop)
-- [ ] Caption component from design system, lower third
-- [ ] Reduced-motion variant
+- [x] `QueenChapter.tsx` using `useChapter('queen')` (Queen is the only chapter of track t0, so localProgress = track progress)
+- [x] Media layout: single full-bleed portrait (mobile) / portrait + soft mirrored blur fill (desktop)
+- [x] Caption component from design system, lower third
+- [x] Reduced-motion variant
 
 ## Acceptance
 - With placeholders and real assets, photo changes land on the VO rhythm; title card appears at the final cue
 - Screenshots at 3 progress points (0.1, 0.5, 0.95) for 390 and 1440 widths
+
+## Lane 07 status
+Done on desktop 1440x900 (shots in `docs/shots/lane-07/`), driven by the stub NarratedTrack via `src/features/phases/queen/demo/queen-demo.html`. Not yet run against the real NarratedTrack/audio (needs LANE-15 barrel swap). Mobile and reduced-motion not verified (desktop-only scope).
