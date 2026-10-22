@@ -30,3 +30,10 @@ Lanes: do NOT edit `src/contracts/*`. Append requests here (lane · what · why)
 - `MiniMap` reads `currentPhase` from the story store when no `phase` prop is given; it is pointer-transparent and fixed bottom-left by default.
 - `content/config/story.config.json → passcode.answerSha256` is still a placeholder, which disables the gate (console warning). Heet runs `node scripts/hash-answer.mjs "answer"` and pastes the hash.
 - Harness: `src/features/map/demo/index.html?view=gate|opening|interlude&to=…|mini|pins` (delete or keep; not imported by the app).
+
+## LANE-10 · distance chapter
+- **Barrel swap (LANE-15):** `src/features/index.ts` → export `DistanceChapter` from `./phases/distance/DistanceChapter` (not `.stub`). The component imports `useChapter` from `@/engine`, so it needs the LANE-05 barrel swap too (until then it throws "useChapter must be used inside <NarratedTrack>" under the real track; the demo uses an alias shim).
+- **`MediaItem.label` / `.blur`:** `story.generated.json` emits both; the chapter reads them through a local `MediaItem & {label?, blur?}` type. Please add them to the contract.
+- **Missing copy:** `content/scripts/track-2.md` still has placeholders, so every distance caption is empty; the chapter falls back to the phase subtitle as its one statement.
+- **`distanceKm`** in `story.config.json` is `null`, so the "km apart" readout is hidden until Heet sets it.
+- **Base is broken:** `src/features/planner/DatePlanner.tsx` on `base/wave1` (44b2e93) contains unresolved merge markers, so `npm run typecheck`/`build` fail there (not a lane-10 file).
