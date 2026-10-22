@@ -1,0 +1,18 @@
+{
+  "shopping": ["palladium-ahmedabad", "ahmedabad-one-mall", "gulmohar-park-mall"],
+  "pickleball": ["sbr-pickleball-colosseum", "ballers-pickleball", "hi5ers-sindhubhavan", "pickle-play-thaltej"],
+  "bowling": ["shott-sbr", "fungrito", "funzone-himalaya-mall"],
+  "pasta": ["mocha-bodakdev", "huber-holly-sbr", "cafe-de-italiano", "sale-e-pepe", "green-pearl"],
+  "pizza": ["pizzaiiolo", "little-italy", "blue-oven", "huber-holly-sbr"],
+  "fondue": [],
+  "noodles": ["ishaara-palladium", "cha-palladium", "mad-by-tomatos", "banjara-bodakdev"],
+  "north-indian": ["tandoori-shala", "piquant-sbr", "birmies-sbr", "punjab-grill-palladium", "millenium-quality"],
+  "surprise": [],
+  "tiramisu": ["chocolate-room-bodakdev", "little-italy", "cacaote-bodakdev"],
+  "cheesecake": ["moi-dessert-studio", "makeba-rooftop"],
+  "gelato": ["creamoholic-sbr", "huber-holly-sbr"],
+  "waffles": ["the-pancake-story", "creamoholic-sbr", "cafe-de-italiano", "huber-holly-sbr"],
+  "brownie-sundae": ["huber-holly-sbr", "creamoholic-sbr"],
+  "choco-fondue": [],
+  "kulfi": []
+}
