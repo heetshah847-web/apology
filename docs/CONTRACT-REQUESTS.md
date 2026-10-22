@@ -16,3 +16,10 @@ Lanes: do NOT edit `src/contracts/*`. Append requests here (lane · what · why)
 - **Test runner (LANE-01/15):** no test runner is installed. `timing.test.ts` runs with `node --experimental-strip-types src/engine/scroll/timing.test.ts`; wire into `npm test` or move to Vitest.
 - **Design system (LANE-02):** `ResumeVoice`, `SkipControl`, mini-map and cue stepper are minimal local versions in `src/engine/scroll/TrackUI.tsx`; swap for design-system components when they exist.
 - **Hand-off glide:** uses `SCROLL_TO_DURATION` (1.6s, measured) rather than the 1.2s in 04-TIMING-MATH §2; the measured value wins per CLAUDE.md rule 10.
+
+## LANE-11 · apology & question
+- **Barrel swap (LANE-15):** in `src/features/index.ts` export `ApologyChapter` from `./phases/apology/ApologyChapter` and `TheQuestion` from `./question/TheQuestion` (same names as the stubs). Both use the real engine modules directly (`@/engine/scroll/useChapter`, `useTrack`, `useScene`, `useSmoothScroll`), so they need the engine barrel swapped (see LANE-05) to run inside the full `App`.
+- **`src/engine/scroll/timing.ts` (LANE-05) is not valid UTF-8:** the comment on line 2 contains a Latin-1 `×` (byte 0xD7). Vite's dependency scan fails on it (`stream did not contain valid UTF-8`) as soon as the real `NarratedTrack` is imported. Re-save the file as UTF-8 (or replace `×` with `x`).
+- **Apology data:** `story.generated.json` currently has the *Distance* narration text inside the `apology` chapter (cues like "until distance began its silent war"). That's a caption-alignment problem for LANE-04 / Heet's `[[chapter:apology]]` marker in `content/scripts/track-2.md`; the Apology component is data-driven and needs no change once it is fixed.
+- **Hand-off note:** `ApologyChapter` ignores `exit` (the last chapter of the last track never fades out; its final line holds until The Question rises). The Question's headline then reveals across the first 40% of its pinned scene, and the buttons come alive at 60%, which is the beat of silence before the question.
+- **Proof harness:** `src/features/question/harness.html` + `question.walk.mjs` (desktop 1440×900).
