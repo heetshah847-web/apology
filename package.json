@@ -1,0 +1,52 @@
+{
+  "name": "atlas-of-us",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo \"lint: implemented by LANE-15\"",
+    "placeholders": "node scripts/make-placeholders.mjs",
+    "media:images": "echo \"implemented by LANE-03\"",
+    "media:videos": "echo \"implemented by LANE-03\"",
+    "media:audio": "echo \"implemented by LANE-04\"",
+    "media:captions": "echo \"implemented by LANE-04\"",
+    "media:story": "echo \"implemented by LANE-04\"",
+    "media": "npm run media:images && npm run media:videos && npm run media:audio && npm run media:captions && npm run media:story",
+    "test:e2e": "echo \"implemented by LANE-15\"",
+    "shots": "echo \"implemented by LANE-15\""
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "canvas-confetti": "^1.9.4",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "gsap": "^3.15.0",
+    "html-to-image": "^1.11.13",
+    "lenis": "^1.3.27",
+    "motion": "^14.6.0",
+    "react": "^18.3.1",
+    "react-day-picker": "^10.0.2",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^26.6.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.1.2",
+    "ffmpeg-static": "^5.3.0",
+    "music-metadata": "^12.2.3",
+    "playwright": "^1.64.1",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}

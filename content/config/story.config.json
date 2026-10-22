@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "siteTitle": "The Atlas of Us",
+    "herName": "Tanisha",
+    "herTitle": "Queen Tanisha",
+    "hisName": "Heet",
+    "hisNickname": "Heetu"
+  },
+  "passcode": {
+    "enabled": true,
+    "question": "What did I call you the very first time? (EDIT THIS)",
+    "answerSha256": "RUN: node scripts/hash-answer.mjs \"your answer\" and paste the hash here",
+    "hints": [
+      "Think back to the beginning…",
+      "It made you laugh.",
+      "Okay, ask Heetu 😄"
+    ]
+  },
+  "hero": {
+    "kicker": "Inside the story of",
+    "names": "Heet & Tanisha",
+    "line": "You've been living in Queen Tanisha's Kingdom",
+    "readout": "23.03° N, 72.57° E",
+    "scrollHint": "Scroll to step inside",
+    "nav": [
+      "Our story",
+      "The question",
+      "The date"
+    ],
+    "soundOff": "Sound off",
+    "soundOn": "Tap for sound"
+  },
+  "mapIntro": {
+    "tapLabel": "Tap to unfold — sound on",
+    "afterUnfold": "Scroll to step inside our story"
+  },
+  "tracks": [
+    {
+      "id": "t0",
+      "voice": "vo-0-queen",
+      "script": "content/scripts/track-0-queen.md",
+      "targetSec": 22.99,
+      "chapters": [
+        "queen"
+      ],
+      "source": "ElevenLabs — David (Documentary)"
+    },
+    {
+      "id": "t1",
+      "voice": "vo-1",
+      "script": "content/scripts/track-1.md",
+      "targetSec": 45.09,
+      "chapters": [
+        "friendship",
+        "love"
+      ],
+      "source": "ElevenLabs — David (Documentary)"
+    },
+    {
+      "id": "t2",
+      "voice": "vo-2",
+      "script": "content/scripts/track-2.md",
+      "targetSec": 43.31,
+      "chapters": [
+        "distance",
+        "apology"
+      ],
+      "source": "ElevenLabs — David (Documentary)"
+    }
+  ],
+  "_tracksNote": "Measured: t0 22.99s, t1 45.09s, t2 43.31s. To change which chapters each voice covers, edit 'chapters' and move the [[chapter:]] markers in the scripts.",
+  "phases": [
+    {
+      "id": "queen",
+      "order": 0,
+      "title": "The Queen",
+      "subtitle": "Queen Tanisha",
+      "mapTerritory": "Queen's Court",
+      "photos": "phase-0-queen",
+      "theme": "gold",
+      "trackId": "t0",
+      "weight": 1
+    },
+    {
+      "id": "friendship",
+      "order": 1,
+      "title": "Friendship",
+      "subtitle": "How two souls became friends",
+      "mapTerritory": "Valley of Friendship",
+      "photos": "phase-1-friendship",
+      "theme": "amber",
+      "trackId": "t1",
+      "weight": 1
+    },
+    {
+      "id": "love",
+      "order": 2,
+      "title": "Us",
+      "subtitle": "How we became partners",
+      "mapTerritory": "Garden of Love",
+      "photos": "phase-2-love",
+      "theme": "rose",
+      "trackId": "t1",
+      "weight": 1
+    },
+    {
+      "id": "distance",
+      "order": 3,
+      "title": "The Distance",
+      "subtitle": "When destiny tried to be cruel",
+      "mapTerritory": "Sea of Distance",
+      "photos": "phase-3-distance",
+      "theme": "fog",
+      "distanceKm": null,
+      "trackId": "t2",
+      "weight": 1
+    },
+    {
+      "id": "apology",
+      "order": 4,
+      "title": "I'm sorry",
+      "subtitle": "From Heetu, with everything I have",
+      "mapTerritory": "Bridge of Forgiveness",
+      "photos": "phase-4-apology",
+      "theme": "dawn",
+      "trackId": "t2",
+      "weight": 1
+    }
+  ],
+  "music": {
+    "bed": "bed.mp3",
+    "yes": "yes.mp3",
+    "planner": "planner.mp3"
+  },
+  "closingLine": "Whatever you choose, I choose you. Every time."
+}

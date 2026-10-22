@@ -1,0 +1,556 @@
+{
+  "meta": {
+    "siteTitle": "The Atlas of Us",
+    "herName": "Tanisha",
+    "herTitle": "Queen Tanisha",
+    "hisName": "Heet",
+    "hisNickname": "Heetu"
+  },
+  "tracks": [
+    {
+      "id": "t0",
+      "audio": {
+        "src": "/media/voice/vo-0-queen.mp3",
+        "durationSec": 22.99
+      },
+      "chapters": [
+        "queen"
+      ]
+    },
+    {
+      "id": "t1",
+      "audio": {
+        "src": "/media/voice/vo-1.mp3",
+        "durationSec": 45.09
+      },
+      "chapters": [
+        "friendship",
+        "love"
+      ]
+    },
+    {
+      "id": "t2",
+      "audio": {
+        "src": "/media/voice/vo-2.mp3",
+        "durationSec": 43.31
+      },
+      "chapters": [
+        "distance",
+        "apology"
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "queen",
+      "order": 0,
+      "trackId": "t0",
+      "title": "The Queen",
+      "subtitle": "Queen Tanisha",
+      "mapTerritory": "Queen's Court",
+      "start": 0,
+      "end": 22.99,
+      "theme": "gold",
+      "captions": [
+        {
+          "start": 0,
+          "end": 5.75,
+          "text": "Placeholder line 1 of The Queen."
+        },
+        {
+          "start": 5.75,
+          "end": 11.5,
+          "text": "Placeholder line 2 of The Queen."
+        },
+        {
+          "start": 11.5,
+          "end": 17.24,
+          "text": "Placeholder line 3 of The Queen."
+        },
+        {
+          "start": 17.24,
+          "end": 22.99,
+          "text": "Placeholder line 4 of The Queen."
+        }
+      ],
+      "media": [
+        {
+          "id": "queen-1",
+          "kind": "image",
+          "src": "/media/placeholders/queen/01-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Queen placeholder 1",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "queen-2",
+          "kind": "image",
+          "src": "/media/placeholders/queen/02-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Queen placeholder 2",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "queen-3",
+          "kind": "image",
+          "src": "/media/placeholders/queen/03-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Queen placeholder 3",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "queen-4",
+          "kind": "image",
+          "src": "/media/placeholders/queen/04-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Queen placeholder 4",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "queen-5",
+          "kind": "image",
+          "src": "/media/placeholders/queen/05-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Queen placeholder 5",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "queen-6",
+          "kind": "image",
+          "src": "/media/placeholders/queen/06-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Queen placeholder 6",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "queen-7",
+          "kind": "image",
+          "src": "/media/placeholders/queen/07-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Queen placeholder 7",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "queen-8",
+          "kind": "image",
+          "src": "/media/placeholders/queen/08-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Queen placeholder 8",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "friendship",
+      "order": 1,
+      "trackId": "t1",
+      "title": "Friendship",
+      "subtitle": "How two souls became friends",
+      "mapTerritory": "Valley of Friendship",
+      "start": 0,
+      "end": 22.55,
+      "theme": "amber",
+      "captions": [
+        {
+          "start": 0,
+          "end": 5.64,
+          "text": "Placeholder line 1 of Friendship."
+        },
+        {
+          "start": 5.64,
+          "end": 11.28,
+          "text": "Placeholder line 2 of Friendship."
+        },
+        {
+          "start": 11.28,
+          "end": 16.91,
+          "text": "Placeholder line 3 of Friendship."
+        },
+        {
+          "start": 16.91,
+          "end": 22.55,
+          "text": "Placeholder line 4 of Friendship."
+        }
+      ],
+      "media": [
+        {
+          "id": "friendship-1",
+          "kind": "image",
+          "src": "/media/placeholders/friendship/01-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Friendship placeholder 1",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "friendship-2",
+          "kind": "image",
+          "src": "/media/placeholders/friendship/02-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Friendship placeholder 2",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "friendship-3",
+          "kind": "image",
+          "src": "/media/placeholders/friendship/03-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Friendship placeholder 3",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "friendship-4",
+          "kind": "image",
+          "src": "/media/placeholders/friendship/04-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Friendship placeholder 4",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "friendship-5",
+          "kind": "image",
+          "src": "/media/placeholders/friendship/05-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Friendship placeholder 5",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "friendship-6",
+          "kind": "image",
+          "src": "/media/placeholders/friendship/06-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Friendship placeholder 6",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "friendship-7",
+          "kind": "image",
+          "src": "/media/placeholders/friendship/07-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Friendship placeholder 7",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "love",
+      "order": 2,
+      "trackId": "t1",
+      "title": "Us",
+      "subtitle": "How we became partners",
+      "mapTerritory": "Garden of Love",
+      "start": 22.55,
+      "end": 45.09,
+      "theme": "rose",
+      "captions": [
+        {
+          "start": 22.55,
+          "end": 28.19,
+          "text": "Placeholder line 1 of Us."
+        },
+        {
+          "start": 28.19,
+          "end": 33.82,
+          "text": "Placeholder line 2 of Us."
+        },
+        {
+          "start": 33.82,
+          "end": 39.46,
+          "text": "Placeholder line 3 of Us."
+        },
+        {
+          "start": 39.46,
+          "end": 45.09,
+          "text": "Placeholder line 4 of Us."
+        }
+      ],
+      "media": [
+        {
+          "id": "love-1",
+          "kind": "image",
+          "src": "/media/placeholders/love/01-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Us placeholder 1",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "love-2",
+          "kind": "image",
+          "src": "/media/placeholders/love/02-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Us placeholder 2",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "love-3",
+          "kind": "image",
+          "src": "/media/placeholders/love/03-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Us placeholder 3",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "love-4",
+          "kind": "image",
+          "src": "/media/placeholders/love/04-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Us placeholder 4",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "love-5",
+          "kind": "image",
+          "src": "/media/placeholders/love/05-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Us placeholder 5",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "love-6",
+          "kind": "image",
+          "src": "/media/placeholders/love/06-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "Us placeholder 6",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "distance",
+      "order": 3,
+      "trackId": "t2",
+      "title": "The Distance",
+      "subtitle": "When destiny tried to be cruel",
+      "mapTerritory": "Sea of Distance",
+      "start": 0,
+      "end": 21.66,
+      "theme": "fog",
+      "captions": [
+        {
+          "start": 0,
+          "end": 5.42,
+          "text": "Placeholder line 1 of The Distance."
+        },
+        {
+          "start": 5.42,
+          "end": 10.83,
+          "text": "Placeholder line 2 of The Distance."
+        },
+        {
+          "start": 10.83,
+          "end": 16.25,
+          "text": "Placeholder line 3 of The Distance."
+        },
+        {
+          "start": 16.25,
+          "end": 21.66,
+          "text": "Placeholder line 4 of The Distance."
+        }
+      ],
+      "media": [
+        {
+          "id": "distance-1",
+          "kind": "image",
+          "src": "/media/placeholders/distance/01-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Distance placeholder 1",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "distance-2",
+          "kind": "image",
+          "src": "/media/placeholders/distance/02-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Distance placeholder 2",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "distance-3",
+          "kind": "image",
+          "src": "/media/placeholders/distance/03-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Distance placeholder 3",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "distance-4",
+          "kind": "image",
+          "src": "/media/placeholders/distance/04-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Distance placeholder 4",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "distance-5",
+          "kind": "image",
+          "src": "/media/placeholders/distance/05-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Distance placeholder 5",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "id": "distance-6",
+          "kind": "image",
+          "src": "/media/placeholders/distance/06-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "The Distance placeholder 6",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apology",
+      "order": 4,
+      "trackId": "t2",
+      "title": "I'm sorry",
+      "subtitle": "From Heetu, with everything I have",
+      "mapTerritory": "Bridge of Forgiveness",
+      "start": 21.66,
+      "end": 43.31,
+      "theme": "dawn",
+      "captions": [
+        {
+          "start": 21.66,
+          "end": 27.07,
+          "text": "Placeholder line 1 of I'm sorry."
+        },
+        {
+          "start": 27.07,
+          "end": 32.49,
+          "text": "Placeholder line 2 of I'm sorry."
+        },
+        {
+          "start": 32.49,
+          "end": 37.9,
+          "text": "Placeholder line 3 of I'm sorry."
+        },
+        {
+          "start": 37.9,
+          "end": 43.31,
+          "text": "Placeholder line 4 of I'm sorry."
+        }
+      ],
+      "media": [
+        {
+          "id": "apology-1",
+          "kind": "image",
+          "src": "/media/placeholders/apology/01-placeholder.jpg",
+          "width": 900,
+          "height": 1200,
+          "alt": "I'm sorry placeholder 1",
+          "focal": [
+            0.5,
+            0.4
+          ]
+        }
+      ]
+    }
+  ]
+}

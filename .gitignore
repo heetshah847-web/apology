@@ -1,0 +1,9 @@
+node_modules
+dist
+.vercel
+*.log
+.DS_Store
+assets-drop/**
+!assets-drop/README*
+!assets-drop/**/.gitkeep
+!assets-drop/**/README*

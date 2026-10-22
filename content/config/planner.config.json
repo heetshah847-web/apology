@@ -1,0 +1,95 @@
+{
+  "whatsappNumber": "91XXXXXXXXXX",
+  "web3formsAccessKey": "",
+  "question": {
+    "headline": "Will you be mine again?",
+    "yesLabel": "Yes",
+    "confirmPrompt": "Promise?",
+    "confirmYes": "Yes, I'm yours",
+    "afterYes": "Then let's plan a date",
+    "noLabels": ["No", "Are you sure?", "Think again, Your Majesty", "The moon disagrees", "Even the roses said yes", "Error 404: No not found"],
+    "noMaxAttempts": 6
+  },
+  "steps": {
+    "activity": {
+      "title": "Choose your vibe",
+      "mode": "all",
+      "cycleMs": 700,
+      "options": [
+        { "id": "shopping",   "label": "Shopping",   "emoji": "🛍️" },
+        { "id": "pickleball", "label": "Pickleball", "emoji": "🏓" },
+        { "id": "bowling",    "label": "Bowling",    "emoji": "🎳" }
+      ],
+      "toast": "Why choose? All three are yours, Your Majesty",
+      "bonus": { "id": "smash-karts", "label": "FREE: Smash Karts battle (Heetu vs Tanisha)", "note": "Loser buys dessert", "emoji": "🏎️" }
+    },
+    "cuisine": {
+      "title": "What's the Queen craving?",
+      "options": [
+        { "id": "pasta",       "label": "Pasta",              "emoji": "🍝" },
+        { "id": "pizza",       "label": "Pizza",              "emoji": "🍕" },
+        { "id": "fondue",      "label": "Cheese fondue",      "emoji": "🧀" },
+        { "id": "noodles",     "label": "Noodles / Pan‑Asian","emoji": "🍜" },
+        { "id": "north-indian","label": "North Indian",       "emoji": "🍛" },
+        { "id": "surprise",    "label": "Surprise me",        "emoji": "🎲" }
+      ]
+    },
+    "dessert": {
+      "title": "Something sweet",
+      "options": [
+        { "id": "tiramisu",        "label": "Tiramisu",         "emoji": "☕" },
+        { "id": "cheesecake",      "label": "Cheesecake",       "emoji": "🍰" },
+        { "id": "gelato",          "label": "Gelato / ice cream","emoji": "🍨" },
+        { "id": "waffles",         "label": "Waffles",          "emoji": "🧇" },
+        { "id": "brownie-sundae",  "label": "Brownie sundae",   "emoji": "🍫" },
+        { "id": "choco-fondue",    "label": "Chocolate fondue", "emoji": "🍓" },
+        { "id": "kulfi",           "label": "Kulfi",            "emoji": "🥛" }
+      ]
+    },
+    "heetu": {
+      "title": "Choose your man",
+      "options": [
+        { "id": "11th",       "label": "11th Heetu",       "description": "Comes with unlimited romance", "image": "heetu-versions/11th",       "specs": ["Romance: unlimited", "Hair: questionable", "Texts: 200 a day"] },
+        { "id": "1st-sem",    "label": "1st Sem Heetu",    "description": "The one who couldn't stop staring", "image": "heetu-versions/1st-sem", "specs": ["Confidence: 40%", "Crush level: 100%", "Plans: none"] },
+        { "id": "march",      "label": "March Heetu",      "description": "EDIT: what made March Heetu special", "image": "heetu-versions/march", "specs": ["EDIT", "EDIT", "EDIT"] },
+        { "id": "bestfriend", "label": "Bestfriend Heetu", "description": "But romantic, and yours only", "image": "heetu-versions/bestfriend", "specs": ["Listening: always", "Memes: premium", "Exclusive: 100% yours"] },
+        { "id": "current",    "label": "Current Heetu",    "description": "Learned his lessons, still crazy about you", "image": "heetu-versions/current", "specs": ["Sorry level: maximum", "Patience: upgraded", "Love: same as day one"] }
+      ]
+    },
+    "flowers": {
+      "title": "Your flowers",
+      "options": [
+        { "id": "red-roses",    "label": "Red roses",     "description": "I love you, plainly and completely", "emoji": "🌹" },
+        { "id": "pink-roses",   "label": "Pink roses",    "description": "Gratitude and gentle admiration",    "emoji": "🌸" },
+        { "id": "tulips",       "label": "Tulips",        "description": "Perfect love",                        "emoji": "🌷" },
+        { "id": "sunflowers",   "label": "Sunflowers",    "description": "You're my sunshine",                  "emoji": "🌻" },
+        { "id": "lilies",       "label": "Lilies",        "description": "A fresh start",                       "emoji": "🤍" },
+        { "id": "orchids",      "label": "Orchids",       "description": "Rare, like you",                      "emoji": "🪻" },
+        { "id": "babys-breath", "label": "Baby's breath", "description": "Everlasting love",                    "emoji": "☁️" },
+        { "id": "mixed",        "label": "Mixed bouquet", "description": "A little of everything you deserve",  "emoji": "💐" }
+      ]
+    },
+    "suggestions": {
+      "title": "Your wish, my command",
+      "placeholder": "Anything else, Your Majesty? Places, plans, rules for Heetu…",
+      "chips": ["Long drive", "Sunset", "Just talk", "Matching outfits", "No phones"]
+    },
+    "review": { "title": "Your royal cart" },
+    "delivery": {
+      "title": "Choose your delivery date",
+      "minDaysFromToday": 1,
+      "maxDaysFromToday": 45,
+      "slots": ["Brunch", "Evening", "Sunset", "Night"],
+      "confirmLabel": "Confirm order"
+    }
+  },
+  "confirmation": {
+    "orderPrefix": "#TANISHA-FOREVER-",
+    "headline": "Order confirmed with all my love",
+    "body": "Delivery guaranteed — by hand, with flowers, on time.",
+    "signature": "Yours, Heetu",
+    "sendLabel": "Send to Heetu",
+    "saveLabel": "Save receipt",
+    "editLabel": "Edit order"
+  }
+}
