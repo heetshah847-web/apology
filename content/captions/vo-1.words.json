@@ -1,0 +1,503 @@
+{
+ "track": "t1",
+ "voice": "vo-1",
+ "language": "en",
+ "model": "Xenova/whisper-base.en",
+ "words": [
+  {
+   "w": "And",
+   "start": 0,
+   "end": 0.2
+  },
+  {
+   "w": "so",
+   "start": 0.2,
+   "end": 0.48
+  },
+  {
+   "w": "upon",
+   "start": 0.48,
+   "end": 1.04
+  },
+  {
+   "w": "a",
+   "start": 1.04,
+   "end": 1.04
+  },
+  {
+   "w": "golden",
+   "start": 1.04,
+   "end": 1.7
+  },
+  {
+   "w": "evening,",
+   "start": 1.7,
+   "end": 2.5
+  },
+  {
+   "w": "fate",
+   "start": 2.98,
+   "end": 3.32
+  },
+  {
+   "w": "brought",
+   "start": 3.32,
+   "end": 3.68
+  },
+  {
+   "w": "the",
+   "start": 3.68,
+   "end": 3.92
+  },
+  {
+   "w": "Queen",
+   "start": 3.92,
+   "end": 4.16
+  },
+  {
+   "w": "before",
+   "start": 4.16,
+   "end": 4.64
+  },
+  {
+   "w": "a",
+   "start": 4.64,
+   "end": 4.84
+  },
+  {
+   "w": "soul",
+   "start": 4.84,
+   "end": 5.2
+  },
+  {
+   "w": "who",
+   "start": 5.2,
+   "end": 5.54
+  },
+  {
+   "w": "would",
+   "start": 5.54,
+   "end": 5.68
+  },
+  {
+   "w": "become",
+   "start": 5.68,
+   "end": 6.04
+  },
+  {
+   "w": "her",
+   "start": 6.04,
+   "end": 6.38
+  },
+  {
+   "w": "dearest",
+   "start": 6.38,
+   "end": 6.94
+  },
+  {
+   "w": "friend.",
+   "start": 6.94,
+   "end": 7.34
+  },
+  {
+   "w": "Their",
+   "start": 8.14,
+   "end": 8.38
+  },
+  {
+   "w": "eyes",
+   "start": 8.38,
+   "end": 8.7
+  },
+  {
+   "w": "met.",
+   "start": 8.7,
+   "end": 9.08
+  },
+  {
+   "w": "Their",
+   "start": 9.62,
+   "end": 9.86
+  },
+  {
+   "w": "smiles",
+   "start": 9.86,
+   "end": 10.24
+  },
+  {
+   "w": "spoke",
+   "start": 10.24,
+   "end": 10.94
+  },
+  {
+   "w": "a",
+   "start": 10.94,
+   "end": 11.14
+  },
+  {
+   "w": "thousand",
+   "start": 11.14,
+   "end": 11.62
+  },
+  {
+   "w": "words,",
+   "start": 11.62,
+   "end": 12.08
+  },
+  {
+   "w": "and",
+   "start": 12.84,
+   "end": 13.02
+  },
+  {
+   "w": "in",
+   "start": 13.02,
+   "end": 13.16
+  },
+  {
+   "w": "that",
+   "start": 13.16,
+   "end": 13.34
+  },
+  {
+   "w": "fleeting",
+   "start": 13.34,
+   "end": 13.64
+  },
+  {
+   "w": "moment,",
+   "start": 13.64,
+   "end": 14.42
+  },
+  {
+   "w": "destiny",
+   "start": 14.62,
+   "end": 15.2
+  },
+  {
+   "w": "itself",
+   "start": 15.2,
+   "end": 15.84
+  },
+  {
+   "w": "smiled.",
+   "start": 15.84,
+   "end": 16.36
+  },
+  {
+   "w": "For",
+   "start": 17.26,
+   "end": 17.36
+  },
+  {
+   "w": "even",
+   "start": 17.36,
+   "end": 17.54
+  },
+  {
+   "w": "queens",
+   "start": 17.54,
+   "end": 17.98
+  },
+  {
+   "w": "need",
+   "start": 17.98,
+   "end": 18.48
+  },
+  {
+   "w": "someone",
+   "start": 18.48,
+   "end": 18.86
+  },
+  {
+   "w": "to",
+   "start": 18.86,
+   "end": 19.22
+  },
+  {
+   "w": "call",
+   "start": 19.22,
+   "end": 19.44
+  },
+  {
+   "w": "their",
+   "start": 19.44,
+   "end": 19.68
+  },
+  {
+   "w": "own.",
+   "start": 19.68,
+   "end": 20
+  },
+  {
+   "w": "And",
+   "start": 20.54,
+   "end": 20.84
+  },
+  {
+   "w": "so,",
+   "start": 20.84,
+   "end": 21.16
+  },
+  {
+   "w": "while",
+   "start": 21.46,
+   "end": 21.76
+  },
+  {
+   "w": "laughter",
+   "start": 21.76,
+   "end": 22.36
+  },
+  {
+   "w": "filled",
+   "start": 22.36,
+   "end": 22.7
+  },
+  {
+   "w": "the",
+   "start": 22.7,
+   "end": 22.98
+  },
+  {
+   "w": "air,",
+   "start": 22.98,
+   "end": 23.26
+  },
+  {
+   "w": "their",
+   "start": 23.8,
+   "end": 23.92
+  },
+  {
+   "w": "hands",
+   "start": 23.92,
+   "end": 24.26
+  },
+  {
+   "w": "met",
+   "start": 24.26,
+   "end": 24.64
+  },
+  {
+   "w": "for",
+   "start": 24.64,
+   "end": 24.9
+  },
+  {
+   "w": "the",
+   "start": 24.9,
+   "end": 25.04
+  },
+  {
+   "w": "very",
+   "start": 25.04,
+   "end": 25.4
+  },
+  {
+   "w": "first",
+   "start": 25.4,
+   "end": 25.72
+  },
+  {
+   "w": "time.",
+   "start": 25.72,
+   "end": 26.2
+  },
+  {
+   "w": "What",
+   "start": 26.96,
+   "end": 27.12
+  },
+  {
+   "w": "began",
+   "start": 27.12,
+   "end": 27.38
+  },
+  {
+   "w": "as",
+   "start": 27.38,
+   "end": 27.76
+  },
+  {
+   "w": "a",
+   "start": 27.76,
+   "end": 27.86
+  },
+  {
+   "w": "playful",
+   "start": 27.86,
+   "end": 28.1
+  },
+  {
+   "w": "moment",
+   "start": 28.1,
+   "end": 28.74
+  },
+  {
+   "w": "became",
+   "start": 28.74,
+   "end": 29.26
+  },
+  {
+   "w": "something",
+   "start": 29.26,
+   "end": 29.92
+  },
+  {
+   "w": "neither",
+   "start": 29.92,
+   "end": 30.28
+  },
+  {
+   "w": "could",
+   "start": 30.28,
+   "end": 30.66
+  },
+  {
+   "w": "explain.",
+   "start": 30.66,
+   "end": 31.08
+  },
+  {
+   "w": "They",
+   "start": 32.02,
+   "end": 32.16
+  },
+  {
+   "w": "held",
+   "start": 32.16,
+   "end": 32.42
+  },
+  {
+   "w": "on,",
+   "start": 32.42,
+   "end": 32.76
+  },
+  {
+   "w": "forgetting",
+   "start": 33.18,
+   "end": 33.52
+  },
+  {
+   "w": "the",
+   "start": 33.52,
+   "end": 33.92
+  },
+  {
+   "w": "world",
+   "start": 33.92,
+   "end": 34.2
+  },
+  {
+   "w": "around",
+   "start": 34.2,
+   "end": 34.52
+  },
+  {
+   "w": "them.",
+   "start": 34.52,
+   "end": 34.88
+  },
+  {
+   "w": "And",
+   "start": 35.6,
+   "end": 35.66
+  },
+  {
+   "w": "somewhere",
+   "start": 35.66,
+   "end": 35.96
+  },
+  {
+   "w": "between",
+   "start": 35.96,
+   "end": 36.62
+  },
+  {
+   "w": "friendship",
+   "start": 36.62,
+   "end": 37.14
+  },
+  {
+   "w": "and",
+   "start": 37.14,
+   "end": 37.64
+  },
+  {
+   "w": "that",
+   "start": 37.64,
+   "end": 37.8
+  },
+  {
+   "w": "lingering",
+   "start": 37.8,
+   "end": 38.16
+  },
+  {
+   "w": "touch,",
+   "start": 38.16,
+   "end": 38.8
+  },
+  {
+   "w": "two",
+   "start": 39.22,
+   "end": 39.66
+  },
+  {
+   "w": "souls",
+   "start": 39.66,
+   "end": 40.1
+  },
+  {
+   "w": "became",
+   "start": 40.1,
+   "end": 40.62
+  },
+  {
+   "w": "partners,",
+   "start": 40.62,
+   "end": 41.12
+  },
+  {
+   "w": "bound",
+   "start": 42.04,
+   "end": 42.12
+  },
+  {
+   "w": "by",
+   "start": 42.12,
+   "end": 42.54
+  },
+  {
+   "w": "a",
+   "start": 42.54,
+   "end": 42.7
+  },
+  {
+   "w": "destiny",
+   "start": 42.7,
+   "end": 43.08
+  },
+  {
+   "w": "neither",
+   "start": 43.08,
+   "end": 43.74
+  },
+  {
+   "w": "wished",
+   "start": 43.74,
+   "end": 44.06
+  },
+  {
+   "w": "to",
+   "start": 44.06,
+   "end": 44.32
+  },
+  {
+   "w": "escape.",
+   "start": 44.32,
+   "end": 44.76
+  }
+ ]
+}

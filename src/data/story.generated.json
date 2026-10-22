@@ -60,57 +60,57 @@
             {
               "w": "Her",
               "start": 0,
-              "end": 0.26
+              "end": 0.2
             },
             {
               "w": "beauty",
-              "start": 0.26,
-              "end": 0.72
+              "start": 0.2,
+              "end": 0.52
             },
             {
               "w": "was",
-              "start": 0.72,
-              "end": 0.98
+              "start": 0.52,
+              "end": 0.9
             },
             {
               "w": "a",
-              "start": 0.98,
-              "end": 1.11
+              "start": 0.9,
+              "end": 1.04
             },
             {
               "w": "force",
-              "start": 1.11,
-              "end": 1.5
+              "start": 1.04,
+              "end": 1.36
             },
             {
               "w": "even",
-              "start": 1.5,
-              "end": 1.83
+              "start": 1.36,
+              "end": 1.86
             },
             {
               "w": "the",
-              "start": 1.83,
-              "end": 2.09
+              "start": 1.86,
+              "end": 2.04
             },
             {
               "w": "heavens",
-              "start": 2.09,
-              "end": 2.61
+              "start": 2.04,
+              "end": 2.42
             },
             {
               "w": "could",
-              "start": 2.61,
-              "end": 3.01
+              "start": 2.42,
+              "end": 2.86
             },
             {
               "w": "not",
-              "start": 3.01,
-              "end": 3.27
+              "start": 2.86,
+              "end": 3.08
             },
             {
               "w": "command,",
-              "start": 3.27,
-              "end": 3.79
+              "start": 3.08,
+              "end": 3.36
             }
           ]
         },
@@ -122,47 +122,47 @@
             {
               "w": "a",
               "start": 4.35,
-              "end": 4.49
+              "end": 4.4
             },
             {
               "w": "divine",
-              "start": 4.49,
-              "end": 4.97
+              "start": 4.4,
+              "end": 4.76
             },
             {
               "w": "radiance",
-              "start": 4.97,
-              "end": 5.6
+              "start": 4.76,
+              "end": 5.56
             },
             {
               "w": "that",
-              "start": 5.6,
-              "end": 5.95
+              "start": 5.56,
+              "end": 5.84
             },
             {
               "w": "made",
-              "start": 5.95,
-              "end": 6.3
+              "start": 5.84,
+              "end": 6.12
             },
             {
               "w": "gods",
-              "start": 6.3,
-              "end": 6.64
+              "start": 6.12,
+              "end": 6.44
             },
             {
               "w": "forget",
-              "start": 6.64,
-              "end": 7.13
+              "start": 6.44,
+              "end": 6.98
             },
             {
               "w": "their",
-              "start": 7.13,
-              "end": 7.55
+              "start": 6.98,
+              "end": 7.46
             },
             {
               "w": "immortality.",
-              "start": 7.55,
-              "end": 8.38
+              "start": 7.46,
+              "end": 7.8
             }
           ]
         },
@@ -174,58 +174,63 @@
             {
               "w": "The",
               "start": 9.02,
-              "end": 9.32
+              "end": 9.1
             },
             {
               "w": "moon",
-              "start": 9.32,
-              "end": 9.69
+              "start": 9.1,
+              "end": 9.36
             },
             {
               "w": "envied",
-              "start": 9.69,
-              "end": 10.2
+              "start": 9.36,
+              "end": 10.18
             },
             {
               "w": "her",
-              "start": 10.2,
-              "end": 10.5
+              "start": 10.18,
+              "end": 10.36
             },
             {
               "w": "glow,",
-              "start": 10.5,
-              "end": 10.87
+              "start": 10.36,
+              "end": 10.64
             }
           ]
         },
         {
           "start": 11.39,
           "end": 13.57,
-          "text": "the roses surrendered their fragrance,",
+          "text": "the roses surrendered their fragrance, and",
           "words": [
             {
               "w": "the",
-              "start": 11.39,
-              "end": 11.62
+              "start": 11.42,
+              "end": 11.46
             },
             {
               "w": "roses",
-              "start": 11.62,
-              "end": 11.96
+              "start": 11.44,
+              "end": 11.84
             },
             {
               "w": "surrendered",
-              "start": 11.96,
-              "end": 12.65
+              "start": 11.84,
+              "end": 12.42
             },
             {
               "w": "their",
-              "start": 12.65,
-              "end": 13
+              "start": 12.42,
+              "end": 12.86
             },
             {
               "w": "fragrance,",
-              "start": 13,
+              "start": 12.86,
+              "end": 13.22
+            },
+            {
+              "w": "and",
+              "start": 13.22,
               "end": 13.57
             }
           ]
@@ -233,42 +238,37 @@
         {
           "start": 13.93,
           "end": 16.67,
-          "text": "and time itself paused to admire her.",
+          "text": "time itself paused to admire her.",
           "words": [
             {
-              "w": "and",
-              "start": 13.93,
-              "end": 14.23
-            },
-            {
               "w": "time",
-              "start": 14.23,
-              "end": 14.6
+              "start": 14,
+              "end": 14.32
             },
             {
               "w": "itself",
-              "start": 14.6,
-              "end": 15.12
+              "start": 14.32,
+              "end": 14.92
             },
             {
               "w": "paused",
-              "start": 15.12,
-              "end": 15.63
+              "start": 14.92,
+              "end": 15.46
             },
             {
               "w": "to",
-              "start": 15.63,
-              "end": 15.86
+              "start": 15.46,
+              "end": 15.9
             },
             {
               "w": "admire",
-              "start": 15.86,
-              "end": 16.37
+              "start": 15.9,
+              "end": 16.2
             },
             {
               "w": "her.",
-              "start": 16.37,
-              "end": 16.67
+              "start": 16.2,
+              "end": 16.6
             }
           ]
         },
@@ -280,32 +280,32 @@
             {
               "w": "She",
               "start": 17.37,
-              "end": 17.62
+              "end": 17.46
             },
             {
               "w": "was",
-              "start": 17.62,
-              "end": 17.86
+              "start": 17.46,
+              "end": 17.58
             },
             {
               "w": "not",
-              "start": 17.86,
-              "end": 18.11
+              "start": 17.58,
+              "end": 17.8
             },
             {
               "w": "merely",
-              "start": 18.11,
-              "end": 18.54
+              "start": 17.8,
+              "end": 18.12
             },
             {
               "w": "a",
-              "start": 18.54,
-              "end": 18.66
+              "start": 18.12,
+              "end": 18.42
             },
             {
               "w": "queen;",
-              "start": 18.66,
-              "end": 19.03
+              "start": 18.42,
+              "end": 18.72
             }
           ]
         },
@@ -317,47 +317,47 @@
             {
               "w": "she",
               "start": 19.53,
-              "end": 19.82
+              "end": 19.7
             },
             {
               "w": "was",
-              "start": 19.82,
-              "end": 20.11
+              "start": 19.7,
+              "end": 20
             },
             {
               "w": "the",
-              "start": 20.11,
-              "end": 20.4
+              "start": 20,
+              "end": 20.18
             },
             {
               "w": "reason",
-              "start": 20.4,
-              "end": 20.9
+              "start": 20.18,
+              "end": 20.5
             },
             {
               "w": "even",
-              "start": 20.9,
-              "end": 21.26
+              "start": 20.5,
+              "end": 20.94
             },
             {
               "w": "gods",
-              "start": 21.26,
-              "end": 21.62
+              "start": 20.94,
+              "end": 21.34
             },
             {
               "w": "learned",
-              "start": 21.62,
-              "end": 22.2
+              "start": 21.34,
+              "end": 21.92
             },
             {
               "w": "to",
-              "start": 22.2,
-              "end": 22.41
+              "start": 21.92,
+              "end": 22.2
             },
             {
               "w": "bow.",
-              "start": 22.41,
-              "end": 22.7
+              "start": 22.2,
+              "end": 22.42
             }
           ]
         }
@@ -509,61 +509,347 @@
       "subtitle": "How two souls became friends",
       "mapTerritory": "Valley of Friendship",
       "start": 0,
-      "end": 27.05,
+      "end": 23.85,
       "theme": "amber",
       "captions": [
         {
           "start": 0,
           "end": 2.7,
-          "text": "",
+          "text": "And so upon a golden evening,",
+          "words": [
+            {
+              "w": "And",
+              "start": 0,
+              "end": 0.2
+            },
+            {
+              "w": "so",
+              "start": 0.2,
+              "end": 0.48
+            },
+            {
+              "w": "upon",
+              "start": 0.48,
+              "end": 1.04
+            },
+            {
+              "w": "a",
+              "start": 1.04,
+              "end": 1.08
+            },
+            {
+              "w": "golden",
+              "start": 1.04,
+              "end": 1.7
+            },
+            {
+              "w": "evening,",
+              "start": 1.7,
+              "end": 2.5
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 3.17,
+          "end": 5.2,
+          "text": "fate brought the Queen before a soul",
+          "words": [
+            {
+              "w": "fate",
+              "start": 3.17,
+              "end": 3.32
+            },
+            {
+              "w": "brought",
+              "start": 3.32,
+              "end": 3.68
+            },
+            {
+              "w": "the",
+              "start": 3.68,
+              "end": 3.92
+            },
+            {
+              "w": "Queen",
+              "start": 3.92,
+              "end": 4.16
+            },
+            {
+              "w": "before",
+              "start": 4.16,
+              "end": 4.64
+            },
+            {
+              "w": "a",
+              "start": 4.64,
+              "end": 4.84
+            },
+            {
+              "w": "soul",
+              "start": 4.84,
+              "end": 5.2
+            }
+          ],
+          "needsReview": true
+        },
+        {
+          "start": 5.2,
           "end": 7.62,
-          "text": "",
+          "text": "who would become her dearest friend.",
+          "words": [
+            {
+              "w": "who",
+              "start": 5.2,
+              "end": 5.54
+            },
+            {
+              "w": "would",
+              "start": 5.54,
+              "end": 5.68
+            },
+            {
+              "w": "become",
+              "start": 5.68,
+              "end": 6.04
+            },
+            {
+              "w": "her",
+              "start": 6.04,
+              "end": 6.38
+            },
+            {
+              "w": "dearest",
+              "start": 6.38,
+              "end": 6.94
+            },
+            {
+              "w": "friend.",
+              "start": 6.94,
+              "end": 7.34
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 8.29,
           "end": 9.25,
-          "text": "",
+          "text": "Their eyes met.",
+          "words": [
+            {
+              "w": "Their",
+              "start": 8.29,
+              "end": 8.38
+            },
+            {
+              "w": "eyes",
+              "start": 8.38,
+              "end": 8.7
+            },
+            {
+              "w": "met.",
+              "start": 8.7,
+              "end": 9.08
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 9.81,
           "end": 12.39,
-          "text": "",
+          "text": "Their smiles spoke a thousand words,",
+          "words": [
+            {
+              "w": "Their",
+              "start": 9.81,
+              "end": 9.86
+            },
+            {
+              "w": "smiles",
+              "start": 9.86,
+              "end": 10.24
+            },
+            {
+              "w": "spoke",
+              "start": 10.24,
+              "end": 10.94
+            },
+            {
+              "w": "a",
+              "start": 10.94,
+              "end": 11.14
+            },
+            {
+              "w": "thousand",
+              "start": 11.14,
+              "end": 11.62
+            },
+            {
+              "w": "words,",
+              "start": 11.62,
+              "end": 12.08
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 12.95,
           "end": 14.39,
-          "text": "",
+          "text": "and in that fleeting moment,",
+          "words": [
+            {
+              "w": "and",
+              "start": 12.95,
+              "end": 13.02
+            },
+            {
+              "w": "in",
+              "start": 13.02,
+              "end": 13.16
+            },
+            {
+              "w": "that",
+              "start": 13.16,
+              "end": 13.34
+            },
+            {
+              "w": "fleeting",
+              "start": 13.34,
+              "end": 13.64
+            },
+            {
+              "w": "moment,",
+              "start": 13.64,
+              "end": 14.39
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 14.86,
           "end": 16.52,
-          "text": "",
+          "text": "destiny itself smiled.",
+          "words": [
+            {
+              "w": "destiny",
+              "start": 14.86,
+              "end": 15.2
+            },
+            {
+              "w": "itself",
+              "start": 15.2,
+              "end": 15.84
+            },
+            {
+              "w": "smiled.",
+              "start": 15.84,
+              "end": 16.36
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 17.33,
           "end": 20.11,
-          "text": "",
+          "text": "For even queens need someone to call their own.",
+          "words": [
+            {
+              "w": "For",
+              "start": 17.33,
+              "end": 17.36
+            },
+            {
+              "w": "even",
+              "start": 17.36,
+              "end": 17.54
+            },
+            {
+              "w": "queens",
+              "start": 17.54,
+              "end": 17.98
+            },
+            {
+              "w": "need",
+              "start": 17.98,
+              "end": 18.48
+            },
+            {
+              "w": "someone",
+              "start": 18.48,
+              "end": 18.86
+            },
+            {
+              "w": "to",
+              "start": 18.86,
+              "end": 19.22
+            },
+            {
+              "w": "call",
+              "start": 19.22,
+              "end": 19.44
+            },
+            {
+              "w": "their",
+              "start": 19.44,
+              "end": 19.68
+            },
+            {
+              "w": "own.",
+              "start": 19.68,
+              "end": 20
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 20.75,
-          "end": 23.44,
-          "text": "",
+          "end": 21.16,
+          "text": "And so,",
+          "words": [
+            {
+              "w": "And",
+              "start": 20.75,
+              "end": 20.84
+            },
+            {
+              "w": "so,",
+              "start": 20.84,
+              "end": 21.16
+            }
+          ],
           "needsReview": true
         },
         {
-          "start": 23.85,
-          "end": 26.28,
-          "text": "",
+          "start": 21.46,
+          "end": 23.44,
+          "text": "while laughter filled the air,",
+          "words": [
+            {
+              "w": "while",
+              "start": 21.46,
+              "end": 21.76
+            },
+            {
+              "w": "laughter",
+              "start": 21.76,
+              "end": 22.36
+            },
+            {
+              "w": "filled",
+              "start": 22.36,
+              "end": 22.7
+            },
+            {
+              "w": "the",
+              "start": 22.7,
+              "end": 22.98
+            },
+            {
+              "w": "air,",
+              "start": 22.98,
+              "end": 23.26
+            }
+          ],
           "needsReview": true
         }
       ],
@@ -689,50 +975,307 @@
       "title": "Us",
       "subtitle": "How we became partners",
       "mapTerritory": "Garden of Love",
-      "start": 27.05,
+      "start": 23.85,
       "end": 45.11,
       "theme": "rose",
       "captions": [
         {
+          "start": 23.85,
+          "end": 26.28,
+          "text": "their hands met for the very first time.",
+          "words": [
+            {
+              "w": "their",
+              "start": 23.85,
+              "end": 23.92
+            },
+            {
+              "w": "hands",
+              "start": 23.92,
+              "end": 24.26
+            },
+            {
+              "w": "met",
+              "start": 24.26,
+              "end": 24.64
+            },
+            {
+              "w": "for",
+              "start": 24.64,
+              "end": 24.9
+            },
+            {
+              "w": "the",
+              "start": 24.9,
+              "end": 25.04
+            },
+            {
+              "w": "very",
+              "start": 25.04,
+              "end": 25.4
+            },
+            {
+              "w": "first",
+              "start": 25.4,
+              "end": 25.72
+            },
+            {
+              "w": "time.",
+              "start": 25.72,
+              "end": 26.2
+            }
+          ],
+          "needsReview": true
+        },
+        {
           "start": 27.05,
           "end": 28.88,
-          "text": "",
+          "text": "What began as a playful moment became",
+          "words": [
+            {
+              "w": "What",
+              "start": 27.05,
+              "end": 27.12
+            },
+            {
+              "w": "began",
+              "start": 27.12,
+              "end": 27.38
+            },
+            {
+              "w": "as",
+              "start": 27.38,
+              "end": 27.76
+            },
+            {
+              "w": "a",
+              "start": 27.76,
+              "end": 27.86
+            },
+            {
+              "w": "playful",
+              "start": 27.86,
+              "end": 28.1
+            },
+            {
+              "w": "moment",
+              "start": 28.1,
+              "end": 28.74
+            },
+            {
+              "w": "became",
+              "start": 28.74,
+              "end": 28.88
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 29.21,
           "end": 31.41,
-          "text": "",
+          "text": "something neither could explain.",
+          "words": [
+            {
+              "w": "something",
+              "start": 29.26,
+              "end": 29.92
+            },
+            {
+              "w": "neither",
+              "start": 29.92,
+              "end": 30.28
+            },
+            {
+              "w": "could",
+              "start": 30.28,
+              "end": 30.66
+            },
+            {
+              "w": "explain.",
+              "start": 30.66,
+              "end": 31.08
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 32.11,
           "end": 32.93,
-          "text": "",
+          "text": "They held on,",
+          "words": [
+            {
+              "w": "They",
+              "start": 32.11,
+              "end": 32.16
+            },
+            {
+              "w": "held",
+              "start": 32.16,
+              "end": 32.42
+            },
+            {
+              "w": "on,",
+              "start": 32.42,
+              "end": 32.76
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 33.28,
           "end": 34.95,
-          "text": "",
+          "text": "forgetting the world around them.",
+          "words": [
+            {
+              "w": "forgetting",
+              "start": 33.28,
+              "end": 33.52
+            },
+            {
+              "w": "the",
+              "start": 33.52,
+              "end": 33.92
+            },
+            {
+              "w": "world",
+              "start": 33.92,
+              "end": 34.2
+            },
+            {
+              "w": "around",
+              "start": 34.2,
+              "end": 34.52
+            },
+            {
+              "w": "them.",
+              "start": 34.52,
+              "end": 34.88
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 35.61,
           "end": 39.01,
-          "text": "",
+          "text": "And somewhere between friendship and that lingering touch,",
+          "words": [
+            {
+              "w": "And",
+              "start": 35.61,
+              "end": 35.66
+            },
+            {
+              "w": "somewhere",
+              "start": 35.66,
+              "end": 35.96
+            },
+            {
+              "w": "between",
+              "start": 35.96,
+              "end": 36.62
+            },
+            {
+              "w": "friendship",
+              "start": 36.62,
+              "end": 37.14
+            },
+            {
+              "w": "and",
+              "start": 37.14,
+              "end": 37.64
+            },
+            {
+              "w": "that",
+              "start": 37.64,
+              "end": 37.8
+            },
+            {
+              "w": "lingering",
+              "start": 37.8,
+              "end": 38.16
+            },
+            {
+              "w": "touch,",
+              "start": 38.16,
+              "end": 38.8
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 39.55,
           "end": 41.53,
-          "text": "",
+          "text": "two souls became partners,",
+          "words": [
+            {
+              "w": "two",
+              "start": 39.55,
+              "end": 39.66
+            },
+            {
+              "w": "souls",
+              "start": 39.66,
+              "end": 40.1
+            },
+            {
+              "w": "became",
+              "start": 40.1,
+              "end": 40.62
+            },
+            {
+              "w": "partners,",
+              "start": 40.62,
+              "end": 41.12
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 41.97,
           "end": 44.73,
-          "text": "",
+          "text": "bound by a destiny neither wished to escape.",
+          "words": [
+            {
+              "w": "bound",
+              "start": 42.04,
+              "end": 42.12
+            },
+            {
+              "w": "by",
+              "start": 42.12,
+              "end": 42.54
+            },
+            {
+              "w": "a",
+              "start": 42.54,
+              "end": 42.7
+            },
+            {
+              "w": "destiny",
+              "start": 42.7,
+              "end": 43.08
+            },
+            {
+              "w": "neither",
+              "start": 43.08,
+              "end": 43.74
+            },
+            {
+              "w": "wished",
+              "start": 43.74,
+              "end": 44.06
+            },
+            {
+              "w": "to",
+              "start": 44.06,
+              "end": 44.32
+            },
+            {
+              "w": "escape.",
+              "start": 44.32,
+              "end": 44.73
+            }
+          ],
           "needsReview": true
         }
       ],
@@ -853,37 +1396,212 @@
         {
           "start": 0,
           "end": 3.16,
-          "text": "",
+          "text": "but cruel destiny tore the partners apart,",
+          "words": [
+            {
+              "w": "but",
+              "start": 0,
+              "end": 0.22
+            },
+            {
+              "w": "cruel",
+              "start": 0.22,
+              "end": 0.56
+            },
+            {
+              "w": "destiny",
+              "start": 0.56,
+              "end": 1.34
+            },
+            {
+              "w": "tore",
+              "start": 1.34,
+              "end": 1.82
+            },
+            {
+              "w": "the",
+              "start": 1.82,
+              "end": 2.16
+            },
+            {
+              "w": "partners",
+              "start": 2.16,
+              "end": 2.46
+            },
+            {
+              "w": "apart,",
+              "start": 2.46,
+              "end": 3.04
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 3.72,
           "end": 5.86,
-          "text": "",
+          "text": "condemning them to distant lands.",
+          "words": [
+            {
+              "w": "condemning",
+              "start": 4,
+              "end": 4.04
+            },
+            {
+              "w": "them",
+              "start": 4,
+              "end": 4.44
+            },
+            {
+              "w": "to",
+              "start": 4.44,
+              "end": 4.68
+            },
+            {
+              "w": "distant",
+              "start": 4.68,
+              "end": 4.94
+            },
+            {
+              "w": "lands.",
+              "start": 4.94,
+              "end": 5.54
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 6.5,
           "end": 6.79,
-          "text": "",
+          "text": "Yet,",
+          "words": [
+            {
+              "w": "Yet,",
+              "start": 6.5,
+              "end": 6.66
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 7.12,
           "end": 8.44,
-          "text": "",
+          "text": "without a second thought,",
+          "words": [
+            {
+              "w": "without",
+              "start": 7.12,
+              "end": 7.28
+            },
+            {
+              "w": "a",
+              "start": 7.28,
+              "end": 7.48
+            },
+            {
+              "w": "second",
+              "start": 7.48,
+              "end": 7.82
+            },
+            {
+              "w": "thought,",
+              "start": 7.82,
+              "end": 8.32
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 8.85,
+          "end": 10.54,
+          "text": "they chose to fight for a love",
+          "words": [
+            {
+              "w": "they",
+              "start": 8.85,
+              "end": 8.92
+            },
+            {
+              "w": "chose",
+              "start": 8.92,
+              "end": 9.2
+            },
+            {
+              "w": "to",
+              "start": 9.2,
+              "end": 9.5
+            },
+            {
+              "w": "fight",
+              "start": 9.5,
+              "end": 9.8
+            },
+            {
+              "w": "for",
+              "start": 9.8,
+              "end": 10.2
+            },
+            {
+              "w": "a",
+              "start": 10.2,
+              "end": 10.34
+            },
+            {
+              "w": "love",
+              "start": 10.34,
+              "end": 10.54
+            }
+          ],
+          "needsReview": true
+        },
+        {
+          "start": 10.54,
           "end": 13.32,
-          "text": "",
+          "text": "built upon the unshakable foundation of",
+          "words": [
+            {
+              "w": "built",
+              "start": 10.54,
+              "end": 11.04
+            },
+            {
+              "w": "upon",
+              "start": 11.04,
+              "end": 11.42
+            },
+            {
+              "w": "the",
+              "start": 11.42,
+              "end": 11.62
+            },
+            {
+              "w": "unshakable",
+              "start": 11.62,
+              "end": 12.36
+            },
+            {
+              "w": "foundation",
+              "start": 12.36,
+              "end": 12.94
+            },
+            {
+              "w": "of",
+              "start": 12.94,
+              "end": 13.32
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 13.59,
           "end": 14.31,
-          "text": "",
+          "text": "friendship.",
+          "words": [
+            {
+              "w": "friendship.",
+              "start": 13.64,
+              "end": 14.04
+            }
+          ],
           "needsReview": true
         }
       ],
@@ -1000,67 +1718,384 @@
         {
           "start": 15.23,
           "end": 18.1,
-          "text": "",
+          "text": "The first year passed like a beautiful dream,",
+          "words": [
+            {
+              "w": "The",
+              "start": 15.23,
+              "end": 15.28
+            },
+            {
+              "w": "first",
+              "start": 15.28,
+              "end": 15.54
+            },
+            {
+              "w": "year",
+              "start": 15.54,
+              "end": 15.88
+            },
+            {
+              "w": "passed",
+              "start": 15.88,
+              "end": 16.24
+            },
+            {
+              "w": "like",
+              "start": 16.24,
+              "end": 16.74
+            },
+            {
+              "w": "a",
+              "start": 16.74,
+              "end": 16.92
+            },
+            {
+              "w": "beautiful",
+              "start": 16.92,
+              "end": 17.3
+            },
+            {
+              "w": "dream,",
+              "start": 17.3,
+              "end": 17.84
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 18.72,
           "end": 21.36,
-          "text": "",
+          "text": "until distance began its silent war.",
+          "words": [
+            {
+              "w": "until",
+              "start": 18.72,
+              "end": 18.94
+            },
+            {
+              "w": "distance",
+              "start": 18.94,
+              "end": 19.36
+            },
+            {
+              "w": "began",
+              "start": 19.36,
+              "end": 19.98
+            },
+            {
+              "w": "its",
+              "start": 19.98,
+              "end": 20.32
+            },
+            {
+              "w": "silent",
+              "start": 20.32,
+              "end": 20.7
+            },
+            {
+              "w": "war.",
+              "start": 20.7,
+              "end": 21.16
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 22.02,
           "end": 23.19,
-          "text": "",
+          "text": "Quarles arose,",
+          "words": [
+            {
+              "w": "Quarles",
+              "start": 22.14,
+              "end": 22.46
+            },
+            {
+              "w": "arose,",
+              "start": 22.46,
+              "end": 22.72
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 23.51,
           "end": 25.84,
-          "text": "",
+          "text": "misunderstandings darkened their hearts,",
+          "words": [
+            {
+              "w": "misunderstandings",
+              "start": 23.51,
+              "end": 24.56
+            },
+            {
+              "w": "darkened",
+              "start": 24.56,
+              "end": 24.8
+            },
+            {
+              "w": "their",
+              "start": 24.8,
+              "end": 25.3
+            },
+            {
+              "w": "hearts,",
+              "start": 25.3,
+              "end": 25.58
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 26.29,
           "end": 29.36,
-          "text": "",
+          "text": "and egos clashed where understanding once lived.",
+          "words": [
+            {
+              "w": "and",
+              "start": 26.3,
+              "end": 26.38
+            },
+            {
+              "w": "egos",
+              "start": 26.38,
+              "end": 26.86
+            },
+            {
+              "w": "clashed",
+              "start": 26.86,
+              "end": 27.2
+            },
+            {
+              "w": "where",
+              "start": 27.2,
+              "end": 27.78
+            },
+            {
+              "w": "understanding",
+              "start": 27.78,
+              "end": 28.34
+            },
+            {
+              "w": "once",
+              "start": 28.34,
+              "end": 28.88
+            },
+            {
+              "w": "lived.",
+              "start": 28.88,
+              "end": 29.32
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 30.11,
           "end": 33.08,
-          "text": "",
+          "text": "The very foundation that had held their love together began",
+          "words": [
+            {
+              "w": "The",
+              "start": 30.11,
+              "end": 30.16
+            },
+            {
+              "w": "very",
+              "start": 30.16,
+              "end": 30.36
+            },
+            {
+              "w": "foundation",
+              "start": 30.36,
+              "end": 30.94
+            },
+            {
+              "w": "that",
+              "start": 30.94,
+              "end": 31.5
+            },
+            {
+              "w": "had",
+              "start": 31.5,
+              "end": 31.66
+            },
+            {
+              "w": "held",
+              "start": 31.66,
+              "end": 31.94
+            },
+            {
+              "w": "their",
+              "start": 31.94,
+              "end": 32.18
+            },
+            {
+              "w": "love",
+              "start": 32.18,
+              "end": 32.4
+            },
+            {
+              "w": "together",
+              "start": 32.4,
+              "end": 32.86
+            },
+            {
+              "w": "began",
+              "start": 32.86,
+              "end": 33.08
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 33.42,
           "end": 34.49,
-          "text": "",
+          "text": "to tremble.",
+          "words": [
+            {
+              "w": "to",
+              "start": 33.56,
+              "end": 33.92
+            },
+            {
+              "w": "tremble.",
+              "start": 33.92,
+              "end": 34.48
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 35.14,
           "end": 35.61,
-          "text": "",
+          "text": "And then,",
+          "words": [
+            {
+              "w": "And",
+              "start": 35.14,
+              "end": 35.2
+            },
+            {
+              "w": "then,",
+              "start": 35.2,
+              "end": 35.44
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 35.92,
           "end": 36.7,
-          "text": "",
+          "text": "without warning,",
+          "words": [
+            {
+              "w": "without",
+              "start": 35.92,
+              "end": 36.02
+            },
+            {
+              "w": "warning,",
+              "start": 36.02,
+              "end": 36.52
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 37.03,
           "end": 39.07,
-          "text": "",
+          "text": "came a mighty wave of conflict,",
+          "words": [
+            {
+              "w": "came",
+              "start": 37.03,
+              "end": 37.12
+            },
+            {
+              "w": "a",
+              "start": 37.12,
+              "end": 37.28
+            },
+            {
+              "w": "mighty",
+              "start": 37.28,
+              "end": 37.62
+            },
+            {
+              "w": "wave",
+              "start": 37.62,
+              "end": 38.12
+            },
+            {
+              "w": "of",
+              "start": 38.12,
+              "end": 38.34
+            },
+            {
+              "w": "conflict,",
+              "start": 38.34,
+              "end": 38.82
+            }
+          ],
           "needsReview": true
         },
         {
           "start": 39.54,
           "end": 43,
-          "text": "",
+          "text": "threatening to drown everything they had once sworn to protect.",
+          "words": [
+            {
+              "w": "threatening",
+              "start": 39.56,
+              "end": 39.72
+            },
+            {
+              "w": "to",
+              "start": 39.72,
+              "end": 40.14
+            },
+            {
+              "w": "drown",
+              "start": 40.14,
+              "end": 40.36
+            },
+            {
+              "w": "everything",
+              "start": 40.36,
+              "end": 41.04
+            },
+            {
+              "w": "they",
+              "start": 41.04,
+              "end": 41.42
+            },
+            {
+              "w": "had",
+              "start": 41.42,
+              "end": 41.58
+            },
+            {
+              "w": "once",
+              "start": 41.58,
+              "end": 41.8
+            },
+            {
+              "w": "sworn",
+              "start": 41.8,
+              "end": 42.24
+            },
+            {
+              "w": "to",
+              "start": 42.24,
+              "end": 42.56
+            },
+            {
+              "w": "protect.",
+              "start": 42.56,
+              "end": 42.98
+            }
+          ],
           "needsReview": true
         }
       ],

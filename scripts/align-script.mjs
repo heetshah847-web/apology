@@ -266,7 +266,7 @@ export function buildCues(words, { phrases = [], chapterStarts = [], limits = LI
 /**
  * @param {object} i { trackId, chapters: string[], weights?: number[], duration, scriptMd?, phrasesTxt?, whisper?: {w,start,end}[] }
  */
-export function alignTrack({ trackId, chapters, weights, duration, scriptMd = '', phrasesTxt = '', whisper = [] }) {
+export function alignTrack({ trackId, chapters, weights, duration, scriptMd = '', phrasesTxt = '', whisper = [], fixedStarts = {} }) {
   const warnings = [];
   const script = parseScript(scriptMd);
   const phrases0 = phrasesTxt ? parsePhrases(phrasesTxt, duration) : [];
@@ -320,6 +320,11 @@ export function alignTrack({ trackId, chapters, weights, duration, scriptMd = ''
     ranges = chapters.map((id, n) => ({ id, start: r2(st[n]), end: r2(n + 1 < chapters.length ? st[n + 1] : duration) }));
   } else {
     ranges = splitByPauses(chapters, wts, duration, gaps);
+    // Heet's explicit chapter starts (story.config.json -> tracks[].chapterStartSec) beat the pause guess.
+    if (chapters.some((id, n) => n > 0 && fixedStarts[id] != null)) {
+      const st = ranges.map((r, n) => (n > 0 && fixedStarts[chapters[n]] != null ? Number(fixedStarts[chapters[n]]) : r.start));
+      ranges = chapters.map((id, n) => ({ id, start: r2(st[n]), end: r2(n + 1 < chapters.length ? st[n + 1] : duration) }));
+    }
     if (chapters.length > 1) {
       needsReview = needsReview || source !== 'script';
       warnings.push(`${trackId}: no usable [[chapter:…]] markers — chapters split at the longest pauses (${ranges.slice(1).map((r) => r.start.toFixed(2) + 's').join(', ')}).`);
@@ -338,6 +343,13 @@ export function alignTrack({ trackId, chapters, weights, duration, scriptMd = ''
       const cut = cutAt.find((t) => t > c.start + 0.05 && t < c.end - 0.05);
       return cut ? [{ ...c, end: r2(cut) }, { ...c, start: r2(cut) }] : [c];
     });
+  }
+
+  // Word times must sit inside their cue (cue edges are snapped to measured phrases; Whisper words can poke out by ms).
+  for (const c of cues) {
+    if (!c.words) continue;
+    let prev = c.start;
+    c.words = c.words.map((w) => { const st = r2(Math.min(Math.max(w.start, prev, c.start), c.end)); prev = st; return { ...w, start: st, end: r2(Math.min(Math.max(w.end, st), c.end)) }; });
   }
 
   // 5. photo anchors
@@ -370,7 +382,7 @@ export async function loadTrackInputs(t, cfg) {
   const whisper = readJson(path.join(caps, `${t.voice}.words.json`), { words: [] }).words ?? [];
   const weights = t.chapters.map((id) => cfg.phases.find((p) => p.id === id)?.weight ?? 1);
   const duration = await measureVoice(t.voice, t.targetSec);
-  return { trackId: t.id, chapters: t.chapters, weights, duration, scriptMd: readIf(path.join(root, t.script)), phrasesTxt, whisper };
+  return { trackId: t.id, chapters: t.chapters, weights, fixedStarts: t.chapterStartSec ?? {}, duration, scriptMd: readIf(path.join(root, t.script)), phrasesTxt, whisper };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
