@@ -5,7 +5,7 @@ import type { PlannerStepId } from '@/contracts';
 import { STEP_ORDER, usePlannerStore } from '@/state/plannerStore';
 import { ActivityStep } from './ActivityStep';
 import { CartColumn, CartList } from './CartPanel';
-import { CuisineStep, DessertStep, FlowersStep, HeetuStep } from './OptionSteps';
+import { CuisineStep, DessertStep, FlowersStep, HeetuStep, PunishStep } from './OptionSteps';
 import { DeliveryStep } from './DeliveryStep';
 import { ReviewStep } from './ReviewStep';
 import { SuggestionsStep } from './SuggestionsStep';
@@ -13,7 +13,7 @@ import { STEP_LABEL } from './types';
 
 const STEPS: Record<PlannerStepId, ComponentType> = {
   activity: ActivityStep, cuisine: CuisineStep, dessert: DessertStep, heetu: HeetuStep,
-  flowers: FlowersStep, suggestions: SuggestionsStep, review: ReviewStep, delivery: DeliveryStep,
+  flowers: FlowersStep, punish: PunishStep, suggestions: SuggestionsStep, review: ReviewStep, delivery: DeliveryStep,
 };
 
 function useDesktop() {

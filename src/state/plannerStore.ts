@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 import type { CartItem, Order, PlannerStepId } from '@/contracts';
 import { useStoryStore } from './storyStore';
 
-export const STEP_ORDER: PlannerStepId[] = ['activity', 'cuisine', 'dessert', 'heetu', 'flowers', 'suggestions', 'review', 'delivery'];
+export const STEP_ORDER: PlannerStepId[] = ['activity', 'cuisine', 'dessert', 'heetu', 'flowers', 'punish', 'suggestions', 'review', 'delivery'];
 
 interface PlannerState {
   currentStep: PlannerStepId;
