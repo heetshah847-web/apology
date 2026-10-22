@@ -5,7 +5,7 @@ export { MapOpening } from './map/MapOpening';
 export { AtlasInterlude } from './map/AtlasInterlude';
 export { QueenChapter } from './phases/queen/QueenChapter';
 export { FriendshipChapter } from './phases/friendship/FriendshipChapter';
-export { LoveChapter } from './phases/love/LoveChapter.stub';
+export { LoveChapter } from './phases/love/LoveChapter';
 export { DistanceChapter } from './phases/distance/DistanceChapter';
 export { ApologyChapter } from './phases/apology/ApologyChapter';
 export { TheQuestion } from './question/TheQuestion';
