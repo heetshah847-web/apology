@@ -1,0 +1,9 @@
+.planner-day .rdp-root {
+  --rdp-accent-color: var(--accent);
+  --rdp-accent-background-color: color-mix(in oklab, var(--accent) 25%, transparent);
+  --rdp-day-height: 44px;
+  --rdp-day-width: 44px;
+  color: var(--ink);
+}
+.planner-day .rdp-selected .rdp-day_button { background: var(--accent); color: var(--night-ink); border-color: var(--accent); }
+.planner-day .rdp-disabled { opacity: 0.3; }
