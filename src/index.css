@@ -1,5 +1,17 @@
-@import "tailwindcss";
+/* Owned by LANE-02. Imports fonts (self-hosted via @fontsource), tokens, textures. */
+@import 'tailwindcss';
+@import '@fontsource-variable/bodoni-moda/opsz.css';
+@import '@fontsource-variable/bodoni-moda/opsz-italic.css';
+@import '@fontsource-variable/figtree/index.css';
+@import '@fontsource/pinyon-script/400.css';
+@import './design/tokens.css';
+@import './design/textures.css';
 
-/* LANE-01 minimal base. LANE-02 (design system) owns and replaces this file. */
-html, body { background: #0b0907; color: #f4efe6; }
-body { margin: 0; font-family: Georgia, 'Times New Roman', serif; -webkit-font-smoothing: antialiased; }
+html { background: var(--bezel); color: var(--ink); }
+body {
+  margin: 0; background: var(--bezel); color: var(--ink);
+  font-family: var(--font-body); font-size: 1rem; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+::selection { background: color-mix(in oklab, var(--accent) 45%, transparent); }
