@@ -22,7 +22,7 @@ function Portrait({ item, index, active, from, to, clock, reduced, intro }: {
   return (
     <motion.div
       className="absolute inset-0"
-      style={{ opacity: index === 0 ? intro : 1 }}
+      style={{ opacity: index === 0 && !reduced ? intro : 1 }}
     >
       <motion.div
         className="absolute inset-0"

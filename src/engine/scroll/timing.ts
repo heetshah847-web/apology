@@ -4,13 +4,13 @@ import type { MediaItem } from '@/contracts';
 
 const clamp = (v: number, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
 
-/** Scroll length (vh) of a pinned track of duration D seconds: L = D � S. */
+/** Scroll length (vh) of a pinned track of duration D seconds: L = D × S. */
 export const sectionLength = (D: number, vhPerSec: number) => D * vhPerSec;
 
 export interface MediaSlot { index: number; show: number; hide: number; crossfade: number }
 
 /**
- * Photo schedule inside a window of D seconds (docs/04-TIMING-MATH.md §4).
+ * Photo schedule inside a window of D seconds (docs/04-TIMING-MATH.md Â§4).
  * Items with an explicit `at` (relative to the window) keep it; the rest share the gaps evenly.
  */
 export function mediaSchedule(D: number, items: Pick<MediaItem, 'at'>[]): MediaSlot[] {

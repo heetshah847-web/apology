@@ -124,7 +124,7 @@ export function TheQuestion() {
       {!answeredYes && (
         <motion.div className="flex items-center justify-center gap-20" style={{ opacity: buttonsOpacity, pointerEvents: alive ? 'auto' : 'none' }}>
           <span ref={yesRef} className="inline-flex" style={{ transform: `scale(${yesScale})`, transition: 'transform .45s var(--ease-enter)' }}>
-            <Button variant="royal" size="lg" data-testid="yes-button" onClick={() => setConfirming(true)}>{Q.yesLabel}</Button>
+            <Button variant="royal" size="lg" className="min-w-[10rem] md:min-w-[13rem] md:py-5 md:text-2xl" data-testid="yes-button" onClick={() => setConfirming(true)}>{Q.yesLabel}</Button>
           </span>
           {/* the slot keeps the row stable while No roams */}
           <span className="inline-flex" style={slot && pos ? { width: slot.w, height: slot.h } : undefined}>
@@ -137,7 +137,7 @@ export function TheQuestion() {
               }}
             >
               <Button
-                variant={exhausted ? 'royal' : 'ghost'} size="lg"
+                variant={exhausted ? 'royal' : 'ghost'} size="lg" className="min-w-[8rem] md:min-w-[10rem] md:py-5 md:text-2xl"
                 data-testid="no-button"
                 style={{ whiteSpace: 'nowrap' }}
                 onClick={() => (exhausted ? setConfirming(true) : attempt())}
