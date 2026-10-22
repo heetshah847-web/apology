@@ -35,3 +35,9 @@ Lanes: do NOT edit `src/contracts/*`. Append requests here (lane · what · why)
 - **Barrel swap (LANE-15):** `src/features/index.ts` should export `QueenChapter` from `./phases/queen/QueenChapter` (same name). QueenChapter imports `useChapter` from `@/engine`, so it needs the engine barrel swapped to the real `NarratedTrack` + `useChapter` together (LANE-05 note), otherwise the stub/real contexts mismatch.
 - **LANE-05 file encoding:** `src/engine/scroll/timing.ts` contains a Latin-1 `×` byte in a comment (line 2), invalid UTF-8; Vite's dependency scan fails on it. Replace with `x` or re-save as UTF-8.
 - **LANE-03:** `Picture.tsx` passes `fetchPriority` which React 18.3 warns about; use lowercase `fetchpriority`.
+## LANE-10 · distance chapter
+- **Barrel swap (LANE-15):** `src/features/index.ts` → export `DistanceChapter` from `./phases/distance/DistanceChapter` (not `.stub`). The component imports `useChapter` from `@/engine`, so it needs the LANE-05 barrel swap too (until then it throws "useChapter must be used inside <NarratedTrack>" under the real track; the demo uses an alias shim).
+- **`MediaItem.label` / `.blur`:** `story.generated.json` emits both; the chapter reads them through a local `MediaItem & {label?, blur?}` type. Please add them to the contract.
+- **Missing copy:** `content/scripts/track-2.md` still has placeholders, so every distance caption is empty; the chapter falls back to the phase subtitle as its one statement.
+- **`distanceKm`** in `story.config.json` is `null`, so the "km apart" readout is hidden until Heet sets it.
+- **Base is broken:** `src/features/planner/DatePlanner.tsx` on `base/wave1` (44b2e93) contains unresolved merge markers, so `npm run typecheck`/`build` fail there (not a lane-10 file).

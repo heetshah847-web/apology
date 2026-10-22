@@ -12,9 +12,9 @@ Theme `fog`, photos desaturated 25%, more negative space. Background: the **Sea 
 - Scenes pin and scrub with `useScene`; scrolling back reverses them exactly.
 
 ## Tasks
-- [ ] `DistanceChapter.tsx` using `useChapter('distance')`; split layout (stacked on mobile)
-- [ ] Optional "x km apart" from config `distanceKm`, fades in at 50%
-- [ ] Reduced‑motion variant
+- [x] `DistanceChapter.tsx` using `useChapter('distance')`; split layout (stacked on mobile)
+- [x] Optional "x km apart" from config `distanceKm`, fades in at 50%
+- [x] Reduced‑motion variant
 
 ## Acceptance
 - Mood clearly colder than Love; the pulse lands inside the hand‑off window
