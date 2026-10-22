@@ -1,0 +1,87 @@
+/* Dreamlit Atlas — design tokens (LANE-02).
+   Palette = docs/02-DESIGN-SYSTEM.md fallback (Pinterest palette not yet supplied; see docs/REFERENCE-NOTES.md). */
+
+:root {
+  /* base palette */
+  --night-ink: #1e1a3a;
+  --dusk-violet: #545388;
+  --moon-pearl: #eee8f4;
+  --royal-gold: #c8a45d;
+  --rose-quartz: #e7a6b8;
+  --sea-fog: #7fa3b8;
+  --bezel: #08060f;
+
+  /* semantic (overridden per phase theme) */
+  --stage: #231d44;          /* stage background */
+  --stage-deep: #17132e;     /* vignette / sheet background */
+  --glow: var(--royal-gold); /* light temperature tint */
+  --accent: var(--royal-gold);
+  --ink: var(--moon-pearl);
+  --ink-soft: color-mix(in oklab, var(--moon-pearl) 68%, transparent);
+  --ink-faint: color-mix(in oklab, var(--moon-pearl) 38%, transparent);
+  --line: color-mix(in oklab, var(--moon-pearl) 28%, transparent);
+  --frame: color-mix(in oklab, var(--accent) 85%, white);
+  --scrim: rgb(10 8 22 / 0.62);
+  --photo-filter: none;
+
+  /* type */
+  --font-display: 'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif;
+  --font-body: 'Figtree Variable', 'Figtree', system-ui, sans-serif;
+  --font-script: 'Pinyon Script', 'Snell Roundhand', cursive;
+
+  /* statement scale — measured reference 113px mobile / 216px desktop hero; ours is calmer because Bodoni is wider */
+  --text-hero: clamp(3.6rem, 4rem + 8vw, 11rem);
+  --text-statement: clamp(2.5rem, 1.6rem + 5.6vw, 7rem);
+  --text-statement-sm: clamp(1.75rem, 1.2rem + 3vw, 3.75rem);
+  --text-caption: clamp(1.125rem, 1rem + 0.5vw, 1.875rem); /* 18–30px */
+  --text-ui: 0.875rem;
+  --text-label: 0.75rem;
+  --leading-statement: 0.98;
+  --tracking-statement: -0.015em;
+
+  /* space / shape */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 5rem;
+  --gutter: 1rem;
+  --radius-sm: 6px; --radius-md: 14px; --radius-lg: 28px; --radius-bezel: 26px; --radius-pill: 999px;
+  --shadow-soft: 0 10px 30px -12px rgb(0 0 0 / 0.55);
+  --shadow-lift: 0 24px 60px -20px rgb(0 0 0 / 0.7), 0 2px 0 rgb(255 255 255 / 0.05) inset;
+  --shadow-glow: 0 0 60px -10px color-mix(in oklab, var(--glow) 55%, transparent);
+
+  /* motion */
+  --ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-scrub: linear;
+  --dur-fast: 160ms; --dur-base: 320ms; --dur-slow: 700ms; --dur-crossfade: 800ms;
+
+  --header-h: 76px;
+}
+@media (min-width: 900px) { :root { --gutter: 2rem; --header-h: 95px; } }
+
+/* ── phase themes: the light temperature of each chapter ───────────────── */
+[data-theme='gold']  { --stage: #251d3f; --stage-deep: #17122c; --glow: #c8a45d; --accent: #d9b76e; --photo-filter: saturate(1.05); }
+[data-theme='amber'] { --stage: #2f2038; --stage-deep: #1d1327; --glow: #e0a15b; --accent: #eab06a; --photo-filter: sepia(0.08) saturate(1.08); }
+[data-theme='rose']  { --stage: #3a1d3b; --stage-deep: #251028; --glow: #e7a6b8; --accent: #f0b6c6; --photo-filter: saturate(1.08); }
+[data-theme='fog']   { --stage: #1b2740; --stage-deep: #111a2d; --glow: #7fa3b8; --accent: #9dbacb; --photo-filter: saturate(0.75) contrast(0.96); } /* −25% saturation */
+[data-theme='dawn']  { --stage: #2a2552; --stage-deep: #1a1637; --glow: #f2c9a0; --accent: #f2c9a0; --photo-filter: saturate(0.95); }
+
+/* Tailwind v4 mapping: bg-stage, text-ink, font-display, rounded-bezel … */
+@theme inline {
+  --color-stage: var(--stage);
+  --color-stage-deep: var(--stage-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-accent: var(--accent);
+  --color-glow: var(--glow);
+  --color-line: var(--line);
+  --color-night: var(--night-ink);
+  --color-violet: var(--dusk-violet);
+  --color-pearl: var(--moon-pearl);
+  --color-gold: var(--royal-gold);
+  --color-rose: var(--rose-quartz);
+  --color-fog: var(--sea-fog);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-script: var(--font-script);
+  --radius-bezel: var(--radius-bezel);
+  --ease-enter: var(--ease-enter);
+}
