@@ -1,0 +1,268 @@
+{
+ "track": "t0",
+ "voice": "vo-0-queen",
+ "language": "en",
+ "model": "Xenova/whisper-base.en",
+ "words": [
+  {
+   "w": "Her",
+   "start": 0,
+   "end": 0.2
+  },
+  {
+   "w": "beauty",
+   "start": 0.2,
+   "end": 0.52
+  },
+  {
+   "w": "was",
+   "start": 0.52,
+   "end": 0.9
+  },
+  {
+   "w": "a",
+   "start": 0.9,
+   "end": 1.04
+  },
+  {
+   "w": "force",
+   "start": 1.04,
+   "end": 1.36
+  },
+  {
+   "w": "even",
+   "start": 1.36,
+   "end": 1.86
+  },
+  {
+   "w": "the",
+   "start": 1.86,
+   "end": 2.04
+  },
+  {
+   "w": "heavens",
+   "start": 2.04,
+   "end": 2.42
+  },
+  {
+   "w": "could",
+   "start": 2.42,
+   "end": 2.86
+  },
+  {
+   "w": "not",
+   "start": 2.86,
+   "end": 3.08
+  },
+  {
+   "w": "command,",
+   "start": 3.08,
+   "end": 3.36
+  },
+  {
+   "w": "a",
+   "start": 4.32,
+   "end": 4.4
+  },
+  {
+   "w": "divine",
+   "start": 4.4,
+   "end": 4.76
+  },
+  {
+   "w": "radiance",
+   "start": 4.76,
+   "end": 5.56
+  },
+  {
+   "w": "that",
+   "start": 5.56,
+   "end": 5.84
+  },
+  {
+   "w": "made",
+   "start": 5.84,
+   "end": 6.12
+  },
+  {
+   "w": "gods",
+   "start": 6.12,
+   "end": 6.44
+  },
+  {
+   "w": "forget",
+   "start": 6.44,
+   "end": 6.98
+  },
+  {
+   "w": "their",
+   "start": 6.98,
+   "end": 7.46
+  },
+  {
+   "w": "immortality.",
+   "start": 7.46,
+   "end": 7.8
+  },
+  {
+   "w": "The",
+   "start": 9.02,
+   "end": 9.1
+  },
+  {
+   "w": "moon",
+   "start": 9.1,
+   "end": 9.36
+  },
+  {
+   "w": "envied",
+   "start": 9.36,
+   "end": 10.18
+  },
+  {
+   "w": "her",
+   "start": 10.18,
+   "end": 10.36
+  },
+  {
+   "w": "glow.",
+   "start": 10.36,
+   "end": 10.64
+  },
+  {
+   "w": "The",
+   "start": 11.42,
+   "end": 11.44
+  },
+  {
+   "w": "roses",
+   "start": 11.44,
+   "end": 11.84
+  },
+  {
+   "w": "surrendered",
+   "start": 11.84,
+   "end": 12.42
+  },
+  {
+   "w": "their",
+   "start": 12.42,
+   "end": 12.86
+  },
+  {
+   "w": "fragrance",
+   "start": 12.86,
+   "end": 13.22
+  },
+  {
+   "w": "and",
+   "start": 13.22,
+   "end": 14
+  },
+  {
+   "w": "time",
+   "start": 14,
+   "end": 14.32
+  },
+  {
+   "w": "itself",
+   "start": 14.32,
+   "end": 14.92
+  },
+  {
+   "w": "paused",
+   "start": 14.92,
+   "end": 15.46
+  },
+  {
+   "w": "to",
+   "start": 15.46,
+   "end": 15.9
+  },
+  {
+   "w": "admire",
+   "start": 15.9,
+   "end": 16.2
+  },
+  {
+   "w": "her.",
+   "start": 16.2,
+   "end": 16.6
+  },
+  {
+   "w": "She",
+   "start": 17.36,
+   "end": 17.46
+  },
+  {
+   "w": "was",
+   "start": 17.46,
+   "end": 17.58
+  },
+  {
+   "w": "not",
+   "start": 17.58,
+   "end": 17.8
+  },
+  {
+   "w": "merely",
+   "start": 17.8,
+   "end": 18.12
+  },
+  {
+   "w": "a",
+   "start": 18.12,
+   "end": 18.42
+  },
+  {
+   "w": "queen.",
+   "start": 18.42,
+   "end": 18.72
+  },
+  {
+   "w": "She",
+   "start": 19.5,
+   "end": 19.7
+  },
+  {
+   "w": "was",
+   "start": 19.7,
+   "end": 20
+  },
+  {
+   "w": "the",
+   "start": 20,
+   "end": 20.18
+  },
+  {
+   "w": "reason",
+   "start": 20.18,
+   "end": 20.5
+  },
+  {
+   "w": "even",
+   "start": 20.5,
+   "end": 20.94
+  },
+  {
+   "w": "gods",
+   "start": 20.94,
+   "end": 21.34
+  },
+  {
+   "w": "learned",
+   "start": 21.34,
+   "end": 21.92
+  },
+  {
+   "w": "to",
+   "start": 21.92,
+   "end": 22.2
+  },
+  {
+   "w": "bow.",
+   "start": 22.2,
+   "end": 22.42
+  }
+ ]
+}

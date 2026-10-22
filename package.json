@@ -12,9 +12,10 @@
     "placeholders": "node scripts/make-placeholders.mjs",
     "media:images": "node scripts/optimize-images.mjs && node scripts/build-manifest.mjs",
     "media:videos": "bash scripts/optimize-videos.sh && node scripts/build-manifest.mjs",
-    "media:audio": "echo \"implemented by LANE-04\"",
-    "media:captions": "echo \"implemented by LANE-04\"",
-    "media:story": "echo \"implemented by LANE-04\"",
+    "media:audio": "bash scripts/prepare-audio.sh",
+    "media:captions": "node scripts/make-captions-browser.mjs && node scripts/align-script.mjs",
+    "media:story": "node scripts/build-story.mjs",
+    "test:audio": "node --experimental-strip-types src/engine/audio/captions.test.ts && node scripts/align-script.test.mjs",
     "media": "npm run media:images && npm run media:videos && npm run media:audio && npm run media:captions && npm run media:story",
     "test:e2e": "echo \"implemented by LANE-15\"",
     "shots": "echo \"implemented by LANE-15\""

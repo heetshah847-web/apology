@@ -49,6 +49,7 @@
       "id": "t1",
       "voice": "vo-1",
       "script": "content/scripts/track-1.md",
+      "chapterStartSec": { "love": 23.85 },
       "targetSec": 45.09,
       "chapters": [
         "friendship",

@@ -1,7 +1,7 @@
 {
   "trackId": "t2",
-  "duration": 43.31,
-  "source": "none",
+  "duration": 43.34,
+  "source": "whisper",
   "needsReview": true,
   "chapters": [
     {
@@ -12,116 +12,608 @@
     {
       "id": "apology",
       "start": 15.23,
-      "end": 43.31
+      "end": 43.34
     }
   ],
   "cues": [
     {
       "start": 0,
       "end": 3.16,
-      "text": "",
+      "text": "but cruel destiny tore the partners apart,",
+      "words": [
+        {
+          "w": "but",
+          "start": 0,
+          "end": 0.22
+        },
+        {
+          "w": "cruel",
+          "start": 0.22,
+          "end": 0.56
+        },
+        {
+          "w": "destiny",
+          "start": 0.56,
+          "end": 1.34
+        },
+        {
+          "w": "tore",
+          "start": 1.34,
+          "end": 1.82
+        },
+        {
+          "w": "the",
+          "start": 1.82,
+          "end": 2.16
+        },
+        {
+          "w": "partners",
+          "start": 2.16,
+          "end": 2.46
+        },
+        {
+          "w": "apart,",
+          "start": 2.46,
+          "end": 3.04
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 3.72,
       "end": 5.86,
-      "text": "",
+      "text": "condemning them to distant lands.",
+      "words": [
+        {
+          "w": "condemning",
+          "start": 4,
+          "end": 4.04
+        },
+        {
+          "w": "them",
+          "start": 4,
+          "end": 4.44
+        },
+        {
+          "w": "to",
+          "start": 4.44,
+          "end": 4.68
+        },
+        {
+          "w": "distant",
+          "start": 4.68,
+          "end": 4.94
+        },
+        {
+          "w": "lands.",
+          "start": 4.94,
+          "end": 5.54
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 6.5,
       "end": 6.79,
-      "text": "",
+      "text": "Yet,",
+      "words": [
+        {
+          "w": "Yet,",
+          "start": 6.5,
+          "end": 6.66
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 7.12,
       "end": 8.44,
-      "text": "",
+      "text": "without a second thought,",
+      "words": [
+        {
+          "w": "without",
+          "start": 7.12,
+          "end": 7.28
+        },
+        {
+          "w": "a",
+          "start": 7.28,
+          "end": 7.48
+        },
+        {
+          "w": "second",
+          "start": 7.48,
+          "end": 7.82
+        },
+        {
+          "w": "thought,",
+          "start": 7.82,
+          "end": 8.32
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 8.85,
+      "end": 10.54,
+      "text": "they chose to fight for a love",
+      "words": [
+        {
+          "w": "they",
+          "start": 8.85,
+          "end": 8.92
+        },
+        {
+          "w": "chose",
+          "start": 8.92,
+          "end": 9.2
+        },
+        {
+          "w": "to",
+          "start": 9.2,
+          "end": 9.5
+        },
+        {
+          "w": "fight",
+          "start": 9.5,
+          "end": 9.8
+        },
+        {
+          "w": "for",
+          "start": 9.8,
+          "end": 10.2
+        },
+        {
+          "w": "a",
+          "start": 10.2,
+          "end": 10.34
+        },
+        {
+          "w": "love",
+          "start": 10.34,
+          "end": 10.54
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "start": 10.54,
       "end": 13.32,
-      "text": "",
+      "text": "built upon the unshakable foundation of",
+      "words": [
+        {
+          "w": "built",
+          "start": 10.54,
+          "end": 11.04
+        },
+        {
+          "w": "upon",
+          "start": 11.04,
+          "end": 11.42
+        },
+        {
+          "w": "the",
+          "start": 11.42,
+          "end": 11.62
+        },
+        {
+          "w": "unshakable",
+          "start": 11.62,
+          "end": 12.36
+        },
+        {
+          "w": "foundation",
+          "start": 12.36,
+          "end": 12.94
+        },
+        {
+          "w": "of",
+          "start": 12.94,
+          "end": 13.32
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 13.59,
       "end": 14.31,
-      "text": "",
+      "text": "friendship.",
+      "words": [
+        {
+          "w": "friendship.",
+          "start": 13.64,
+          "end": 14.04
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 15.23,
       "end": 18.1,
-      "text": "",
+      "text": "The first year passed like a beautiful dream,",
+      "words": [
+        {
+          "w": "The",
+          "start": 15.23,
+          "end": 15.28
+        },
+        {
+          "w": "first",
+          "start": 15.28,
+          "end": 15.54
+        },
+        {
+          "w": "year",
+          "start": 15.54,
+          "end": 15.88
+        },
+        {
+          "w": "passed",
+          "start": 15.88,
+          "end": 16.24
+        },
+        {
+          "w": "like",
+          "start": 16.24,
+          "end": 16.74
+        },
+        {
+          "w": "a",
+          "start": 16.74,
+          "end": 16.92
+        },
+        {
+          "w": "beautiful",
+          "start": 16.92,
+          "end": 17.3
+        },
+        {
+          "w": "dream,",
+          "start": 17.3,
+          "end": 17.84
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 18.72,
       "end": 21.36,
-      "text": "",
+      "text": "until distance began its silent war.",
+      "words": [
+        {
+          "w": "until",
+          "start": 18.72,
+          "end": 18.94
+        },
+        {
+          "w": "distance",
+          "start": 18.94,
+          "end": 19.36
+        },
+        {
+          "w": "began",
+          "start": 19.36,
+          "end": 19.98
+        },
+        {
+          "w": "its",
+          "start": 19.98,
+          "end": 20.32
+        },
+        {
+          "w": "silent",
+          "start": 20.32,
+          "end": 20.7
+        },
+        {
+          "w": "war.",
+          "start": 20.7,
+          "end": 21.16
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 22.02,
       "end": 23.19,
-      "text": "",
+      "text": "Quarles arose,",
+      "words": [
+        {
+          "w": "Quarles",
+          "start": 22.14,
+          "end": 22.46
+        },
+        {
+          "w": "arose,",
+          "start": 22.46,
+          "end": 22.72
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 23.51,
       "end": 25.84,
-      "text": "",
+      "text": "misunderstandings darkened their hearts,",
+      "words": [
+        {
+          "w": "misunderstandings",
+          "start": 23.51,
+          "end": 24.56
+        },
+        {
+          "w": "darkened",
+          "start": 24.56,
+          "end": 24.8
+        },
+        {
+          "w": "their",
+          "start": 24.8,
+          "end": 25.3
+        },
+        {
+          "w": "hearts,",
+          "start": 25.3,
+          "end": 25.58
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 26.29,
       "end": 29.36,
-      "text": "",
+      "text": "and egos clashed where understanding once lived.",
+      "words": [
+        {
+          "w": "and",
+          "start": 26.3,
+          "end": 26.38
+        },
+        {
+          "w": "egos",
+          "start": 26.38,
+          "end": 26.86
+        },
+        {
+          "w": "clashed",
+          "start": 26.86,
+          "end": 27.2
+        },
+        {
+          "w": "where",
+          "start": 27.2,
+          "end": 27.78
+        },
+        {
+          "w": "understanding",
+          "start": 27.78,
+          "end": 28.34
+        },
+        {
+          "w": "once",
+          "start": 28.34,
+          "end": 28.88
+        },
+        {
+          "w": "lived.",
+          "start": 28.88,
+          "end": 29.32
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 30.11,
       "end": 33.08,
-      "text": "",
+      "text": "The very foundation that had held their love together began",
+      "words": [
+        {
+          "w": "The",
+          "start": 30.11,
+          "end": 30.16
+        },
+        {
+          "w": "very",
+          "start": 30.16,
+          "end": 30.36
+        },
+        {
+          "w": "foundation",
+          "start": 30.36,
+          "end": 30.94
+        },
+        {
+          "w": "that",
+          "start": 30.94,
+          "end": 31.5
+        },
+        {
+          "w": "had",
+          "start": 31.5,
+          "end": 31.66
+        },
+        {
+          "w": "held",
+          "start": 31.66,
+          "end": 31.94
+        },
+        {
+          "w": "their",
+          "start": 31.94,
+          "end": 32.18
+        },
+        {
+          "w": "love",
+          "start": 32.18,
+          "end": 32.4
+        },
+        {
+          "w": "together",
+          "start": 32.4,
+          "end": 32.86
+        },
+        {
+          "w": "began",
+          "start": 32.86,
+          "end": 33.08
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 33.42,
       "end": 34.49,
-      "text": "",
+      "text": "to tremble.",
+      "words": [
+        {
+          "w": "to",
+          "start": 33.56,
+          "end": 33.92
+        },
+        {
+          "w": "tremble.",
+          "start": 33.92,
+          "end": 34.48
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 35.14,
       "end": 35.61,
-      "text": "",
+      "text": "And then,",
+      "words": [
+        {
+          "w": "And",
+          "start": 35.14,
+          "end": 35.2
+        },
+        {
+          "w": "then,",
+          "start": 35.2,
+          "end": 35.44
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 35.92,
       "end": 36.7,
-      "text": "",
+      "text": "without warning,",
+      "words": [
+        {
+          "w": "without",
+          "start": 35.92,
+          "end": 36.02
+        },
+        {
+          "w": "warning,",
+          "start": 36.02,
+          "end": 36.52
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 37.03,
       "end": 39.07,
-      "text": "",
+      "text": "came a mighty wave of conflict,",
+      "words": [
+        {
+          "w": "came",
+          "start": 37.03,
+          "end": 37.12
+        },
+        {
+          "w": "a",
+          "start": 37.12,
+          "end": 37.28
+        },
+        {
+          "w": "mighty",
+          "start": 37.28,
+          "end": 37.62
+        },
+        {
+          "w": "wave",
+          "start": 37.62,
+          "end": 38.12
+        },
+        {
+          "w": "of",
+          "start": 38.12,
+          "end": 38.34
+        },
+        {
+          "w": "conflict,",
+          "start": 38.34,
+          "end": 38.82
+        }
+      ],
       "needsReview": true
     },
     {
       "start": 39.54,
       "end": 43,
-      "text": "",
+      "text": "threatening to drown everything they had once sworn to protect.",
+      "words": [
+        {
+          "w": "threatening",
+          "start": 39.56,
+          "end": 39.72
+        },
+        {
+          "w": "to",
+          "start": 39.72,
+          "end": 40.14
+        },
+        {
+          "w": "drown",
+          "start": 40.14,
+          "end": 40.36
+        },
+        {
+          "w": "everything",
+          "start": 40.36,
+          "end": 41.04
+        },
+        {
+          "w": "they",
+          "start": 41.04,
+          "end": 41.42
+        },
+        {
+          "w": "had",
+          "start": 41.42,
+          "end": 41.58
+        },
+        {
+          "w": "once",
+          "start": 41.58,
+          "end": 41.8
+        },
+        {
+          "w": "sworn",
+          "start": 41.8,
+          "end": 42.24
+        },
+        {
+          "w": "to",
+          "start": 42.24,
+          "end": 42.56
+        },
+        {
+          "w": "protect.",
+          "start": 42.56,
+          "end": 42.98
+        }
+      ],
       "needsReview": true
     }
   ],
   "photoAnchors": {},
   "warnings": [
-    "t2: no script text and no Whisper words — captions are empty (needsReview). Paste the script or run media:captions.",
+    "t2: script is still a placeholder — captions use the Whisper transcript (needsReview). Paste Heet's text into the track script.",
     "t2: no usable [[chapter:…]] markers — chapters split at the longest pauses (15.23s)."
   ]
 }
