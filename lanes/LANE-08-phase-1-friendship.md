@@ -15,12 +15,13 @@ Theme `amber`. Playful and warm. **7 photos** (incl. the uni seoul photobooth st
 - Scenes pin and scrub with `useScene`; scrolling back reverses them exactly.
 
 ## Tasks
-- [ ] `FriendshipChapter.tsx` using `useChapter('friendship')`; render nothing when `!isActive && exit === 1`
-- [ ] Polaroid stack (last 3 visible on mobile, 5 desktop); optional handwritten date from `overlay`
-- [ ] Two‑souls line (SVG path, `localProgress`)
-- [ ] Muted looping video allowed as one polaroid
-- [ ] Reduced‑motion variant
+- [x] `FriendshipChapter.tsx` using `useChapter('friendship')`; render nothing when `!isActive && exit === 1`
+- [x] Polaroid stack (last 3 visible on mobile, 5 desktop); optional handwritten date from `overlay`
+- [x] Two‑souls line (SVG path, `localProgress`)
+- [x] Muted looping video (supported; no video in this chapter yet) allowed as one polaroid
+- [x] Reduced‑motion variant (implemented, not screenshot-tested)
 
 ## Acceptance
-- Works with chapter windows from 8s to 25s (test both) without feeling rushed or empty
-- Videos never play with sound; drift check passes
+- [ ] Works with chapter windows from 8s to 25s: everything is derived from phase data, but only the measured 27.05s window was tested
+- [x] Videos never play with sound (muted attribute)
+- [ ] Drift check: needs the real NarratedTrack (barrel still points at stubs until lane 15)

@@ -1,0 +1,1 @@
+export { FriendshipChapter } from './FriendshipChapter';
