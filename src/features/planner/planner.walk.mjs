@@ -4,9 +4,9 @@ import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
-const base = process.argv[2] ?? 'http://localhost:5212';
+const base = process.argv[2] ?? 'http://localhost:5112';
 const url = `${base}/planner-harness.html`;
-const out = 'docs/lane12-shots';
+const out = 'docs/shots/lane-12';
 mkdirSync(out, { recursive: true });
 const browser = await chromium.launch();
 
