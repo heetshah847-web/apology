@@ -12,9 +12,9 @@ The chapter ends the track: on `ended` the engine glides to the map interlude �
 - Scenes pin and scrub with `useScene`; scrolling back reverses them exactly.
 
 ## Tasks
-- [ ] `LoveChapter.tsx` using `useChapter('love')`
-- [ ] Overlay line typography distinct from captions (display serif italic, opposite side to the caption)
-- [ ] Reduced‑motion variant
+- [x] `LoveChapter.tsx` using `useChapter('love')`
+- [x] Overlay line typography distinct from captions (display serif italic, opposite side to the caption)
+- [x] Reduced‑motion variant
 
 ## Acceptance
-- Overlay lines and captions never overlap at 390px; at most 1 overlay line visible at a time
+- [x] Overlay lines and captions never overlap at 390px; at most 1 overlay line visible at a time
