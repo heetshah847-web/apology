@@ -16,3 +16,10 @@ Lanes: do NOT edit `src/contracts/*`. Append requests here (lane · what · why)
 - **Test runner (LANE-01/15):** no test runner is installed. `timing.test.ts` runs with `node --experimental-strip-types src/engine/scroll/timing.test.ts`; wire into `npm test` or move to Vitest.
 - **Design system (LANE-02):** `ResumeVoice`, `SkipControl`, mini-map and cue stepper are minimal local versions in `src/engine/scroll/TrackUI.tsx`; swap for design-system components when they exist.
 - **Hand-off glide:** uses `SCROLL_TO_DURATION` (1.6s, measured) rather than the 1.2s in 04-TIMING-MATH §2; the measured value wins per CLAUDE.md rule 10.
+
+## LANE-06 (gate & map)
+- No new dependencies. No contract changes.
+- Wiring for lane 15: in `src/features/index.ts` export `PasscodeGate` from `./gate`, and `MapOpening`, `AtlasInterlude` from `./map` (also `MiniMap`, `MapPins`). LANE-05/10 import `MiniMap` / `MapPins` from `@/features/map`.
+- `MiniMap` reads `currentPhase` from the story store when no `phase` prop is given; it is pointer-transparent and fixed bottom-left by default.
+- `content/config/story.config.json → passcode.answerSha256` is still a placeholder, which disables the gate (console warning). Heet runs `node scripts/hash-answer.mjs "answer"` and pastes the hash.
+- Harness: `src/features/map/demo/index.html?view=gate|opening|interlude&to=…|mini|pins` (delete or keep; not imported by the app).
