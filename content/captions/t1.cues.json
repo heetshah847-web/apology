@@ -1,0 +1,121 @@
+{
+  "trackId": "t1",
+  "duration": 45.09,
+  "source": "none",
+  "needsReview": true,
+  "chapters": [
+    {
+      "id": "friendship",
+      "start": 0,
+      "end": 27.05
+    },
+    {
+      "id": "love",
+      "start": 27.05,
+      "end": 45.09
+    }
+  ],
+  "cues": [
+    {
+      "start": 0,
+      "end": 2.7,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 3.17,
+      "end": 7.62,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 8.29,
+      "end": 9.25,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 9.81,
+      "end": 12.39,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 12.95,
+      "end": 14.39,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 14.86,
+      "end": 16.52,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 17.33,
+      "end": 20.11,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 20.75,
+      "end": 23.44,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 23.85,
+      "end": 26.28,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 27.05,
+      "end": 28.88,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 29.21,
+      "end": 31.41,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 32.11,
+      "end": 32.93,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 33.28,
+      "end": 34.95,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 35.61,
+      "end": 39.01,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 39.55,
+      "end": 41.53,
+      "text": "",
+      "needsReview": true
+    },
+    {
+      "start": 41.97,
+      "end": 44.73,
+      "text": "",
+      "needsReview": true
+    }
+  ],
+  "photoAnchors": {},
+  "warnings": [
+    "t1: no script text and no Whisper words — captions are empty (needsReview). Paste the script or run media:captions.",
+    "t1: no usable [[chapter:…]] markers — chapters split at the longest pauses (27.05s)."
+  ]
+}
