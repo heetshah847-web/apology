@@ -1,12 +1,5 @@
 import { PlannerShell } from './PlannerShell';
 
-<<<<<<< HEAD
-/** LANE-12: "The Royal Order". Works standalone; the story mounts it once she says yes. */
-export function DatePlanner() {
-  return (
-    <section id="planner" aria-label="Plan our date" className="relative min-h-[100svh]" style={{ background: 'var(--stage)' }}>
-      <PlannerShell />
-=======
 /** LANE-12: "The Royal Order". Works standalone; the story mounts it once she says yes.
  *  Sits in the Dreamlit Atlas bezel + stage (amber theme = the Date Bazaar's lantern light). */
 export function DatePlanner() {
@@ -17,7 +10,6 @@ export function DatePlanner() {
           <PlannerShell />
         </div>
       </div>
->>>>>>> d66ca9a
     </section>
   );
 }
