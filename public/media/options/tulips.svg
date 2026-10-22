@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Tulips">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M200 190 V360 M130 200 L150 360 M270 200 L250 360" fill="none"/>
+<path d="M200 360 q-70 -30 -80 -110 q50 30 80 110z M200 360 q70 -30 80 -110 q-50 30 -80 110z" fill="#5E9C4E"/>
+<g fill="#F4739C">
+<path d="M150 80 q-30 60 20 110 q30 -20 30 -60 q-30 10 -50 -50z"/>
+<path d="M250 80 q30 60 -20 110 q-30 -20 -30 -60 q30 10 50 -50z"/>
+<path d="M200 60 q-48 20 -40 80 q10 50 40 56 q30 -6 40 -56 q8 -60 -40 -80z"/></g>
+<path d="M200 60 V190 M165 100 q10 40 35 30" fill="none" stroke-width="4"/>
+</g></svg>

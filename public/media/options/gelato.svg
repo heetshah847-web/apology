@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Gelato">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M135 225 L200 368 L265 225 Z" fill="#E0A458"/>
+<path d="M160 260 L240 260 M150 290 L250 290 M170 225 L215 340 M230 225 L190 340" fill="none" stroke-width="3"/>
+<circle cx="200" cy="190" r="70" fill="#F4A6C0"/>
+<path d="M135 205 q10 28 22 8 q10 30 22 4 q12 26 22 2 q12 28 24 2 q12 24 24 -2 q8 18 18 -4" fill="#F4A6C0"/>
+<circle cx="200" cy="108" r="54" fill="#FFF1D6"/>
+<path d="M150 125 q8 22 20 4 q10 24 22 2 q12 22 22 0" fill="none" stroke-width="4"/>
+<circle cx="205" cy="48" r="14" fill="#C9382E"/>
+<path d="M205 36 q10 -18 24 -16" fill="none" stroke-width="4"/>
+</g></svg>

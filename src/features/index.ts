@@ -1,14 +1,13 @@
-// Barrel: each line re-exports the real module (when its lane lands) or the stub.
-// Lanes must NOT edit this file; LANE-15 swaps the export lines.
-export { PasscodeGate } from './gate/PasscodeGate.stub';
-export { MapOpening } from './map/MapOpening.stub';
-export { AtlasInterlude } from './map/AtlasInterlude.stub';
-export { QueenChapter } from './phases/queen/QueenChapter.stub';
-export { FriendshipChapter } from './phases/friendship/FriendshipChapter.stub';
-export { LoveChapter } from './phases/love/LoveChapter.stub';
-export { DistanceChapter } from './phases/distance/DistanceChapter.stub';
-export { ApologyChapter } from './phases/apology/ApologyChapter.stub';
-export { TheQuestion } from './question/TheQuestion.stub';
-export { DatePlanner } from './planner/DatePlanner.stub';
-export { OrderConfirmed } from './order/OrderConfirmed.stub';
-export { SoundToggle } from './chrome/SoundToggle.stub';
+// Barrel wired by LANE-15: every line re-exports the real module.
+export { PasscodeGate } from './gate/PasscodeGate';
+export { MapOpening } from './map/MapOpening';
+export { AtlasInterlude } from './map/AtlasInterlude';
+export { QueenChapter } from './phases/queen/QueenChapter';
+export { FriendshipChapter } from './phases/friendship/FriendshipChapter';
+export { LoveChapter } from './phases/love/LoveChapter';
+export { DistanceChapter } from './phases/distance/DistanceChapter';
+export { ApologyChapter } from './phases/apology/ApologyChapter';
+export { TheQuestion } from './question/TheQuestion';
+export { DatePlanner } from './planner/DatePlanner';
+export { OrderConfirmed } from './order/OrderConfirmed';
+export { SoundToggle } from './chrome/SoundToggle.stub'; // no lane owns a real one: the stub is wired to audioDirector and is the final header toggle

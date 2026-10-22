@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Lilies">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M200 200 V365" fill="none"/>
+<path d="M200 345 q-60 -20 -75 -80 q55 10 75 80z M200 320 q60 -20 75 -80 q-55 10 -75 80z" fill="#5E9C4E"/>
+<g fill="#FFFFFF" transform="translate(200 170)">
+<path d="M0 0 Q-30 -60 0 -110 Q30 -60 0 0z"/>
+<path d="M0 0 Q-30 -60 0 -110 Q30 -60 0 0z" transform="rotate(60)"/>
+<path d="M0 0 Q-30 -60 0 -110 Q30 -60 0 0z" transform="rotate(120)"/>
+<path d="M0 0 Q-30 -60 0 -110 Q30 -60 0 0z" transform="rotate(180)"/>
+<path d="M0 0 Q-30 -60 0 -110 Q30 -60 0 0z" transform="rotate(240)"/>
+<path d="M0 0 Q-30 -60 0 -110 Q30 -60 0 0z" transform="rotate(300)"/></g>
+<circle cx="200" cy="170" r="14" fill="#F7C23A"/>
+<path d="M200 170 V120 M200 170 L165 135 M200 170 L235 135" fill="none" stroke-width="4"/>
+</g></svg>

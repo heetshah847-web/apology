@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Red roses">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M200 200 V360 M150 215 L120 360 M250 215 L280 360" fill="none"/>
+<path d="M200 300 q-40 -20 -50 -50 q40 0 50 50z M200 270 q40 -20 50 -50 q-40 0 -50 50z" fill="#5E9C4E"/>
+<g fill="#D0283A"><circle cx="200" cy="150" r="62"/><circle cx="125" cy="200" r="42"/><circle cx="275" cy="200" r="42"/></g>
+<g fill="none" stroke-width="5"><path d="M175 150 q25 -30 50 0 q-10 28 -25 28 q-18 0 -25 -28z"/><path d="M200 128 q18 14 6 32"/><path d="M105 200 q20 -22 40 0 q-8 16 -20 16"/><path d="M255 200 q20 -22 40 0 q-8 16 -20 16"/></g>
+</g></svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Sunflowers">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M200 250 V365" fill="none"/>
+<path d="M200 330 q-60 -10 -70 -60 q50 -6 70 60z M200 310 q60 -10 70 -60 q-50 -6 -70 60z" fill="#5E9C4E"/>
+<g fill="#F7C23A" transform="translate(200 150)">
+<ellipse rx="22" ry="62" cy="-62" /><ellipse rx="22" ry="62" cy="-62" transform="rotate(45)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(90)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(135)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(180)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(225)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(270)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(315)"/></g>
+<circle cx="200" cy="150" r="42" fill="#6B3A1E"/>
+<g fill="#4a2418" stroke-width="0"><circle cx="188" cy="140" r="4"/><circle cx="212" cy="140" r="4"/><circle cx="200" cy="158" r="4"/><circle cx="184" cy="162" r="4"/><circle cx="216" cy="162" r="4"/></g>
+</g></svg>

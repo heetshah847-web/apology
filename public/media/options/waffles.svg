@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Waffles">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="200" cy="215" r="150" fill="#FFFFFF"/>
+<rect x="90" y="105" width="220" height="220" rx="28" fill="#E0A458"/>
+<path d="M163 105 V325 M237 105 V325 M90 178 H310 M90 252 H310" fill="none" stroke-width="5"/>
+<path d="M90 140 Q110 140 110 175 Q112 200 132 190 Q150 180 160 150 Q180 130 205 150 Q225 175 250 160 Q270 135 290 150 Q310 160 310 130 L310 105 L90 105Z" fill="#A8461F" stroke-width="4"/>
+<rect x="165" y="165" width="70" height="52" rx="8" fill="#FFE58A" transform="rotate(-6 200 190)"/>
+<circle cx="285" cy="270" r="14" fill="#C9382E"/><circle cx="262" cy="285" r="12" fill="#C9382E"/>
+</g></svg>
