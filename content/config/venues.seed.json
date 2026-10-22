@@ -1,0 +1,16 @@
+{
+  "_readme": "UNVERIFIED seeds gathered quickly from listing sites in Oct 2026. LANE-13 must verify each (open? still serving? correct address?) before use. Do not show unverified venues to her.",
+  "areas": ["Sindhu Bhavan Road (Bodakdev / Thaltej)", "Near Nirma University (SG Highway, Chharodi / Gota)"],
+  "venues": [
+    { "id": "cafe-de-italiano", "name": "Cafe De Italiano", "area": "Sindhu Bhavan Marg, Bodakdev", "address": "Arista Hub, 3, Sindhu Bhavan Marg, PRL Colony, Bodakdev", "knownFor": ["Alfredo pasta", "Pink pasta", "Farmhouse pizza", "Waffles"], "forOptions": ["pasta", "pizza", "waffles"], "verified": false, "sources": ["housing.com best cafes in Ahmedabad"] },
+    { "id": "huber-holly-sbr", "name": "Huber & Holly", "area": "Sindhu Bhavan Road", "knownFor": ["Pizza", "Pasta", "Desserts", "Ice cream"], "priceForTwo": "₹600 (listing)", "forOptions": ["pizza", "pasta", "gelato", "waffles", "brownie-sundae"], "verified": false, "sources": ["eazydiner.com Sindhubhavan Road listing"] },
+    { "id": "sage-by-cacaote", "name": "Sage – By Cacaote", "area": "Sindhu Bhavan Road", "knownFor": ["Italian", "Continental", "North Indian"], "forOptions": ["pasta", "pizza"], "verified": false, "sources": ["eazydiner.com Sindhubhavan Road listing"] },
+    { "id": "table-tales-sbr", "name": "Table Tales", "area": "Sindhu Bhavan Road", "knownFor": ["Spaghetti / Italian"], "forOptions": ["pasta"], "verified": false, "sources": ["restaurant-guru spaghetti Ahmedabad"] },
+    { "id": "the-cafe-stellar", "name": "The Café (Stellar Building)", "area": "Sindhu Bhavan Marg, Thaltej", "address": "Stellar Building, Sindhu Bhavan Marg, PRL Colony, Thaltej", "knownFor": ["Breakfast", "Lasagna"], "forOptions": ["pasta"], "verified": false, "sources": ["yappe.in listing"] },
+    { "id": "tandoor-story-sbr", "name": "Tandoor Story – Chur Chur Naan", "area": "Sindhu Bhavan Road", "knownFor": ["Chur chur naan", "North Indian"], "priceForTwo": "₹800 (listing)", "forOptions": ["north-indian"], "verified": false, "sources": ["eazydiner.com Sindhubhavan Road listing"] },
+    { "id": "legends-of-punjab-sbr", "name": "Legends Of Punjab", "area": "Sindhu Bhavan Road", "knownFor": ["Punjabi", "North Indian"], "priceForTwo": "₹1200 (listing)", "forOptions": ["north-indian"], "verified": false, "sources": ["eazydiner.com Sindhubhavan Road listing"] },
+    { "id": "creamoholic-sbr", "name": "Creamoholic Cafe & Restaurant", "area": "Sindhu Bhavan Marg, Thaltej", "knownFor": ["Ice creams", "Shakes", "Desserts"], "forOptions": ["gelato", "brownie-sundae", "waffles"], "verified": false, "sources": ["explurger.com listing"] },
+    { "id": "makeba-rooftop", "name": "Makeba – The Lounge Cafe (rooftop)", "area": "VERIFY", "knownFor": ["Blueberry cheesecake", "Pasta"], "forOptions": ["cheesecake", "pasta"], "verified": false, "sources": ["wanderlog.com reviews"], "notes": "Reviews mention slow service" }
+  ],
+  "toResearch": ["fondue", "noodles", "tiramisu", "choco-fondue", "kulfi", "florists near SBR / Nirma", "pickleball courts near SBR / Nirma", "bowling (nearest good alley)", "shopping (malls / streets near SBR)"]
+}

@@ -1,0 +1,18 @@
+# vo-1.mp3 (Friendship → Love) — 45.09s. 17 spoken phrases MEASURED from pauses. Text unknown until the script is pasted into content/scripts/track-1.md.
+# Longest pauses (likely paragraph breaks, candidate Friendship→Love boundary): 16.52–17.33s (0.81s), 26.28–27.05s (0.77s).
+00:00.00-00:02.70
+00:03.17-00:07.62
+00:08.29-00:09.25
+00:09.81-00:12.39
+00:12.95-00:14.39
+00:14.86-00:16.52
+00:17.33-00:20.11
+00:20.75-00:23.44
+00:23.85-00:26.28
+00:27.05-00:28.88
+00:29.21-00:31.41
+00:32.11-00:32.93
+00:33.28-00:34.95
+00:35.61-00:39.01
+00:39.55-00:41.53
+00:41.97-00:44.73

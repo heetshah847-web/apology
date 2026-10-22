@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* LANE-01 minimal base. LANE-02 (design system) owns and replaces this file. */
+html, body { background: #0b0907; color: #f4efe6; }
+body { margin: 0; font-family: Georgia, 'Times New Roman', serif; -webkit-font-smoothing: antialiased; }
