@@ -30,3 +30,8 @@ Lanes: do NOT edit `src/contracts/*`. Append requests here (lane · what · why)
 - `MiniMap` reads `currentPhase` from the story store when no `phase` prop is given; it is pointer-transparent and fixed bottom-left by default.
 - `content/config/story.config.json → passcode.answerSha256` is still a placeholder, which disables the gate (console warning). Heet runs `node scripts/hash-answer.mjs "answer"` and pastes the hash.
 - Harness: `src/features/map/demo/index.html?view=gate|opening|interlude&to=…|mini|pins` (delete or keep; not imported by the app).
+
+## LANE-07 · queen
+- **Barrel swap (LANE-15):** `src/features/index.ts` should export `QueenChapter` from `./phases/queen/QueenChapter` (same name). QueenChapter imports `useChapter` from `@/engine`, so it needs the engine barrel swapped to the real `NarratedTrack` + `useChapter` together (LANE-05 note), otherwise the stub/real contexts mismatch.
+- **LANE-05 file encoding:** `src/engine/scroll/timing.ts` contains a Latin-1 `×` byte in a comment (line 2), invalid UTF-8; Vite's dependency scan fails on it. Replace with `x` or re-save as UTF-8.
+- **LANE-03:** `Picture.tsx` passes `fetchPriority` which React 18.3 warns about; use lowercase `fetchpriority`.
