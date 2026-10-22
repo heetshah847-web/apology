@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
 import type { PlannerStepId } from '@/contracts';
 import { FrameOutline } from '@/design';
@@ -15,20 +14,16 @@ export interface OptionCardProps {
   onVenue: (venueId: string) => void;
 }
 
-/** Option card inside a design-tool frame. The badge flies to the cart through a shared layoutId. */
+/** Option card inside a design-tool frame (no photos; emoji or heart badge). The badge flies to the cart through a shared layoutId. */
 export function OptionCard({ stepId, option, layer, selected, venueId, onSelect, onVenue }: OptionCardProps) {
-  const [imgOk, setImgOk] = useState(true);
-  const hasImage = !!option.image && imgOk;
   return (
     <FrameOutline label={layer} className="mt-10">
       <div className="p-4 text-left" style={{ background: selected ? 'color-mix(in oklab, var(--accent) 14%, var(--stage-deep))' : 'var(--stage-deep)' }}>
         <button type="button" onClick={onSelect} aria-pressed={selected} className="flex w-full items-center gap-4 bg-transparent p-0 text-left" style={{ color: 'var(--ink)' }}>
-          {hasImage ? (
-            <img src={`/media/${option.image}.jpg`} alt="" loading="lazy" onError={() => setImgOk(false)} className="h-20 w-20 shrink-0 rounded-[10px] object-cover" />
-          ) : selected ? (
+          {selected ? (
             <span aria-hidden className="grid h-14 w-14 shrink-0 place-items-center rounded-full text-2xl" style={{ background: 'var(--accent)', color: 'var(--night-ink)' }}>✓</span>
           ) : (
-            <motion.span layoutId={`fly-${stepId}-${option.id}`} className="grid h-14 w-14 shrink-0 place-items-center rounded-full text-3xl" style={{ background: 'var(--stage)' }}>{option.emoji ?? option.label[0]}</motion.span>
+            <motion.span layoutId={`fly-${stepId}-${option.id}`} className="grid h-14 w-14 shrink-0 place-items-center rounded-full text-3xl" style={{ background: 'var(--stage)' }}>{option.emoji ?? '♥'}</motion.span>
           )}
           <span className="flex-1">
             <span className="block text-xl" style={{ fontFamily: 'var(--font-display)' }}>{option.label}</span>
