@@ -16,9 +16,17 @@ Lanes: do NOT edit `src/contracts/*`. Append requests here (lane · what · why)
 4. **MediaItem extras** — manifest items carry `avifSrcSet`, `blur`, `label`, `placeholder` beyond the frozen `MediaItem`; typed as `ManifestItem` in `src/engine/media/types.ts`. No contract change needed.
 5. **Generated photos** — `public/media/photos/**` (≈7.5 MB, derived from `assets-drop`) is NOT committed by this lane; run `npm run media:images` before deploy (or commit it in LANE-15 if Vercel can't run the script).
 6. **Video naming** — clips in `assets-drop/videos` must start with a phase id (`love-cafe.mp4`).
+
 ## LANE-05 · scroll engine
 - **Barrel swap (LANE-15):** in `src/engine/index.ts` point `SmoothScroll`, `NarratedTrack`, `useChapter` at `./scroll/SmoothScroll`, `./scroll/NarratedTrack`, `./scroll/useChapter`. Also export `useScene`, `StepInside`, `useSmoothScroll`, `useTrack` from `./scroll/*` for chapter/planner lanes.
 - **Demo route (LANE-15):** the demo lives at `src/engine/scroll/demo/engine-demo.html` (dev: `/src/engine/scroll/demo/engine-demo.html?debug=1`). Mount `EngineDemo` at `/engine-demo` if wanted in the app.
 - **Test runner (LANE-01/15):** no test runner is installed. `timing.test.ts` runs with `node --experimental-strip-types src/engine/scroll/timing.test.ts`; wire into `npm test` or move to Vitest.
 - **Design system (LANE-02):** `ResumeVoice`, `SkipControl`, mini-map and cue stepper are minimal local versions in `src/engine/scroll/TrackUI.tsx`; swap for design-system components when they exist.
 - **Hand-off glide:** uses `SCROLL_TO_DURATION` (1.6s, measured) rather than the 1.2s in 04-TIMING-MATH §2; the measured value wins per CLAUDE.md rule 10.
+
+## LANE-06 (gate & map)
+- No new dependencies. No contract changes.
+- Wiring for lane 15: in `src/features/index.ts` export `PasscodeGate` from `./gate`, and `MapOpening`, `AtlasInterlude` from `./map` (also `MiniMap`, `MapPins`). LANE-05/10 import `MiniMap` / `MapPins` from `@/features/map`.
+- `MiniMap` reads `currentPhase` from the story store when no `phase` prop is given; it is pointer-transparent and fixed bottom-left by default.
+- `content/config/story.config.json → passcode.answerSha256` is still a placeholder, which disables the gate (console warning). Heet runs `node scripts/hash-answer.mjs "answer"` and pastes the hash.
+- Harness: `src/features/map/demo/index.html?view=gate|opening|interlude&to=…|mini|pins` (delete or keep; not imported by the app).
