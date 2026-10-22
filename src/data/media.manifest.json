@@ -1,0 +1,508 @@
+{
+  "generatedAt": "2026-10-22T18:54:35.906Z",
+  "phases": {
+    "queen": [
+      {
+        "id": "queen-01-white-kurta",
+        "kind": "image",
+        "src": "/media/photos/queen/01-white-kurta-720.webp",
+        "srcSet": "/media/photos/queen/01-white-kurta-720.webp 720w",
+        "avifSrcSet": "/media/photos/queen/01-white-kurta-720.avif 720w",
+        "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwBACdASoQABwAPu1iqk2ppaQiMAgBMB2JQBdmUAFIYFtyRXnIEiNC0AAA9DmGqm/x/SClrRQ03Hu/YVJ8ccS22fcd5iER48hzFFgaI7mbNOvWc0zbWaE+UJTdJtg7u/u8DEHqupW0NTwUS1g8wIAA",
+        "width": 720,
+        "height": 1280,
+        "alt": "Tanisha in a white kurta in front of a carved wooden door",
+        "focal": [
+          0.5,
+          0.75
+        ],
+        "at": 0,
+        "label": "Queen / Portrait 01"
+      },
+      {
+        "id": "queen-02-white-kurta-garlands",
+        "kind": "image",
+        "src": "/media/photos/queen/02-white-kurta-garlands-720.webp",
+        "srcSet": "/media/photos/queen/02-white-kurta-garlands-720.webp 720w",
+        "avifSrcSet": "/media/photos/queen/02-white-kurta-garlands-720.avif 720w",
+        "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBACdASoQABwAPu1iqk2ppaQiMAgBMB2JZwDImGmi+SHJO2cvSJLzQAD+5Qjp7HwvGufiJcq198aCOqkjF/mzpzOfBlcFQEGPWvyrUHZWQDNfZawYXzpJIoFh83FWiUwAAA==",
+        "width": 720,
+        "height": 1280,
+        "alt": "Tanisha in white, framed by flower garlands",
+        "focal": [
+          0.5,
+          0.719
+        ],
+        "at": 4.35,
+        "label": "Queen / Portrait 02"
+      },
+      {
+        "id": "queen-03-elevator",
+        "kind": "image",
+        "src": "/media/photos/queen/03-elevator-960.webp",
+        "srcSet": "/media/photos/queen/03-elevator-800.webp 800w, /media/photos/queen/03-elevator-960.webp 960w",
+        "avifSrcSet": "/media/photos/queen/03-elevator-800.avif 800w, /media/photos/queen/03-elevator-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZwC/WMgA/mpHFtj+NQAA/r5TpX+HjLiRMM9dJzhJ+Du41kn4m1z3ByopNm9SlEa+/Y+u7+06a+2XQsy/kzCYK4H5+AAA",
+        "width": 960,
+        "height": 1280,
+        "alt": "Tanisha taking a mirror selfie in a lift",
+        "focal": [
+          0.5,
+          0.625
+        ],
+        "at": 6.6,
+        "label": "Queen / Portrait 03"
+      },
+      {
+        "id": "queen-04-red-fairy-lights",
+        "kind": "image",
+        "src": "/media/photos/queen/04-red-fairy-lights-960.webp",
+        "srcSet": "/media/photos/queen/04-red-fairy-lights-800.webp 800w, /media/photos/queen/04-red-fairy-lights-960.webp 960w",
+        "avifSrcSet": "/media/photos/queen/04-red-fairy-lights-800.avif 800w, /media/photos/queen/04-red-fairy-lights-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwBACdASoQABUAPu1qrU8ppiQiMAgBMB2JZAC7MoGsAAKo0TuNDyzsmUAA/XR2IjGDVlwbIFWPW3iYQn/wfkxInT9xabCz8GpoRdnNwokbabXMlQukQdE1eR58o/3YsL67bI/yD7a4AA==",
+        "width": 960,
+        "height": 1280,
+        "alt": "Tanisha in red under fairy lights",
+        "focal": [
+          0.5,
+          0.656
+        ],
+        "at": 9.02,
+        "label": "Queen / The glow"
+      },
+      {
+        "id": "queen-05-flower-in-hair",
+        "kind": "image",
+        "src": "/media/photos/queen/05-flower-in-hair-960.webp",
+        "srcSet": "/media/photos/queen/05-flower-in-hair-800.webp 800w, /media/photos/queen/05-flower-in-hair-960.webp 960w",
+        "avifSrcSet": "/media/photos/queen/05-flower-in-hair-800.avif 800w, /media/photos/queen/05-flower-in-hair-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADQAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JYwDCgCBjuX1wxG8IIMAA/M49HfoQ1BkVeNEE3j20p62UrA4zJ5pnXuy19PdjwOcrm1yxmOVFWA6cD8ODmrJ0r1p0MYfeTS/9D4vx8iRdn7WSjGjODgAA",
+        "width": 960,
+        "height": 1280,
+        "alt": "Tanisha smiling with a white flower in her hair",
+        "focal": [
+          0.5,
+          0.313
+        ],
+        "at": 11.39,
+        "label": "Queen / The rose"
+      },
+      {
+        "id": "queen-06-close-portrait",
+        "kind": "image",
+        "src": "/media/photos/queen/06-close-portrait-960.webp",
+        "srcSet": "/media/photos/queen/06-close-portrait-800.webp 800w, /media/photos/queen/06-close-portrait-960.webp 960w",
+        "avifSrcSet": "/media/photos/queen/06-close-portrait-800.avif 800w, /media/photos/queen/06-close-portrait-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQBACdASoQABUAPu1iqU2ppaQiMAgBMB2JagCdMoAC8gpw/FG4RUoPmRugAP6vHwdQW8CxImT4bLPfB8BIsTvezi5k4nidaICx432gmtg7oq5nkmg3oz3T/NIlfYMw3HjLvdY/lxm8otfOp3Sc//CklczrTdl4AAA=",
+        "width": 960,
+        "height": 1280,
+        "alt": "Close portrait of Tanisha smiling",
+        "focal": [
+          0.5,
+          0.781
+        ],
+        "at": 13.93,
+        "label": "Queen / Time paused"
+      },
+      {
+        "id": "queen-07-sweatshirt",
+        "kind": "image",
+        "src": "/media/photos/queen/07-sweatshirt-960.webp",
+        "srcSet": "/media/photos/queen/07-sweatshirt-800.webp 800w, /media/photos/queen/07-sweatshirt-960.webp 960w",
+        "avifSrcSet": "/media/photos/queen/07-sweatshirt-800.avif 800w, /media/photos/queen/07-sweatshirt-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JYwC7ACFTlTm6a59TlAD+8T8GNZ1OEu4c9i96qxMEFDDCQUaayga80TVACMlHRMbSL/VefGQ853s7IvB/c/Sj8ASAAA==",
+        "width": 960,
+        "height": 1280,
+        "alt": "Tanisha in a lavender sweatshirt",
+        "focal": [
+          0.5,
+          0.281
+        ],
+        "at": 17.37,
+        "label": "Queen / Portrait 07"
+      },
+      {
+        "id": "queen-08-red-queen",
+        "kind": "image",
+        "src": "/media/photos/queen/08-red-queen-960.webp",
+        "srcSet": "/media/photos/queen/08-red-queen-800.webp 800w, /media/photos/queen/08-red-queen-960.webp 960w",
+        "avifSrcSet": "/media/photos/queen/08-red-queen-800.avif 800w, /media/photos/queen/08-red-queen-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwAwCdASoQABUAPu1iqk2ppaQiMAgBMB2JYgCdABtXTCE0LRVMeAD+F+DgBzlpOs5c33YHAS9lpuisUtDhlPdNjrpJx16fNtnHXdB4LrDfRWdIwQfqakI1Q89mlpUCuGLqmAAA",
+        "width": 960,
+        "height": 1280,
+        "alt": "Tanisha in a red outfit, standing like royalty",
+        "focal": [
+          0.5,
+          0.438
+        ],
+        "at": 19.53,
+        "label": "Queen / Tanisha"
+      }
+    ],
+    "friendship": [
+      {
+        "id": "friendship-01-pout-selfie",
+        "kind": "image",
+        "src": "/media/photos/friendship/01-pout-selfie-1200.webp",
+        "srcSet": "/media/photos/friendship/01-pout-selfie-800.webp 800w, /media/photos/friendship/01-pout-selfie-1200.webp 1200w, /media/photos/friendship/01-pout-selfie-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/friendship/01-pout-selfie-800.avif 800w, /media/photos/friendship/01-pout-selfie-1200.avif 1200w, /media/photos/friendship/01-pout-selfie-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoQAAwAA4BaJbACdACzXmRiNgAA/uqXvM2K8Ix5xqojHIqhKwz5+QLsuiLUsJt+7AnhYQbs/v1VF5TgCW4zDAAA",
+        "width": 1280,
+        "height": 960,
+        "alt": "Heet and Tanisha pouting in a selfie",
+        "focal": [
+          0.875,
+          0.5
+        ],
+        "label": "Memory / Pout contest"
+      },
+      {
+        "id": "friendship-02-blue-tee-selfie",
+        "kind": "image",
+        "src": "/media/photos/friendship/02-blue-tee-selfie-1200.webp",
+        "srcSet": "/media/photos/friendship/02-blue-tee-selfie-800.webp 800w, /media/photos/friendship/02-blue-tee-selfie-1200.webp 1200w, /media/photos/friendship/02-blue-tee-selfie-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/friendship/02-blue-tee-selfie-800.avif 800w, /media/photos/friendship/02-blue-tee-selfie-1200.avif 1200w, /media/photos/friendship/02-blue-tee-selfie-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAwAA4BaJbACdADb9rp2TB4cAP63l2j+lAT6c18ITZiFVb4bhBuueV7kC78CbO4k2Z0YvU1IzCJ5mQemAp4wsAA=",
+        "width": 1280,
+        "height": 960,
+        "alt": "Heet and Tanisha smiling in a selfie",
+        "focal": [
+          0.969,
+          0.5
+        ],
+        "label": "Memory / Best friends"
+      },
+      {
+        "id": "friendship-03-big-smiles",
+        "kind": "image",
+        "src": "/media/photos/friendship/03-big-smiles-1200.webp",
+        "srcSet": "/media/photos/friendship/03-big-smiles-800.webp 800w, /media/photos/friendship/03-big-smiles-1200.webp 1200w, /media/photos/friendship/03-big-smiles-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/friendship/03-big-smiles-800.avif 800w, /media/photos/friendship/03-big-smiles-1200.avif 1200w, /media/photos/friendship/03-big-smiles-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAwAA4BaJZACdACVzEOTOgAA/bt8wQjCyxKuH+wQhJiHKtpfG5qwEFo0S9qynoa36aprtt7gtuDWrXER2DUKtHAzPFRAAAA=",
+        "width": 1280,
+        "height": 960,
+        "alt": "Heet and Tanisha laughing together",
+        "focal": [
+          0.219,
+          0.5
+        ],
+        "label": "Memory / Big smiles"
+      },
+      {
+        "id": "friendship-04-night-selfie",
+        "kind": "image",
+        "src": "/media/photos/friendship/04-night-selfie-1200.webp",
+        "srcSet": "/media/photos/friendship/04-night-selfie-800.webp 800w, /media/photos/friendship/04-night-selfie-1200.webp 1200w, /media/photos/friendship/04-night-selfie-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/friendship/04-night-selfie-800.avif 800w, /media/photos/friendship/04-night-selfie-1200.avif 1200w, /media/photos/friendship/04-night-selfie-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAwAA4BaJZQCdADHfTVX5AAA/veCR3R4kzFdrg9/aOdqK6Uvde0cgFtK0XIDbIXCMAAA",
+        "width": 1280,
+        "height": 960,
+        "alt": "Heet and Tanisha in a night selfie",
+        "focal": [
+          0.469,
+          0.5
+        ],
+        "label": "Memory / Late nights"
+      },
+      {
+        "id": "friendship-05-photobooth-uni-seoul",
+        "kind": "image",
+        "src": "/media/photos/friendship/05-photobooth-uni-seoul-1200.webp",
+        "srcSet": "/media/photos/friendship/05-photobooth-uni-seoul-800.webp 800w, /media/photos/friendship/05-photobooth-uni-seoul-1200.webp 1200w, /media/photos/friendship/05-photobooth-uni-seoul-1430.webp 1430w",
+        "avifSrcSet": "/media/photos/friendship/05-photobooth-uni-seoul-800.avif 800w, /media/photos/friendship/05-photobooth-uni-seoul-1200.avif 1200w, /media/photos/friendship/05-photobooth-uni-seoul-1430.avif 1430w",
+        "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAsAA4BaJZAAAujcoxZ1owAA/sqdeTAzAgsUjAeH4ZpbIe2X29y+Q2qWvMscWe6zwJ9vKs89cc0gUyIh9ey/q0m6/FAYAAA=",
+        "width": 1430,
+        "height": 960,
+        "alt": "Photobooth strip of four photos of Heet and Tanisha",
+        "focal": [
+          0.469,
+          0.5
+        ],
+        "label": "Memory / Polaroid therapy"
+      },
+      {
+        "id": "friendship-06-standing-together",
+        "kind": "image",
+        "src": "/media/photos/friendship/06-standing-together-960.webp",
+        "srcSet": "/media/photos/friendship/06-standing-together-800.webp 800w, /media/photos/friendship/06-standing-together-960.webp 960w",
+        "avifSrcSet": "/media/photos/friendship/06-standing-together-800.avif 800w, /media/photos/friendship/06-standing-together-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoQABUAPu1kqk4ppaQiMAgBMB2JZQCdABt08gWJbQpzFlYAAN9BY7fky8cA95yX9Gt5xk0YQ8iUc9RLaG43/DLbl56yWPJYUPHci+7AAAA=",
+        "width": 960,
+        "height": 1280,
+        "alt": "Heet and Tanisha standing together on a street at dusk",
+        "focal": [
+          0.5,
+          0.438
+        ],
+        "label": "Memory / Side by side"
+      },
+      {
+        "id": "friendship-07-all-my-heart",
+        "kind": "image",
+        "src": "/media/photos/friendship/07-all-my-heart-720.webp",
+        "srcSet": "/media/photos/friendship/07-all-my-heart-720.webp 720w",
+        "avifSrcSet": "/media/photos/friendship/07-all-my-heart-720.avif 720w",
+        "blur": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADQBACdASoQABwAPu1iqU2ppaOiMAgBMB2JbACdMoR4T4ABC2WtczBh9N7S2kfkgAD+9/F9tsvVbtq2/tmhhF+L/YUhTJUs1t9tqO2OIER2JPEfSL899TWjWhLD4o+lQ1s37pIZbb9b5hV42K2APT0e4NjMrvcMLbxiThFmVw7oWeyjxa8jiY97ipQD2J0akvGJPSPmRK/ouuuih2gAAA==",
+        "width": 720,
+        "height": 1280,
+        "alt": "Two stacked selfies captioned all my heart",
+        "focal": [
+          0.5,
+          0.656
+        ],
+        "label": "Memory / All my heart"
+      }
+    ],
+    "love": [
+      {
+        "id": "love-01-heads-together",
+        "kind": "image",
+        "src": "/media/photos/love/01-heads-together-1200.webp",
+        "srcSet": "/media/photos/love/01-heads-together-800.webp 800w, /media/photos/love/01-heads-together-1200.webp 1200w, /media/photos/love/01-heads-together-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/love/01-heads-together-800.avif 800w, /media/photos/love/01-heads-together-1200.avif 1200w, /media/photos/love/01-heads-together-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAwAA4BaJbACdACwErOYWAAA/udBrZFhEY+wJyzZ3/kxOb5kRA59OpIrZBOzBXkHgkEg3GXh0xq3keg/MZwBSWxs9W0AAAA=",
+        "width": 1280,
+        "height": 960,
+        "alt": "Heet and Tanisha resting heads together",
+        "focal": [
+          0.969,
+          0.5
+        ],
+        "overlay": "Somewhere between hello and forever, you became my favourite place.",
+        "label": "Us / Heads together"
+      },
+      {
+        "id": "love-02-cheek-to-cheek",
+        "kind": "image",
+        "src": "/media/photos/love/02-cheek-to-cheek-959.webp",
+        "srcSet": "/media/photos/love/02-cheek-to-cheek-800.webp 800w, /media/photos/love/02-cheek-to-cheek-959.webp 959w",
+        "avifSrcSet": "/media/photos/love/02-cheek-to-cheek-800.avif 800w, /media/photos/love/02-cheek-to-cheek-959.avif 959w",
+        "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADwAwCdASoQABYAPu1iqU2ppaOiMAgBMB2JYgCdMoRwACRO4bOfoc6AAP7Hf6JqKaNhiDfdEo+V6wCfQdJTAIRfp7FC/mY2XXcythTkccjUfKiZuWmBRQKDlmEYWy071KwT1CRGelMr6w/sHpXqiZ8xsuMj62g4CpOu5YAA",
+        "width": 959,
+        "height": 1280,
+        "alt": "Heet and Tanisha cheek to cheek, laughing",
+        "focal": [
+          0.5,
+          0.656
+        ],
+        "overlay": "Two friends, one heartbeat.",
+        "label": "Us / Cheek to cheek"
+      },
+      {
+        "id": "love-03-cheek-kiss",
+        "kind": "image",
+        "src": "/media/photos/love/03-cheek-kiss-1200.webp",
+        "srcSet": "/media/photos/love/03-cheek-kiss-800.webp 800w, /media/photos/love/03-cheek-kiss-1200.webp 1200w, /media/photos/love/03-cheek-kiss-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/love/03-cheek-kiss-800.avif 800w, /media/photos/love/03-cheek-kiss-1200.avif 1200w, /media/photos/love/03-cheek-kiss-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAwAA4BaJYgCdACA31y6AAD+2GdekiudlVax+XImbiRdr+paRh6dftdSIUXJJ3nL1gnp6Fs07n+GhxnI8TMHWSPPAAAA",
+        "width": 1280,
+        "height": 960,
+        "alt": "Heet kissing Tanisha's cheek",
+        "focal": [
+          0.531,
+          0.5
+        ],
+        "label": "Us / A kiss"
+      },
+      {
+        "id": "love-04-her-kiss",
+        "kind": "image",
+        "src": "/media/photos/love/04-her-kiss-1200.webp",
+        "srcSet": "/media/photos/love/04-her-kiss-800.webp 800w, /media/photos/love/04-her-kiss-1200.webp 1200w, /media/photos/love/04-her-kiss-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/love/04-her-kiss-800.avif 800w, /media/photos/love/04-her-kiss-1200.avif 1200w, /media/photos/love/04-her-kiss-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoQAAwAA4BaJQBOgB4OVbyVQAD+84HK6q1s0RF2Bb4gBpEnkyVyJq7XILQj1qWZ0OUc8eOmj2zXBAuKo0l0pHw1wWkZe3qd9FtsAAAA",
+        "width": 1280,
+        "height": 960,
+        "alt": "Tanisha kissing Heet's cheek",
+        "focal": [
+          0,
+          0.5
+        ],
+        "overlay": "You were the answer to a question I didn't know I was asking.",
+        "label": "Us / Her kiss"
+      },
+      {
+        "id": "love-05-cafe-kiss-1",
+        "kind": "image",
+        "src": "/media/photos/love/05-cafe-kiss-1-1200.webp",
+        "srcSet": "/media/photos/love/05-cafe-kiss-1-800.webp 800w, /media/photos/love/05-cafe-kiss-1-1200.webp 1200w, /media/photos/love/05-cafe-kiss-1-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/love/05-cafe-kiss-1-800.avif 800w, /media/photos/love/05-cafe-kiss-1-1200.avif 1200w, /media/photos/love/05-cafe-kiss-1-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoQAAwAA4BaJbACdAD8s2UI5kAAAP7N35LGpNQm+h9JlUYb075SafPHuoq3y3EjxGdUwCGOejCdvQBGeXnAAA==",
+        "width": 1280,
+        "height": 960,
+        "alt": "Heet kissing Tanisha's cheek in a café",
+        "focal": [
+          0.969,
+          0.5
+        ],
+        "label": "Us / Café date"
+      },
+      {
+        "id": "love-06-cafe-kiss-2",
+        "kind": "image",
+        "src": "/media/photos/love/06-cafe-kiss-2-1200.webp",
+        "srcSet": "/media/photos/love/06-cafe-kiss-2-800.webp 800w, /media/photos/love/06-cafe-kiss-2-1200.webp 1200w, /media/photos/love/06-cafe-kiss-2-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/love/06-cafe-kiss-2-800.avif 800w, /media/photos/love/06-cafe-kiss-2-1200.avif 1200w, /media/photos/love/06-cafe-kiss-2-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQAAwAA4BaJbACdAEey4MshgAA/qlRMbN5QUNr+ZpeRxIPMi1YycvGBOc4+HfT6OvL/pYLQacfAzwvuFEAAA==",
+        "width": 1280,
+        "height": 960,
+        "alt": "Tanisha kissing Heet's cheek in a café",
+        "focal": [
+          0.625,
+          0.5
+        ],
+        "overlay": "Home stopped being a place. It became you.",
+        "label": "Us / Café date"
+      }
+    ],
+    "distance": [
+      {
+        "id": "distance-01-video-call",
+        "kind": "image",
+        "src": "/media/photos/distance/01-video-call-588.webp",
+        "srcSet": "/media/photos/distance/01-video-call-588.webp 588w",
+        "avifSrcSet": "/media/photos/distance/01-video-call-588.avif 588w",
+        "blur": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADQBACdASoQACMAPt1apU2opSOiNUgBEBuJQBbZBZteXINpQ7zBHjxum3MqjI9tPgD+7LpFqdBOgpormvbBWpp/1UhRsPyo6rO5bIdbfYAl2Jx08NhB8ufHJjMpQn362liA30gIOQhyRQNNBir6Czj+VJNAAA==",
+        "width": 588,
+        "height": 1280,
+        "alt": "Video-call screenshot: Tanisha making a face, Heet in the corner",
+        "focal": [
+          0.5,
+          0.531
+        ],
+        "label": "Distance / Video call"
+      },
+      {
+        "id": "distance-02-her-side-mirror-dress",
+        "kind": "image",
+        "src": "/media/photos/distance/02-her-side-mirror-dress-720.webp",
+        "srcSet": "/media/photos/distance/02-her-side-mirror-dress-720.webp 720w",
+        "avifSrcSet": "/media/photos/distance/02-her-side-mirror-dress-720.avif 720w",
+        "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoQABwAPu1Ct1apoqakGAEwHYljAJ0AI/6apIYiXQ+MAAD+tT5yi7Qy0+HKvTVtQ/iaECzqqfJ1NRitk36qDwPH2dIKRE+n3bfRFzv3JYtjL28mSVwAAA==",
+        "width": 720,
+        "height": 1280,
+        "alt": "Tanisha's mirror selfie in a dress",
+        "focal": [
+          0.5,
+          0.5
+        ],
+        "label": "Her side / Mirror"
+      },
+      {
+        "id": "distance-03-her-side-mirror",
+        "kind": "image",
+        "src": "/media/photos/distance/03-her-side-mirror-1200.webp",
+        "srcSet": "/media/photos/distance/03-her-side-mirror-800.webp 800w, /media/photos/distance/03-her-side-mirror-1200.webp 1200w, /media/photos/distance/03-her-side-mirror-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/distance/03-her-side-mirror-800.avif 800w, /media/photos/distance/03-her-side-mirror-1200.avif 1200w, /media/photos/distance/03-her-side-mirror-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAACQAQCdASoQAAsAA4BaJZwAAh+glYAA/vFsD/BWED139oTn6Av4GgSLoSngAA==",
+        "width": 1280,
+        "height": 865,
+        "alt": "Tanisha's mirror selfie",
+        "focal": [
+          0.594,
+          0.5
+        ],
+        "label": "Her side / Mirror"
+      },
+      {
+        "id": "distance-04-her-side-blue-dress",
+        "kind": "image",
+        "src": "/media/photos/distance/04-her-side-blue-dress-1200.webp",
+        "srcSet": "/media/photos/distance/04-her-side-blue-dress-800.webp 800w, /media/photos/distance/04-her-side-blue-dress-1200.webp 1200w, /media/photos/distance/04-her-side-blue-dress-1280.webp 1280w",
+        "avifSrcSet": "/media/photos/distance/04-her-side-blue-dress-800.avif 800w, /media/photos/distance/04-her-side-blue-dress-1200.avif 1200w, /media/photos/distance/04-her-side-blue-dress-1280.avif 1280w",
+        "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoQAAwAA4BaJYwCdAEDH+6OA4OAAP7XI+AWcoyYDp7/JYFQMrLjXI2foJx1NoNuuSNjBMceAAA=",
+        "width": 1280,
+        "height": 960,
+        "alt": "Tanisha in a blue dress, mirror selfie",
+        "focal": [
+          0.531,
+          0.5
+        ],
+        "label": "Her side / Blue dress"
+      },
+      {
+        "id": "distance-05-her-side-mirror-2",
+        "kind": "image",
+        "src": "/media/photos/distance/05-her-side-mirror-2-621.webp",
+        "srcSet": "/media/photos/distance/05-her-side-mirror-2-621.webp 621w",
+        "avifSrcSet": "/media/photos/distance/05-her-side-mirror-2-621.avif 621w",
+        "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABwBACdASoQACEAPu1eqE2ppKOiNVgIATAdiWcAxNhDELS5aEblvGPGyffvwADKkdvJleJChmROJz7DducFGpFYfHXAqCpvPIKj2Bx6A4TZQjCFfokSrdr92U4pelnPtkT6/IaDqVZqAhUmQNYAAA==",
+        "width": 621,
+        "height": 1280,
+        "alt": "Tanisha's mirror selfie",
+        "focal": [
+          0.5,
+          0.563
+        ],
+        "label": "Her side / Mirror"
+      },
+      {
+        "id": "distance-06-her-smile-night",
+        "kind": "image",
+        "src": "/media/photos/distance/06-her-smile-night-960.webp",
+        "srcSet": "/media/photos/distance/06-her-smile-night-800.webp 800w, /media/photos/distance/06-her-smile-night-960.webp 960w",
+        "avifSrcSet": "/media/photos/distance/06-her-smile-night-800.avif 800w, /media/photos/distance/06-her-smile-night-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JQBOmUABNYZCXDxqOS8W0qgAA/tzj5YnIwYvFzLTcSxOLkLyz7CrlqVaOg/RakDVgLiYvuX8eA4lMevR4P5rgptqHeoOqKLqCv4+xWI93ik8AAAA=",
+        "width": 960,
+        "height": 1280,
+        "alt": "Tanisha smiling at night with a flower in her hair",
+        "focal": [
+          0.5,
+          0.281
+        ],
+        "label": "Her side / That smile"
+      }
+    ],
+    "apology": [
+      {
+        "id": "apology-01-holding-hands",
+        "kind": "image",
+        "src": "/media/photos/apology/01-holding-hands-960.webp",
+        "srcSet": "/media/photos/apology/01-holding-hands-800.webp 800w, /media/photos/apology/01-holding-hands-960.webp 960w",
+        "avifSrcSet": "/media/photos/apology/01-holding-hands-800.avif 800w, /media/photos/apology/01-holding-hands-960.avif 960w",
+        "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JYgCdABMMhn1YsRVrwNgA1vf39hhC9aOA2vMloFcvTlA8BYW2J7zKtpUEdGSMKqWkE/gnKNS+1Z96EG+7Ukt8Xhf6HIQf1mYHAAAA",
+        "width": 960,
+        "height": 1280,
+        "alt": "Heet and Tanisha holding hands",
+        "focal": [
+          0.5,
+          0.125
+        ],
+        "label": "Apology / Still holding on"
+      }
+    ],
+    "heetu-versions": []
+  },
+  "report": [
+    {
+      "phase": "queen",
+      "seconds": 23,
+      "have": 8,
+      "recommended": 8
+    },
+    {
+      "phase": "friendship",
+      "seconds": 22.6,
+      "have": 7,
+      "recommended": 8
+    },
+    {
+      "phase": "love",
+      "seconds": 22.5,
+      "have": 6,
+      "recommended": 8
+    },
+    {
+      "phase": "distance",
+      "seconds": 21.7,
+      "have": 6,
+      "recommended": 8
+    },
+    {
+      "phase": "apology",
+      "seconds": 21.7,
+      "have": 1,
+      "recommended": 8
+    }
+  ]
+}

@@ -249,7 +249,7 @@ export function NarratedTrack({ trackId, children }: NarratedTrackProps) {
         {debug && <DebugOverlay mode={mode} />}
       </TrackContext.Provider>
 
-      <div style={{ ...chromeStyle, top: 'max(16px, env(safe-area-inset-top))', right: 16 }}>
+      <div style={{ ...chromeStyle, top: 'max(16px, env(safe-area-inset-top))', right: 176, height: 32, alignItems: 'center' }}>
         <MiniMap phases={phases} activeId={activePhase?.id ?? null} />
       </div>
       <div style={{ ...chromeStyle, bottom: 'max(16px, env(safe-area-inset-bottom))', right: 16 }}>

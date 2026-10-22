@@ -125,7 +125,7 @@ export function QueenChapter() {
     <div
       data-chapter="queen"
       className="absolute inset-0 overflow-hidden"
-      style={{ opacity: Math.min(1, enter), pointerEvents: 'none' }}
+      style={{ opacity: 1, pointerEvents: 'none' }}
     >
       {current && <BlurFill item={current} />}
       <div aria-hidden className="absolute inset-0" style={{ background: 'radial-gradient(70% 60% at 50% 45%, transparent, var(--stage-deep) 110%)' }} />
