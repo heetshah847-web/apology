@@ -73,7 +73,7 @@ export interface AudioDirector {
 }
 
 // Planner (LANE-12)
-export type PlannerStepId = 'activity' | 'cuisine' | 'dessert' | 'heetu' | 'flowers' | 'suggestions' | 'review' | 'delivery';
+export type PlannerStepId = 'activity' | 'cuisine' | 'dessert' | 'heetu' | 'flowers' | 'punish' | 'suggestions' | 'review' | 'delivery';
 export interface Venue { id: string; name: string; area: string; address?: string; mapsUrl?: string; knownFor: string[]; priceForTwo?: string; verified: boolean; sources: string[]; notes?: string }
 export interface PlannerOption { id: string; label: string; description?: string; image?: string; venueIds?: string[]; emoji?: string }
 export interface CartItem { stepId: PlannerStepId; optionId: string; label: string; venueId?: string; note?: string; bonus?: boolean }
