@@ -6,6 +6,7 @@ import {
   BAZAAR_NAME, BRIDGE_PATH, CROWN_PATH, GEOMETRY, GLYPH_PATHS, HEART_PATH, PIN_PATH, ROUTE, SHIP_PATH,
   blobPath, routeSegments, scatterGlyphs, type Orientation, type TerritoryId,
 } from './mapData';
+import { PaperGrain, RoughCoast } from './RoughCoast';
 
 /** Ink + paper colours come from the design tokens, with fallbacks so the map also renders standalone. */
 const INK = 'var(--royal-gold, #c8a45d)';
@@ -88,6 +89,8 @@ const Base = memo(function Base({ orientation, uid }: { orientation: Orientation
         {lands.map((d, i) => <path key={i} d={d} fill={`url(#${uid}-land)`} />)}
         {lands.map((d, i) => <path key={`h${i}`} d={d} fill={`url(#${uid}-hatch)`} />)}
       </g>
+      <RoughCoast lands={lands} ink={INK} />
+      <PaperGrain uid={uid} w={g.w} h={g.h} />
 
       {/* symbols */}
       <g fill="none" stroke={INK} strokeOpacity="0.75" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

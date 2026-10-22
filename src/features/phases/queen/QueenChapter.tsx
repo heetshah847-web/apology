@@ -129,6 +129,8 @@ export function QueenChapter() {
     >
       {current && <BlurFill item={current} />}
       <div aria-hidden className="absolute inset-0" style={{ background: 'radial-gradient(70% 60% at 50% 45%, transparent, var(--stage-deep) 110%)' }} />
+      {/* the Queen's gold: a slow-breathing glow behind her portrait */}
+      <div aria-hidden className={reduced ? 'absolute inset-0' : 'glow-breathe absolute inset-0'} style={{ background: 'radial-gradient(48% 62% at 30% 52%, color-mix(in oklab, var(--royal-gold) 26%, transparent), transparent 72%)' }} />
       {!reduced && <Motes paused={frozen} />}
 
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-[5vh] px-[var(--gutter)] pb-14 pt-16 md:flex-row md:gap-[6vw] md:px-[8vw] md:py-0">

@@ -46,3 +46,8 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
+
+@keyframes rough-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes glow-breathe { 0%, 100% { opacity: .65; } 50% { opacity: 1; } }
+.glow-breathe { animation: glow-breathe 7s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .glow-breathe, [style*="rough-in"] { animation: none !important; } }
