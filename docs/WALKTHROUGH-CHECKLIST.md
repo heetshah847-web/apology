@@ -1,7 +1,7 @@
 # Final walkthrough checklist (for Heet, on his own phone and laptop)
 
 ## Needs your input before this is final
-- [ ] **Scripts for tracks 1 and 2.** `content/scripts/track-1.md` and `track-2.md` still contain `(paste ... here)`. All Friendship, Love, Distance and Apology captions (36 of them, flagged `needsReview`) are an automatic transcript, and it has errors, e.g. Apology shows "**Quarles** arose" (should read "quarrels"). Paste your exact words between the `[[chapter:...]]` markers, or approve fixing the transcript in place. Not edited: `content/` is protected.
+- [x] **Scripts for tracks 1 and 2: not needed** (Heet decided). Captions stay as the voice-matched transcript; the one obvious error ("Quarles" -> "Quarrels") is fixed in `src/data/story.generated.json` and `content/captions/`. Re-reading the other captions once while listening is still worthwhile.
 - [ ] **Two Love overlay lines.** Photos `03-cheek-kiss` and `05-cafe-kiss-1` have no overlay line (4 of 6 do). `meta.json` / the OVERLAY LINES section only contain four lines, so nothing to use; write two lines (or tell me to leave those photos bare).
 - [ ] Approve or reject the **"punish your man" planner step** (4 options you asked for). It is built on branch `lane/12b-punish` but is NOT in this branch: porting it edits `content/config/planner.config.json` and the frozen `src/contracts`.
 - [ ] Decide on the mobile LCP: 2.7 s vs the 2.5 s target under worst-case throttling (see QA-REPORT).
