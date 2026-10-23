@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="North Indian">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<g transform="rotate(-18 285 120)"><path d="M215 120 Q215 60 285 55 Q355 60 355 120 Q335 180 285 190 Q235 180 215 120Z" fill="#F3D9A4"/>
+<circle cx="260" cy="100" r="5" fill="#A8672F" stroke-width="0"/><circle cx="300" cy="130" r="6" fill="#A8672F" stroke-width="0"/><circle cx="320" cy="90" r="5" fill="#A8672F" stroke-width="0"/><circle cx="270" cy="150" r="5" fill="#A8672F" stroke-width="0"/></g>
+<path d="M65 215 H335 Q325 340 200 340 Q75 340 65 215 Z" fill="#B8651B"/>
+<ellipse cx="200" cy="215" rx="135" ry="32" fill="#E8872B"/>
+<path d="M150 215 q30 -22 60 0 q30 18 50 -6" fill="none" stroke="#FFF1D6" stroke-width="7"/>
+<path d="M170 205 q4 -20 22 -8 q-2 16 -22 8z" fill="#5E9C4E" stroke-width="4"/>
+<path d="M225 222 q10 -20 26 -4 q-8 16 -26 4z" fill="#5E9C4E" stroke-width="4"/>
+<path d="M65 235 H40 M335 235 H360" fill="none"/>
+</g></svg>

@@ -37,9 +37,9 @@ export function CueStepper({ onPrev, onNext }: { onPrev: () => void; onNext: () 
 /** Small corner indicator: which territory of the atlas the story is in. */
 export function MiniMap({ phases, activeId }: { phases: PhaseData[]; activeId: string | null }) {
   return (
-    <ol aria-label="Atlas position" style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', gap: 10, font: '500 12px/1 var(--font-ui, system-ui)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+    <ol aria-label="Atlas position" style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: '6px 10px', font: '500 12px/1 var(--font-ui, system-ui)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
       {phases.map((p) => (
-        <li key={p.id} aria-current={p.id === activeId ? 'step' : undefined} style={{ color: p.id === activeId ? 'var(--accent, #d9b76e)' : 'var(--ink-faint, rgba(244,239,230,.38))', transition: 'color .6s' }}>
+        <li key={p.id} aria-current={p.id === activeId ? 'step' : undefined} style={{ whiteSpace: 'nowrap', color: p.id === activeId ? 'var(--accent, #d9b76e)' : 'var(--ink-faint, rgba(244,239,230,.38))', transition: 'color .6s' }}>
           {p.mapTerritory}
         </li>
       ))}

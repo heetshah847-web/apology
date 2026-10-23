@@ -122,7 +122,7 @@ export function TheQuestion() {
       </div>
 
       {!answeredYes && (
-        <motion.div className="flex items-center justify-center gap-20" style={{ opacity: buttonsOpacity, pointerEvents: alive ? 'auto' : 'none' }}>
+        <motion.div className="flex items-center justify-center gap-20" style={{ opacity: buttonsOpacity, pointerEvents: alive ? 'auto' : 'none' }} {...(alive ? {} : { inert: '' })}>
           <span ref={yesRef} className="inline-flex" style={{ transform: `scale(${yesScale})`, transition: 'transform .45s var(--ease-enter)' }}>
             <Button variant="royal" size="lg" className="min-w-[10rem] md:min-w-[13rem] md:py-5 md:text-2xl" data-testid="yes-button" onClick={() => setConfirming(true)}>{Q.yesLabel}</Button>
           </span>

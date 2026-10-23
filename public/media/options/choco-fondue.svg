@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Chocolate fondue">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M165 365 Q200 325 235 365 Z" fill="#F59E0B"/>
+<path d="M85 230 H315 Q315 345 200 345 Q85 345 85 230 Z" fill="#D0503A"/>
+<path d="M85 250 H60 M315 250 H340" fill="none"/>
+<ellipse cx="200" cy="230" rx="115" ry="28" fill="#5A2E1A"/>
+<path d="M170 224 q30 -10 60 0" fill="none" stroke="#8A5A3A" stroke-width="5"/>
+<path d="M300 55 L225 215" fill="none"/>
+<path d="M300 80 q-34 -4 -36 28 q6 36 36 48 q30 -12 36 -48 q-2 -32 -36 -28z" fill="#D9345A"/>
+<path d="M270 104 q30 18 62 0 q4 20 -8 34 q-14 -10 -26 4 q-12 -14 -26 -2 q-6 -16 -2 -36z" fill="#5A2E1A" stroke-width="4"/>
+<path d="M290 70 q10 -16 22 0 q-12 8 -22 0z" fill="#5E9C4E" stroke-width="4"/>
+</g></svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Mixed bouquet">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<path d="M150 190 L190 340 M250 190 L210 340 M200 180 V340" fill="none"/>
+<path d="M120 150 q-30 30 -10 60 q40 20 80 20 q40 0 80 -20 q20 -30 -10 -60 Z" fill="#5E9C4E"/>
+<circle cx="150" cy="140" r="34" fill="#D0283A"/>
+<circle cx="250" cy="140" r="34" fill="#F4739C"/>
+<circle cx="200" cy="105" r="36" fill="#F7C23A"/><circle cx="200" cy="105" r="12" fill="#6B3A1E"/>
+<circle cx="115" cy="190" r="22" fill="#FFFFFF"/><circle cx="285" cy="190" r="22" fill="#B58CE0"/>
+<path d="M150 125 q14 -14 28 0 M250 125 q14 -14 28 0" fill="none" stroke-width="4"/>
+<path d="M165 340 L200 250 L235 340 Z" fill="#F7C65A" transform="translate(0,0)"/>
+<path d="M150 345 H250" fill="none"/>
+</g></svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Surprise me">
+<rect width="400" height="400" rx="48" fill="#FFF3E6"/>
+<g stroke="#4a2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+<rect x="85" y="95" width="230" height="230" rx="40" fill="#FFFFFF" transform="rotate(-8 200 210)"/>
+<g transform="rotate(-8 200 210)" fill="#C9382E" stroke-width="0">
+<circle cx="140" cy="150" r="17"/><circle cx="260" cy="150" r="17"/><circle cx="200" cy="210" r="17"/><circle cx="140" cy="270" r="17"/><circle cx="260" cy="270" r="17"/>
+</g>
+<path d="M330 60 l8 20 l20 8 l-20 8 l-8 20 l-8 -20 l-20 -8 l20 -8z" fill="#F7C65A" stroke-width="4"/>
+<path d="M62 330 l5 12 l12 5 l-12 5 l-5 12 l-5 -12 l-12 -5 l12 -5z" fill="#F7C65A" stroke-width="4"/>
+</g></svg>
