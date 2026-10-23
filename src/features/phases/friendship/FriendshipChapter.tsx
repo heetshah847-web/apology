@@ -40,7 +40,7 @@ export function FriendshipChapter() {
       <div className="grid min-h-0 flex-1 grid-cols-1 items-center gap-6 md:grid-cols-2" style={{ opacity: fade }}>
         <div>
           <p className="mb-4 text-[var(--text-label)] uppercase tracking-[0.3em]" style={{ color: 'var(--accent)' }}>{phase.mapTerritory} / {phase.title}</p>
-          <StatementText text={stmt.text} progress={reduce ? 1 : stmt.progress} size="small" />
+          <StatementText text={stmt.text} progress={reduce ? 1 : stmt.progress} size="small" className="text-left!" />
         </div>
         <div className="relative h-[48vh] md:h-[62vh]">
           <PolaroidStack media={phase.media} active={index} visible={visible} />

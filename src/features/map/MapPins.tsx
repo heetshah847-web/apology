@@ -28,7 +28,7 @@ export function MapPins({ labelA = 'Heet', labelB = 'Tanisha', stretch, classNam
     <svg viewBox={`0 0 ${W} ${H}`} className={className ?? 'block w-full'} role="img" aria-label={`${labelA} and ${labelB}`}>
       <motion.line
         x1={AX} y1={Y} y2={Y} x2={bx}
-        stroke="var(--accent, #c8a45d)" strokeWidth="5" strokeLinecap="round" strokeDasharray="1 16"
+        stroke="var(--accent, #b5677a)" strokeWidth="5" strokeLinecap="round" strokeDasharray="1 16"
       />
       <Pin x={AX} y={Y} label={labelA} />
       <motion.g style={{ x: bx }}>
@@ -42,10 +42,10 @@ export function MapPins({ labelA = 'Heet', labelB = 'Tanisha', stretch, classNam
 function Pin({ x, y, label }: { x: number; y: number; label: string }) {
   return (
     <g transform={`translate(${x} ${y})`}>
-      <ellipse cx="0" cy="2" rx="16" ry="5" fill="#000" fillOpacity="0.35" />
+      <ellipse cx="0" cy="2" rx="16" ry="5" fill="#6b4a4f" fillOpacity="0.18" />
       <g transform="scale(1.8)">
         <path d={PIN_PATH} fill="#d85b7d" stroke="var(--moon-pearl, #eee8f4)" strokeWidth="2" />
-        <circle cy="-24" r="4.5" fill="var(--moon-pearl, #eee8f4)" />
+        <circle cy="-24" r="4.5" fill="#ffffff" />
       </g>
       <text y="52" textAnchor="middle" fontFamily="var(--font-script, cursive)" fontSize="44" fill="var(--accent, #c8a45d)">{label}</text>
     </g>

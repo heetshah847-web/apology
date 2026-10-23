@@ -7,9 +7,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const V = {
-  primary: { background: 'var(--accent)', color: 'var(--night-ink)', border: '1px solid transparent' },
-  ghost: { background: 'transparent', color: 'var(--ink)', border: '1px solid var(--line)' },
-  royal: { background: 'linear-gradient(135deg,#e8cf94,#c8a45d 55%,#a8843f)', color: '#241a05', border: '1px solid #f0dca8', boxShadow: 'var(--shadow-glow)' },
+  primary: { background: 'var(--night-ink)', color: 'var(--moon-pearl)', border: '1px solid transparent' },
+  ghost: { background: 'var(--white)', color: 'var(--ink)', border: '1px solid var(--line)' },
+  royal: { background: 'var(--night-ink)', color: 'var(--moon-pearl)', border: '1px solid transparent', boxShadow: 'var(--shadow-soft)' },
 } as const;
 
 export function Button({ variant = 'primary', size = 'md', className, style, ...rest }: ButtonProps) {
@@ -17,7 +17,7 @@ export function Button({ variant = 'primary', size = 'md', className, style, ...
     <button
       type="button"
       {...rest}
-      className={clsx('inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-transform duration-[var(--dur-fast)] active:scale-[0.97] disabled:opacity-50', size === 'lg' ? 'px-8 py-4 text-lg' : 'px-5 py-[10px] text-[length:var(--text-ui)]', className)}
+      className={clsx('inline-flex items-center justify-center gap-2 rounded-full font-semibold uppercase tracking-[0.14em] transition-[transform,background-color,box-shadow] duration-[var(--dur-fast)] active:scale-[0.97] disabled:opacity-50', size === 'lg' ? 'px-8 py-4 text-lg' : 'px-5 py-[10px] text-[length:var(--text-ui)]', className)}
       style={{ ...V[variant], ...style }}
     />
   );

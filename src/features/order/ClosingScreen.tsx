@@ -13,6 +13,7 @@ export function ClosingScreen({ onReplay }: { onReplay: () => void }) {
   const photos = getMedia('love').filter((m) => m.kind === 'image' && !broken.has(m.id)).slice(0, 6);
   return (
     <section className="order-closing" aria-label="Closing">
+      <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/media/options/couple-art.webp`} alt="" aria-hidden className="order-art" draggable={false} />
       {photos.length > 0 && (
         <div className="order-collage" aria-hidden={photos.every((p) => !p.alt)}>
           {photos.map((p, i) => (
@@ -45,7 +46,7 @@ export function ClosingScreen({ onReplay }: { onReplay: () => void }) {
       >
         {closingLine}
       </motion.p>
-      <Button variant="ghost" onClick={onReplay}>Watch our story again</Button>
+      <Button variant="primary" onClick={onReplay}>Watch our story again</Button>
     </section>
   );
 }

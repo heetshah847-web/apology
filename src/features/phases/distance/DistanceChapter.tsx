@@ -7,7 +7,7 @@ import { MapPins } from '@/features/map/MapPins';
 import config from '../../../../content/config/story.config.json';
 
 const HANDOFF_SEC = 0.6;
-const DAWN_VIOLET = '#3b3170';
+const DAWN_VIOLET = '#f3c9cf';
 const clamp = (v: number, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 

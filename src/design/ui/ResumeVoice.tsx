@@ -10,7 +10,7 @@ export function ResumeVoice({ onResume, visible }: { onResume: () => void; visib
     <AnimatePresence>
       {show && (
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }} className="fixed bottom-6 right-[var(--gutter)] z-40">
-          <Button variant="ghost" onClick={onResume} style={{ background: 'color-mix(in oklab, var(--stage-deep) 80%, transparent)', backdropFilter: 'blur(8px)' }}>Resume voice</Button>
+          <Button variant="ghost" onClick={onResume} style={{ background: 'rgba(255,255,255,.9)', backdropFilter: 'blur(8px)' }}>Resume voice</Button>
         </motion.div>
       )}
     </AnimatePresence>

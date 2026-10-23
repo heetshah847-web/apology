@@ -4,7 +4,7 @@ import type { CartItem, PlannerStepId } from '@/contracts';
 import { usePlannerStore } from '@/state/plannerStore';
 import { OptionCard } from './OptionCard';
 import { StepTitle } from './StepTitle';
-import { STEP_LABEL, planner, type PlannerOptionX } from './types';
+import { planner, type PlannerOptionX } from './types';
 
 const toItem = (stepId: PlannerStepId, o: PlannerOptionX): CartItem => ({ stepId, optionId: o.id, label: o.label });
 
@@ -26,13 +26,14 @@ function PickStep({ stepId, onTitleTap, extra, onSelectOption }: PickStepProps) 
     <div>
       <StepTitle onClick={onTitleTap}>{cfg.title}</StepTitle>
       {extra}
-      {mine.length === 0 && <p className="mb-0 text-[length:var(--text-ui)]" style={{ color: 'var(--ink-faint)' }}>Nothing chosen yet. Pick one, Your Majesty.</p>}
-      <div className="grid gap-4 md:grid-cols-2">
+      {mine.length === 0 && <p className="pl-note">Nothing chosen yet. Pick one, Your Majesty.</p>}
+      <div aria-hidden className="pl-cols"><span>Item</span><span>Selection</span></div>
+      <ul className="pl-list">
         {cfg.options!.map((o) => {
           const item = mine.find((c) => c.optionId === o.id);
           return (
             <OptionCard
-              key={o.id} stepId={stepId} option={o} layer={`${STEP_LABEL[stepId]} / ${o.label}`}
+              key={o.id} stepId={stepId} option={o}
               selected={!!item} venueId={item?.venueId}
               onSelect={() => {
                 if (item) return clearStep(stepId);
@@ -47,7 +48,7 @@ function PickStep({ stepId, onTitleTap, extra, onSelectOption }: PickStepProps) 
             />
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }

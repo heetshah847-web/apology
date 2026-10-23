@@ -47,7 +47,7 @@ for (let i = 0; i < 700; i++) {
     console.log('planner top =', await p.evaluate(() => Math.round(document.querySelector('#planner').getBoundingClientRect().top)));
     break;
   }
-  if (i % 40 === 0) await p.screenshot({ path: `docs/shots/walk/${W}${mobile ? 'm' : ''}-${String(shot++).padStart(2, '0')}.png` });
+  if (i % 14 === 0) await p.screenshot({ path: `docs/shots/walk/${W}${mobile ? 'm' : ''}-${String(shot++).padStart(2, '0')}.png` });
   if (s.qVisible) { console.log(sec() + 's QUESTION visible y=' + s.y, 'done times', JSON.stringify(doneAt)); await p.waitForTimeout(1500); await p.screenshot({ path: `docs/shots/walk/${W}${mobile ? 'm' : ''}-question.png` }); break; }
 }
 console.log('errors', errs.filter(e => !/Outdated Optimize/.test(e)));

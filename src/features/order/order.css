@@ -1,59 +1,53 @@
-/* LANE-14: order confirmed. Paper receipt on the night stage. */
+/* Order confirmed: a plain white receipt on a beige page, hairline rules, tracked caps, dusty-rose accent. */
 .order-stage {
   min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: var(--space-5); padding: var(--space-7) var(--gutter); background: var(--bezel); color: var(--ink);
+  gap: var(--space-5); padding: var(--space-7) var(--gutter); background: var(--beige); color: var(--ink);
 }
 
 .order-paper {
-  --paper: #f3ead6; --paper-ink: #2a2233; --paper-soft: #6d6176; --ink-soft: #6d6176;
-  position: relative; isolation: isolate; width: min(100%, 560px); padding: 2.25rem 1.75rem 1.75rem;
-  background:
-    radial-gradient(120% 60% at 50% 0%, #fbf5e6, transparent 70%),
-    linear-gradient(180deg, #f3ead6, #ecdfc2);
-  color: var(--paper-ink); border-radius: 4px; box-shadow: var(--shadow-lift), var(--shadow-glow);
-  padding-bottom: 2.5rem; /* no CSS mask: it breaks html-to-image on iOS Safari */
-}
-.order-paper::before {
-  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .35  0 0 0 0 .2  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  background-size: 160px 160px;
+  --paper: #ffffff; --paper-ink: #2b2528; --paper-soft: #6b6165; --paper-rose: #9b4a5f; --paper-hair: rgb(43 37 40 / 0.14);
+  --ink-soft: #6b6165;
+  position: relative; width: min(100%, 560px); padding: 2.5rem 2.25rem 2.25rem;
+  background: var(--paper); color: var(--paper-ink); border-top: 4px solid var(--paper-ink); box-shadow: var(--shadow-soft);
 }
 
 .order-head { text-align: center; }
-.order-eyebrow { font-size: var(--text-label); letter-spacing: 0.22em; text-transform: uppercase; color: var(--paper-soft); }
-.order-title { margin: 0.5rem 0 0.35rem; font-family: var(--font-display); font-size: clamp(1.9rem, 1.2rem + 3vw, 2.75rem); line-height: 1.02; letter-spacing: var(--tracking-statement); text-wrap: balance; }
-.order-number { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.12em; color: #8f6c2c; }
+.order-eyebrow { margin: 0; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--paper-soft); }
+.order-title { margin: 0.9rem 0 0.6rem; font-family: var(--font-display); font-weight: 500; font-size: clamp(1.7rem, 1.2rem + 2.4vw, 2.4rem); line-height: 1.08; letter-spacing: 0; text-wrap: balance; }
+.order-number { margin: 0; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; color: var(--paper-rose); }
 
-.order-rule { height: 1px; margin: 1.25rem 0; background: repeating-linear-gradient(90deg, #8f6c2c 0 6px, transparent 6px 11px); opacity: 0.6; }
+.order-rule { height: 0; margin: 1.5rem 0; border-top: 1px solid var(--paper-hair); }
 
-.order-groups { display: grid; gap: 1rem; }
-.order-group h3, .order-when h3 { margin: 0 0 0.35rem; font-size: var(--text-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--paper-soft); font-weight: 600; }
-.order-group ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; }
-.order-group li { display: flex; flex-direction: column; font-family: var(--font-display); font-size: 1.15rem; line-height: 1.2; }
-.order-group li small { font-family: var(--font-body); font-size: 0.8rem; color: var(--paper-soft); }
-.order-bonus { font-family: var(--font-body); font-size: 0.7rem; font-style: normal; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8f6c2c; border: 1px solid currentColor; border-radius: 999px; padding: 0 0.4rem; }
-.order-wish { margin-top: 1rem; }
+.order-groups { display: grid; gap: 1.5rem; }
+.order-group h3, .order-when h3 { margin: 0 0 0.6rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--paper-hair); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--paper-soft); font-weight: 600; }
+.order-group ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.7rem; }
+.order-group li { display: flex; flex-direction: column; font-size: 1rem; font-weight: 600; line-height: 1.3; }
+.order-group li small { font-size: 0.8rem; font-weight: 400; color: var(--paper-soft); }
+.order-bonus { font-style: normal; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper-rose); border: 1px solid currentColor; border-radius: 999px; padding: 0.05rem 0.5rem; margin-left: 0.25rem; }
+.order-wish { margin-top: 1.5rem; }
 .order-wish p { margin: 0; font-family: var(--font-script); font-size: 1.6rem; line-height: 1.15; white-space: pre-wrap; overflow-wrap: anywhere; }
-.order-when p { margin: 0; font-family: var(--font-display); font-size: 1.3rem; }
-.order-body { margin: 1.1rem 0 0; text-align: center; font-style: italic; color: var(--paper-soft); text-wrap: balance; }
+.order-when p { margin: 0; font-size: 1.05rem; font-weight: 600; }
+.order-body { margin: 1.5rem 0 0; text-align: center; font-size: 0.9rem; color: var(--paper-soft); text-wrap: balance; }
 
-.order-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.order-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--paper-hair); flex-wrap: wrap; }
 .order-foot .order-sign { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; margin-left: auto; }
 .order-sign span { font-family: var(--font-script); font-size: 2.1rem; line-height: 1; }
-.order-seal { filter: drop-shadow(0 4px 6px rgb(60 40 10 / 0.4)); }
+.order-seal { filter: drop-shadow(0 3px 5px rgb(120 50 70 / 0.25)); }
 
 .order-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
-.order-status { min-height: 1.4em; margin: 0; font-size: var(--text-ui); color: var(--ink-soft); }
+.order-status { min-height: 1.4em; margin: 0; font-size: var(--text-ui); color: #6b6165; }
 
 /* closing */
 .order-closing {
-  min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: var(--space-6); padding: var(--space-8) var(--gutter); background: var(--stage-deep, #17132e); color: var(--ink); text-align: center;
+  position: relative; overflow: hidden; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--space-6); padding: var(--space-8) var(--gutter); background: var(--white); color: var(--ink); text-align: center;
 }
+.order-closing > * { position: relative; z-index: 1; }
+.order-art { position: absolute !important; z-index: 0 !important; right: 0; bottom: 0; height: min(78%, 640px); width: auto; opacity: 0.55; mix-blend-mode: multiply; pointer-events: none; user-select: none; }
 .order-collage { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; width: min(100%, 640px); }
 .order-collage img {
-  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; padding: 6px 6px 18px; background: #f6f0e6; border-radius: 2px; box-shadow: var(--shadow-soft);
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; padding: 8px; background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow-soft);
 }
-.order-closing-line { margin: 0; max-width: 18ch; font-family: var(--font-display); font-size: var(--text-statement-sm); line-height: var(--leading-statement); letter-spacing: var(--tracking-statement); text-wrap: balance; }
+.order-closing-line { margin: 0; max-width: 18ch; font-family: var(--font-display); font-weight: 500; font-size: var(--text-statement-sm); line-height: 1.05; letter-spacing: 0; text-wrap: balance; }
 
 @media (prefers-reduced-motion: reduce) { .order-seal { transition: none; } }

@@ -2,7 +2,7 @@ import { addDays, format, parseISO, startOfDay } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/style.css';
 import './planner.css';
-import { Button, Chip } from '@/design';
+import { Button } from '@/design';
 import { audioDirector } from '@/engine';
 import { usePlannerStore } from '@/state/plannerStore';
 import { StepTitle } from './StepTitle';
@@ -23,24 +23,25 @@ export function DeliveryStep() {
   return (
     <div>
       <StepTitle>{cfg.title}</StepTitle>
-      <div className="planner-day mt-4 flex justify-center rounded-[14px] p-3" style={{ background: 'var(--stage-deep)', border: '1px solid var(--line)' }}>
+      <div className="planner-day mt-4 flex justify-center border-y px-3 pb-5 pt-3" style={{ borderColor: 'var(--pl-hair)' }}>
         <DayPicker
           mode="single" selected={selected} defaultMonth={selected ?? from} startMonth={from} endMonth={to}
           disabled={[{ before: from }, { after: to }]}
           onSelect={(d) => d && usePlannerStore.getState().setDelivery({ date: format(d, 'yyyy-MM-dd') })}
         />
       </div>
-      <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Time slot">
-        {cfg.slots.map((s) => <Chip key={s} selected={slot === s} onClick={() => usePlannerStore.getState().setDelivery({ slot: s })}>{s}</Chip>)}
+      <p className="pl-label" style={{ marginTop: "2rem" }}>Time slot</p>
+      <div className="pl-chips" role="group" aria-label="Time slot" style={{ marginTop: '0.75rem' }}>
+        {cfg.slots.map((s) => <button key={s} type="button" aria-pressed={slot === s} className="pl-chip" onClick={() => usePlannerStore.getState().setDelivery({ slot: s })}>{s}</button>)}
       </div>
       <div className="mt-6 flex flex-wrap items-center gap-4">
         <Button
-          variant="royal" size="lg" disabled={!!missing}
+          variant="primary" size="lg" disabled={!!missing}
           onClick={() => { if (usePlannerStore.getState().confirm()) audioDirector.sfx('chime'); }}
         >
           {order ? 'Order confirmed ✓' : cfg.confirmLabel}
         </Button>
-        {missing && <span className="text-[length:var(--text-ui)]" style={{ color: 'var(--ink-soft)' }}>{missing}</span>}
+        {missing && <span className="pl-note m-0">{missing}</span>}
       </div>
     </div>
   );

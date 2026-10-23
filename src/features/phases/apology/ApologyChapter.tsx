@@ -20,7 +20,8 @@ function CueStatement({ cue, until, last, time }: CueProps) {
   });
   // Words land well before the cue ends so the whole line is readable while it is still on screen.
   const reveal = useTransform(time, (t) => clamp((t - cue.start) / Math.max(0.35, (cue.end - cue.start) * 0.75)));
-  const size = cue.text.length > 44 ? 'small' : 'statement';
+  const longest = Math.max(...cue.text.split(/\s+/).map((w) => w.length));
+  const size = cue.text.length > 44 || longest > 11 ? 'small' : 'statement';
   return (
     <motion.div className="absolute inset-0 flex items-center justify-center" style={{ opacity }}>
       <StatementText text={cue.text} progress={reveal} size={size} className="max-w-[16ch] md:max-w-[22ch]" />
@@ -40,9 +41,10 @@ export function ApologyChapter() {
   const cues = phase.captions;
 
   const photoOpacity = useTransform(localProgress, [FOCUS_FROM - 0.12, FOCUS_FROM + 0.08], [1, 0]);
-  const focus = useTransform(localProgress, [FOCUS_FROM, 0.85], [0, 1]);
-  const captionX = useTransform(focus, [0, 1], ['13vw', '0vw']);
-  const captionScale = useTransform(focus, [0, 1], [1, 1.12]);
+  const focus = useTransform(localProgress, [FOCUS_FROM - 0.1, FOCUS_FROM + 0.12], [0, 1]); // moves while the photo dissolves, not after
+  // the words sit right of the photo, then glide to the centre of the screen once the photo has gone (no scaling: long words must not collide)
+  const captionLeft = useTransform(focus, [0, 1], ['36vw', '10vw']);
+  const captionRight = useTransform(focus, [0, 1], ['6vw', '10vw']);
   const warmth = useTransform(localProgress, [0.9, 1], [0, 1]);
   // Last chapter of the last track: it fades in, but never out, so the final line holds until The Question rises.
   const frameOpacity = c.enter;
@@ -63,14 +65,14 @@ export function ApologyChapter() {
             className={i === 0 ? 'relative' : 'absolute inset-0'}
             style={{ opacity: i === c.activeMediaIndex ? 1 : 0, transition: 'opacity 1.4s ease' }}
           >
-            <FrameOutline label={(m as MediaItem & { label?: string }).label ?? 'Apology / Photo'} readout="still here">
+            <FrameOutline label={(m as MediaItem & { label?: string }).label ?? 'Apology / Photo'}>
               <PhotoFrame src={m.src} alt={m.alt} focal={m.focal} className="aspect-[3/4] w-full" />
             </FrameOutline>
           </div>
         ))}
       </motion.div>
 
-      <motion.div className="absolute inset-y-0 left-[24vw] right-[24vw]" style={{ x: captionX, scale: captionScale }}>
+      <motion.div className="absolute inset-y-0" style={{ left: captionLeft, right: captionRight }}>
         {cues.map((cue, i) => (
           <CueStatement
             key={`${cue.start}-${i}`}

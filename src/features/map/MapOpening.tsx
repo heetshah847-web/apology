@@ -10,7 +10,7 @@ import { useOrientation } from './useOrientation';
 type Stage = 'folded' | 'unfolding' | 'drawing' | 'ready';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
-const PAPER = 'linear-gradient(160deg, #3b3770, #25214c)';
+const PAPER = 'linear-gradient(160deg, #fffaf3, #f3e8da)';
 
 /** One fold of the map. Panels nest: each hinges on the previous panel's far edge, so the stack opens like a real accordion. */
 function Panel({ k, o, open, reduced, onOpened }: { k: number; o: Orientation; open: boolean; reduced: boolean; onOpened: () => void }) {
@@ -60,8 +60,8 @@ function Panel({ k, o, open, reduced, onOpened }: { k: number; o: Orientation; o
           style={{
             position: 'absolute', inset: 0, pointerEvents: 'none',
             background: horizontal
-              ? 'linear-gradient(90deg, rgba(8,6,15,.8), transparent 14%, transparent 86%, rgba(8,6,15,.5))'
-              : 'linear-gradient(180deg, rgba(8,6,15,.8), transparent 14%, transparent 86%, rgba(8,6,15,.5))',
+              ? 'linear-gradient(90deg, rgba(120,90,80,.2), transparent 14%, transparent 86%, rgba(120,90,80,.12))'
+              : 'linear-gradient(180deg, rgba(120,90,80,.2), transparent 14%, transparent 86%, rgba(120,90,80,.12))',
           }}
         />
       </div>
@@ -69,8 +69,8 @@ function Panel({ k, o, open, reduced, onOpened }: { k: number; o: Orientation; o
         aria-hidden
         style={{
           position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
-          transform: horizontal ? 'rotateY(180deg)' : 'rotateX(180deg)', background: 'linear-gradient(160deg,#2c2858,#1c1840)',
-          boxShadow: 'inset 0 0 0 3px rgba(200,164,93,.35)',
+          transform: horizontal ? 'rotateY(180deg)' : 'rotateX(180deg)', background: 'linear-gradient(160deg,#f8e2e4,#f1c9cf)',
+          boxShadow: 'inset 0 0 0 3px rgba(181,103,122,.3)',
         }}
       />
       {k < PANELS - 1 && <Panel k={k + 1} o={o} open={open} reduced={reduced} onOpened={onOpened} />}
@@ -87,12 +87,12 @@ function Cover({ visible, wide }: { visible: boolean; wide: boolean }) {
       animate={{ opacity: visible ? 1 : 0 }}
       transition={{ duration: 0.6 }}
       className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-[6%] text-center"
-      style={{ background: PAPER, boxShadow: 'inset 0 0 0 4px rgba(200,164,93,.7), inset 0 0 0 9px rgba(200,164,93,.25)', pointerEvents: 'none' }}
+      style={{ background: PAPER, boxShadow: 'inset 0 0 0 1px rgba(181,103,122,.55), inset 0 0 0 7px rgba(255,255,255,.6)', pointerEvents: 'none' }}
     >
-      <svg viewBox="-40 -30 80 60" className={wide ? 'w-[14%]' : 'w-[28%]'} fill="var(--royal-gold,#c8a45d)" aria-hidden>
+      <svg viewBox="-40 -30 80 60" className={wide ? 'w-[14%]' : 'w-[28%]'} fill="#b5677a" aria-hidden>
         <path d="M-30 14L-34 -16L-16 -2L0 -24L16 -2L34 -16L30 14ZM-30 20H30" />
       </svg>
-      <span style={{ fontFamily: 'var(--font-display)', fontSize: wide ? 'clamp(.9rem,2.1vw,1.9rem)' : 'clamp(.9rem,5.5vw,1.5rem)', lineHeight: 1.05, color: 'var(--royal-gold,#c8a45d)', padding: '0 8%' }}>
+      <span style={{ fontFamily: 'var(--font-display)', fontSize: wide ? 'clamp(.9rem,2.1vw,1.9rem)' : 'clamp(.9rem,5.5vw,1.5rem)', lineHeight: 1.05, color: '#b5677a', padding: '0 8%' }}>
         {storyConfig.meta.siteTitle}
       </span>
     </motion.div>
@@ -152,8 +152,8 @@ export function MapOpening() {
       className="relative flex min-h-[100svh] flex-col overflow-hidden"
       style={{
         height: '100svh',
-        background: 'radial-gradient(120% 90% at 50% 20%, #2f2a5c 0%, var(--night-ink,#1e1a3a) 55%, #120f26 100%)',
-        color: 'var(--ink,#eee8f4)',
+        background: 'radial-gradient(120% 90% at 50% 20%, #fffdfb 0%, #f7efe5 55%, #efe3d3 100%)',
+        color: 'var(--ink,#2b2528)',
         paddingTop: 'var(--header-h, 76px)',
       }}
       aria-label={storyConfig.meta.siteTitle}
@@ -173,7 +173,7 @@ export function MapOpening() {
             initial={false}
             animate={horizontal ? { x: open ? '0%' : `${packetShift}%` } : { y: open ? '0%' : `${packetShift}%` }}
             transition={reduced ? { duration: 0 } : { duration: 2.6, ease: EASE }}
-            style={{ ...rootStyle, filter: 'drop-shadow(0 30px 40px rgba(0,0,0,.55))' }}
+            style={{ ...rootStyle, filter: 'drop-shadow(0 30px 40px rgba(110,80,75,.25))' }}
           >
             <Panel k={0} o={o} open={open} reduced={reduced} onOpened={onOpened} />
             {/* cover sits on the folded packet only */}
@@ -210,7 +210,7 @@ export function MapOpening() {
             type="button"
             onClick={tap}
             className="rounded-full px-6 py-3"
-            style={{ border: '1px solid var(--line)', background: 'color-mix(in oklab, var(--moon-pearl,#eee8f4) 8%, transparent)', color: 'var(--ink)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-ui,.875rem)', backdropFilter: 'blur(6px)' }}
+            style={{ border: '1px solid transparent', background: 'var(--night-ink)', color: 'var(--moon-pearl)', letterSpacing: '.14em', textTransform: 'uppercase', fontFamily: 'var(--font-body)', fontSize: 'var(--text-ui,.875rem)', backdropFilter: 'blur(6px)' }}
           >
             {mapIntro.tapLabel}
           </button>
@@ -225,20 +225,8 @@ export function MapOpening() {
             <ScrollTick reduced={reduced} />
           </motion.p>
         )}
-        <Readout text={hero.readout} />
       </footer>
     </section>
-  );
-}
-
-/** Design-tool style coordinates readout inside a thin frame with corner handles. */
-function Readout({ text }: { text: string }) {
-  const handle = (pos: React.CSSProperties) => <span aria-hidden style={{ position: 'absolute', width: 6, height: 6, background: 'var(--frame,#e2cf9c)', ...pos }} />;
-  return (
-    <div className="relative px-4 py-1.5" style={{ border: '1px solid var(--line)', fontFamily: 'var(--font-body)', fontSize: 'var(--text-label,.75rem)', color: 'var(--ink-soft)', letterSpacing: '.04em' }}>
-      {handle({ left: -3, top: -3 })}{handle({ right: -3, top: -3 })}{handle({ left: -3, bottom: -3 })}{handle({ right: -3, bottom: -3 })}
-      <span style={{ opacity: 0.6 }}>Atlas / Ahmedabad&nbsp;&nbsp;</span>{text}
-    </div>
   );
 }
 
@@ -247,7 +235,7 @@ function ScrollTick({ reduced }: { reduced: boolean }) {
     <span aria-hidden className="mx-auto mt-2 block h-8 w-px overflow-hidden" style={{ background: 'var(--line)' }}>
       <motion.span
         className="block h-3 w-px"
-        style={{ background: 'var(--accent,#c8a45d)' }}
+        style={{ background: 'var(--accent,#b5677a)' }}
         animate={reduced ? undefined : { y: [-12, 32] }}
         transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -255,7 +243,7 @@ function ScrollTick({ reduced }: { reduced: boolean }) {
   );
 }
 
-/** Slowly drifting star dust (CSS only, so it costs nothing on the main thread). */
+/** Slowly drifting petal dust (CSS only, so it costs nothing on the main thread). */
 function StarDust({ reduced }: { reduced: boolean }) {
   const stars = useMemo(() => {
     let s = 7;
@@ -270,7 +258,7 @@ function StarDust({ reduced }: { reduced: boolean }) {
           className="absolute rounded-full"
           style={{
             left: `${s.x}%`, top: `${s.y}%`, width: s.d, height: s.d, opacity: s.o,
-            background: 'var(--moon-pearl,#eee8f4)',
+            background: 'var(--blush-deep,#f1c9cf)',
             animation: reduced ? undefined : `atlas-drift ${s.t}s ease-in-out ${-s.t * (i % 5) / 5}s infinite alternate`,
           }}
         />

@@ -51,9 +51,9 @@ function BlurFill({ item }: { item: ManifestItem }) {
         key={item.id}
         aria-hidden
         className="absolute inset-0 hidden md:block"
-        initial={{ opacity: 0 }} animate={{ opacity: 0.32 }} exit={{ opacity: 0 }}
+        initial={{ opacity: 0 }} animate={{ opacity: 0.16 }} exit={{ opacity: 0 }}
         transition={{ duration: 1.1, ease: 'easeInOut' }}
-        style={{ transform: 'scale(1.25)', filter: 'blur(48px) saturate(1.1)' }}
+        style={{ transform: 'scale(1.25)', filter: 'blur(60px) saturate(0.9)' }}
       >
         <Picture item={item} sizes="30vw" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', aspectRatio: 'auto' }} />
       </motion.div>
@@ -128,9 +128,9 @@ export function QueenChapter() {
       style={{ opacity: 1, pointerEvents: 'none' }}
     >
       {current && <BlurFill item={current} />}
-      <div aria-hidden className="absolute inset-0" style={{ background: 'radial-gradient(70% 60% at 50% 45%, transparent, var(--stage-deep) 110%)' }} />
+      <div aria-hidden className="absolute inset-0" style={{ background: 'radial-gradient(80% 70% at 50% 45%, transparent, color-mix(in oklab, var(--stage-deep) 60%, transparent) 120%)' }} />
       {/* the Queen's gold: a slow-breathing glow behind her portrait */}
-      <div aria-hidden className={reduced ? 'absolute inset-0' : 'glow-breathe absolute inset-0'} style={{ background: 'radial-gradient(48% 62% at 30% 52%, color-mix(in oklab, var(--royal-gold) 26%, transparent), transparent 72%)' }} />
+      <div aria-hidden className={reduced ? 'absolute inset-0' : 'glow-breathe absolute inset-0'} style={{ background: 'radial-gradient(48% 62% at 30% 52%, color-mix(in oklab, var(--blush-deep) 55%, transparent), transparent 72%)' }} />
       {!reduced && <Motes paused={frozen} />}
 
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-[5vh] px-[var(--gutter)] pb-14 pt-16 md:flex-row md:gap-[6vw] md:px-[8vw] md:py-0">
@@ -147,7 +147,7 @@ export function QueenChapter() {
                 from={startOf(i)} to={endOf(i)} clock={clock} reduced={reduced} intro={intro}
               />
             ))}
-            <div aria-hidden className="absolute inset-0" style={{ boxShadow: 'inset 0 0 90px 10px color-mix(in oklab, var(--stage-deep) 70%, transparent)' }} />
+            <div aria-hidden className="absolute inset-0" style={{ boxShadow: 'none' }} />
             <Crown time={localTime} reduced={reduced} />
           </div>
         </FrameOutline>

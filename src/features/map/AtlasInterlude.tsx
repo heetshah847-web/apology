@@ -50,11 +50,11 @@ export function AtlasInterlude({ to }: { to: PhaseId }) {
   const heightVh = reduced ? 100 : 100 + SCENE_PIN_VH.mapInterludeSec * SCROLL_VH_PER_SEC;
 
   return (
-    <section ref={ref} aria-label={territoryName(to)} style={{ position: 'relative', height: `${heightVh}svh`, background: '#2a2656' }}>
+    <section ref={ref} aria-label={territoryName(to)} style={{ position: 'relative', height: `${heightVh}svh`, background: '#f3e8da' }}>
       <div style={{ position: 'sticky', top: 0, height: '100svh', overflow: 'hidden' }}>
         <AtlasMap orientation={o} camera={cam} drawn={drawn} active={to} hideActiveLabel fit="slice" className="absolute inset-0 h-full w-full" title="" />
         {/* soft vignette keeps the territory name readable over the map */}
-        <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(90% 70% at 50% 45%, transparent 40%, rgba(16,12,36,.65) 100%), linear-gradient(0deg, rgba(16,12,36,.8), transparent 38%)' }} />
+        <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(90% 70% at 50% 45%, transparent 45%, rgba(251,246,239,.6) 100%), linear-gradient(0deg, rgba(251,246,239,.92), transparent 40%)' }} />
         <motion.div
           style={{ opacity: nameOpacity, y: nameY }}
           className="pointer-events-none absolute inset-x-0 bottom-[10svh] px-[var(--gutter,1rem)] text-center"
@@ -62,7 +62,7 @@ export function AtlasInterlude({ to }: { to: PhaseId }) {
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 'var(--text-ui,.875rem)', color: 'var(--ink-soft)', marginBottom: '.25rem' }}>
             {phase.subtitle ?? phase.title}
           </p>
-          <h2 style={{ fontFamily: 'var(--font-script)', fontSize: 'clamp(3rem,1.5rem + 7vw,7.5rem)', lineHeight: 1, color: 'var(--royal-gold,#c8a45d)', textShadow: '0 2px 24px rgba(0,0,0,.6)' }}>
+          <h2 style={{ fontFamily: 'var(--font-script)', fontSize: 'clamp(3rem,1.5rem + 7vw,7.5rem)', lineHeight: 1, color: '#b5677a', textShadow: '0 2px 18px rgba(255,255,255,.9)' }}>
             {territoryName(to)}
           </h2>
         </motion.div>

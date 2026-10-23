@@ -7,8 +7,8 @@
 }
 .queen-mote {
   position: absolute; border-radius: 9999px;
-  background: color-mix(in oklab, var(--glow) 80%, white);
-  box-shadow: 0 0 10px 2px color-mix(in oklab, var(--glow) 55%, transparent);
+  background: color-mix(in oklab, var(--blush-deep) 90%, white);
+  box-shadow: 0 0 8px 2px color-mix(in oklab, var(--blush-deep) 60%, transparent);
   animation: queen-mote-drift linear infinite; will-change: transform, opacity;
 }
 @media (prefers-reduced-motion: reduce) { .queen-mote { display: none; } }

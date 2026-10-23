@@ -1,6 +1,7 @@
 import { Button } from '@/design';
 import { STEP_ORDER, usePlannerStore } from '@/state/plannerStore';
 import { StepTitle } from './StepTitle';
+import { Thumb, optionFor } from './Thumb';
 import { STEP_LABEL, planner } from './types';
 import { venueById } from './venues';
 
@@ -12,29 +13,30 @@ export function ReviewStep() {
     <div>
       <StepTitle>{planner.steps.review.title}</StepTitle>
       {cart.length === 0 && (
-        <p style={{ color: 'var(--ink-soft)' }}>
+        <p className="pl-note">
           Your royal cart is empty.{' '}
-          <button type="button" className="bg-transparent p-0 underline" style={{ color: 'var(--accent)' }} onClick={() => goTo('activity')}>Start with your vibe</button>.
+          <button type="button" className="pl-link" onClick={() => goTo('activity')}>Start with your vibe</button>
         </p>
       )}
-      <div className="mt-4 grid gap-5">
+      <div>
         {STEP_ORDER.map((sid) => {
           const items = cart.filter((c) => c.stepId === sid);
           if (!items.length) return null;
           return (
-            <section key={sid} aria-label={STEP_LABEL[sid]}>
-              <header className="mb-2 flex items-center justify-between">
-                <h3 className="m-0 text-[length:var(--text-label)] uppercase tracking-widest" style={{ color: 'var(--accent)' }}>{STEP_LABEL[sid]}</h3>
-                <button type="button" className="bg-transparent p-0 text-[length:var(--text-label)] underline" style={{ color: 'var(--ink-soft)' }} onClick={() => goTo(sid)}>Edit</button>
+            <section key={sid} aria-label={STEP_LABEL[sid]} className="pl-sec">
+              <header>
+                <h3 className="pl-label m-0">{STEP_LABEL[sid]}</h3>
+                <button type="button" className="pl-link" onClick={() => goTo(sid)}>Edit</button>
               </header>
-              <ul className="m-0 grid list-none gap-2 p-0">
+              <ul className="pl-list">
                 {items.map((c) => (
-                  <li key={c.optionId} className="flex items-center justify-between gap-3 rounded-[10px] px-4 py-3" style={{ background: 'var(--stage-deep)', border: '1px solid var(--line)' }}>
-                    <span>
+                  <li key={c.optionId} className="pl-item">
+                    <span aria-hidden className="pl-tile"><Thumb option={optionFor(c.stepId, c.optionId)} fallback={c.bonus ? '🎁' : '✦'} /></span>
+                    <span className="pl-item-main">
                       {c.label}{c.bonus && ' 🎁'}
-                      {(c.note || c.venueId) && <small className="block" style={{ color: 'var(--ink-soft)' }}>{[venueById(c.venueId)?.name, c.note].filter(Boolean).join(' · ')}</small>}
+                      {(c.note || c.venueId) && <small>{[venueById(c.venueId)?.name, c.note].filter(Boolean).join(' · ')}</small>}
                     </span>
-                    <button type="button" aria-label={`Remove ${c.label}`} className="bg-transparent p-1 text-lg" style={{ color: 'var(--ink-soft)' }} onClick={() => remove(c.stepId, c.optionId)}>✕</button>
+                    <button type="button" aria-label={`Remove ${c.label}`} className="pl-x" onClick={() => remove(c.stepId, c.optionId)}>✕</button>
                   </li>
                 ))}
               </ul>
@@ -42,13 +44,13 @@ export function ReviewStep() {
           );
         })}
         {suggestions.trim() && (
-          <section aria-label="Wishes">
-            <h3 className="m-0 mb-2 text-[length:var(--text-label)] uppercase tracking-widest" style={{ color: 'var(--accent)' }}>Your wishes</h3>
-            <p className="m-0 whitespace-pre-wrap rounded-[10px] px-4 py-3" style={{ background: 'var(--stage-deep)', border: '1px solid var(--line)' }}>{suggestions}</p>
+          <section aria-label="Wishes" className="pl-sec">
+            <header><h3 className="pl-label m-0">Your wishes</h3></header>
+            <p className="pl-wish">{suggestions}</p>
           </section>
         )}
       </div>
-      <div className="mt-6"><Button variant="royal" onClick={next}>Choose delivery date</Button></div>
+      <div className="mt-8"><Button variant="primary" onClick={next}>Choose delivery date</Button></div>
     </div>
   );
 }
