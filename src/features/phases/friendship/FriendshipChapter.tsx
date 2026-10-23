@@ -32,7 +32,7 @@ export function FriendshipChapter() {
 
   if (!isActive && exit === 1) return null;
   if (!isActive) return null;
-  const fade = Math.min(enter, 1 - exit); // the souls keep glowing through the hand-off; the rest fades
+  const fade = 1 - exit; // first chapter of the track: visible from t=0 so the entry screen is never blank. The souls keep glowing through the hand-off; the rest fades
   const index = reduce ? phase.media.length - 1 : activeMediaIndex;
 
   return (

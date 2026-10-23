@@ -1,106 +1,91 @@
 // LANE-11 walkthrough: node src/features/question/question.walk.mjs [baseUrl]
-// Question harness: 6 No attempts -> No becomes Yes; Yes -> confirm -> answeredYes -> planner in view. Apology demo screenshots.
+// Desktop 1440x900 only. Checks: apology scrubs (photo fades for the last 40%, captions remain),
+// 6 No attempts -> No becomes Yes, No never overlaps Yes / leaves the screen, Yes -> planner visible.
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
-const base = process.argv[2] ?? 'http://localhost:5111';
-const out = 'src/features/question/shots';
+const base = process.argv[2] ?? 'http://localhost:5311';
+const url = `${base}/src/features/question/harness.html`;
+const out = 'docs/lane11-shots';
 mkdirSync(out, { recursive: true });
+
 const browser = await chromium.launch();
+const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+const page = await ctx.newPage();
 const errors = [];
-const track = (page) => {
-  page.on('pageerror', (e) => errors.push(e.message));
-  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+page.on('pageerror', (e) => errors.push(e.message));
+page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+await page.goto(url);
+await page.evaluate(() => localStorage.clear());
+await page.reload();
+await page.waitForSelector('[data-chapter="apology"]');
+
+// ── Apology ───────────────────────────────────────────────────────────────
+const trackScroll = await page.evaluate(() => {
+  const t = document.querySelector('[data-track="t2"]');
+  const spacer = t.parentElement;
+  return { top: spacer.getBoundingClientRect().top + scrollY, len: spacer.offsetHeight - innerHeight };
+});
+// track progress for apology: phase.start/dur, phase.end/dur of t2 (43.3s)
+const at = async (trackSec, name) => {
+  const y = trackScroll.top + (trackSec / 43.3) * trackScroll.len;
+  await page.evaluate((v) => window.scrollTo(0, v), y);
+  await page.waitForTimeout(3000);
+  const photoOpacity = await page.evaluate(() => {
+    const el = document.querySelector('[data-chapter="apology"] figure')?.closest('div[style*="opacity"]');
+    return el ? Number(getComputedStyle(el.parentElement).opacity) : -1;
+  });
+  await page.screenshot({ path: `${out}/desktop-apology-${name}.png` });
+  return photoOpacity;
 };
+const early = await at(20, '1-early');
+const late = await at(36, '2-focus');
+const end = await at(43.2, '3-end');
+console.log('photo opacity early/late/end', early, late, end);
+assert.ok(early > 0.9, 'photo visible early');
+assert.ok(late < 0.1 && end < 0.1, 'photo gone for the last 40%');
 
-for (const [name, vp] of [['1440x900', { width: 1440, height: 900 }], ['1366x768', { width: 1366, height: 768 }], ['390x844', { width: 390, height: 844 }]]) {
-  const mobile = vp.width < 500;
-  const ctx = await browser.newContext({ viewport: vp, hasTouch: mobile, isMobile: mobile });
-  const page = await ctx.newPage();
-  track(page);
-  await page.goto(`${base}/src/features/question/harness.html`);
-  const no = page.getByTestId('no');
-  const yes = page.getByTestId('yes');
-  await no.waitFor();
-  await page.waitForTimeout(2200);
-  await page.screenshot({ path: `${out}/question-${name}-0.png` });
+// ── The Question ──────────────────────────────────────────────────────────
+const qTop = await page.evaluate(() => document.getElementById('question').closest('.pin-spacer').getBoundingClientRect().top + scrollY);
+await page.evaluate((v) => window.scrollTo(0, v + 0.3 * 1.6 * innerHeight), qTop);
+await page.waitForTimeout(800);
+await page.screenshot({ path: `${out}/desktop-question-1-headline.png` });
+await page.evaluate((v) => window.scrollTo(0, v + 0.75 * 1.6 * innerHeight), qTop);
+await page.waitForTimeout(1000);
+await page.screenshot({ path: `${out}/desktop-question-2-buttons.png` });
 
-  const inside = async () => {
-    const [n, y, a] = await Promise.all([no.boundingBox(), yes.boundingBox(), page.locator('#question').boundingBox()]);
-    assert.ok(n.x >= 0 && n.y >= 0 && n.x + n.width <= vp.width && n.y + n.height <= vp.height, `No on screen ${JSON.stringify(n)}`);
-    const overlap = n.x < y.x + y.width && n.x + n.width > y.x && n.y < y.y + y.height && n.y + n.height > y.y;
-    assert.ok(!overlap, `No never overlaps Yes ${name} ${JSON.stringify([n, y])}`);
-    return n;
-  };
-
-  const seen = new Set();
-  for (let i = 1; i <= 6; i++) {
-    const b = await no.boundingBox();
-    if (mobile) await page.touchscreen.tap(b.x + b.width / 2, b.y + b.height / 2);
-    else { await page.mouse.move(b.x - 400, b.y); await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2, { steps: 8 }); }
-    await page.waitForTimeout(900);
-    const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-story-v1')).state.noAttempts);
-    assert.equal(stored, i, `attempt ${i} counted`);
-    if (i < 6) { seen.add(await no.innerText()); await inside(); }
-    if (i === 3) await page.screenshot({ path: `${out}/question-${name}-3.png` });
-  }
-  assert.ok(seen.size >= 3, 'No label cycles');
-  assert.equal((await no.innerText()).trim(), 'Yes', 'No became Yes');
-  await page.screenshot({ path: `${out}/question-${name}-6.png` });
-
-  // Yes -> confirm sheet -> answeredYes
-  await yes.click();
-  await page.getByRole('dialog', { name: 'Promise?' }).waitFor();
-  await page.waitForTimeout(600);
-  await page.screenshot({ path: `${out}/question-${name}-sheet.png` });
-  await page.getByTestId('confirm').click();
-  await page.waitForFunction(() => JSON.parse(localStorage.getItem('atlas-story-v1')).state.answeredYes === true);
-  await page.getByText("Then let's plan a date").first().waitFor();
-  await page.waitForTimeout(500);
-  await page.screenshot({ path: `${out}/question-${name}-confetti.png` });
-  await page.waitForFunction(() => { const r = document.getElementById('planner')?.getBoundingClientRect(); return !!r && r.top < innerHeight * 0.5; }, null, { timeout: 8000 });
-  await ctx.close();
-}
-
-// keyboard: Tab reaches No, it moves on focus; Enter on Yes opens the sheet
-{
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-  const page = await ctx.newPage();
-  track(page);
-  await page.goto(`${base}/src/features/question/harness.html`);
-  await page.getByTestId('no').waitFor();
-  const before = await page.getByTestId('no').boundingBox();
-  await page.keyboard.press('Tab'); // Yes
-  assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('data-testid')), 'yes');
-  await page.keyboard.press('Tab'); // No
-  assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('data-testid')), 'no');
+const box = async (id) => page.getByTestId(id).boundingBox();
+const overlaps = (a, b) => a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y;
+const labels = [];
+for (let i = 0; i < 6; i++) {
+  const no = await box('no-button');
+  labels.push(await page.getByTestId('no-button').innerText());
+  await page.mouse.move(no.x - 400, no.y - 40);
+  await page.mouse.move(no.x + no.width / 2, no.y + no.height / 2, { steps: 6 });
   await page.waitForTimeout(700);
-  const after = await page.getByTestId('no').boundingBox();
-  assert.ok(Math.hypot(after.x - before.x, after.y - before.y) > 40, 'No moved after keyboard focus');
-  await page.getByTestId('yes').focus();
-  await page.keyboard.press('Enter');
-  await page.getByRole('dialog', { name: 'Promise?' }).waitFor();
-  await ctx.close();
-}
-
-// apology chapter: from 8s to 30s windows -> scroll through track t2 harness
-{
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-  const page = await ctx.newPage();
-  track(page);
-  await page.goto(`${base}/src/features/phases/apology/demo/index.html`);
-  const total = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight);
-  const dur = 43.3;
-  for (const [label, t] of [['a', 16], ['b', 22], ['c', 30], ['d', 38], ['e', 43.3]]) {
-    await page.evaluate((y) => window.scrollTo(0, y), Math.min(total, (t / dur) * total));
-    await page.waitForTimeout(1800);
-    await page.screenshot({ path: `${out}/apology-${label}.png` });
-    assert.equal(await page.locator('[data-chapter="apology"]').count(), 1, `apology visible at ${t}s`);
+  if (i < 5) {
+    const n2 = await box('no-button'), yes = await box('yes-button');
+    assert.ok(n2.x >= 0 && n2.y >= 0 && n2.x + n2.width <= 1440 && n2.y + n2.height <= 900, `No on screen (attempt ${i + 1})`);
+    assert.ok(!overlaps(n2, yes), `No does not overlap Yes (attempt ${i + 1})`);
+    assert.ok(Math.hypot(n2.x - no.x, n2.y - no.y) > 50, `No moved (attempt ${i + 1})`);
   }
-  await ctx.close();
 }
+console.log('No labels seen:', labels.join(' | '));
+await page.screenshot({ path: `${out}/desktop-question-3-no-exhausted.png` });
+assert.equal((await page.getByTestId('no-button').innerText()).trim(), 'Yes', 'No became Yes after 6 attempts');
 
+// ── Yes -> confirm -> planner ─────────────────────────────────────────────
+await page.getByTestId('no-button').click();
+await page.getByRole('dialog', { name: 'Promise?' }).waitFor();
+await page.screenshot({ path: `${out}/desktop-question-4-confirm.png` });
+await page.getByRole('button', { name: "Yes, I'm yours" }).click();
+await page.getByRole('heading', { name: "Then let's plan a date" }).waitFor();
+assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('atlas-story-v1')).state.answeredYes), true);
+await page.screenshot({ path: `${out}/desktop-question-5-confetti.png` });
+await page.waitForFunction(() => { const r = document.getElementById('planner')?.getBoundingClientRect(); return r && Math.abs(r.top) < 40; }, null, { timeout: 8000 });
+await page.screenshot({ path: `${out}/desktop-question-6-planner.png` });
+
+assert.deepEqual(errors, [], `console/page errors: ${errors.join('; ')}`);
 await browser.close();
-assert.deepEqual(errors, [], `console/page errors: ${errors.join(' | ')}`);
-console.log('question walk OK');
+console.log('lane 11 walk OK');

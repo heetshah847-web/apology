@@ -6,6 +6,7 @@ import {
   BAZAAR_NAME, BRIDGE_PATH, CROWN_PATH, GEOMETRY, GLYPH_PATHS, HEART_PATH, PIN_PATH, ROUTE, SHIP_PATH,
   blobPath, routeSegments, scatterGlyphs, type Orientation, type TerritoryId,
 } from './mapData';
+import { PaperGrain, RoughCoast } from './RoughCoast';
 
 /** Ink + paper colours come from the design tokens, with fallbacks so the map also renders standalone. */
 const INK = 'var(--royal-gold, #c8a45d)';
@@ -42,7 +43,7 @@ export interface AtlasMapProps {
 export const territoryName = (id: TerritoryId): string => (id === 'bazaar' ? BAZAAR_NAME : getPhase(id as PhaseId).mapTerritory);
 
 // ── static base layer ──────────────────────────────────────────────────────
-const Base = memo(function Base({ orientation, uid }: { orientation: Orientation; uid: string }) {
+const Base = memo(function Base({ orientation, uid, rough }: { orientation: Orientation; uid: string; rough: boolean }) {
   const g = GEOMETRY[orientation];
   const lands = useMemo(() => g.lands.map((l) => blobPath(l)), [g]);
   const glyphs = useMemo(() => scatterGlyphs(orientation), [orientation]);
@@ -88,6 +89,8 @@ const Base = memo(function Base({ orientation, uid }: { orientation: Orientation
         {lands.map((d, i) => <path key={i} d={d} fill={`url(#${uid}-land)`} />)}
         {lands.map((d, i) => <path key={`h${i}`} d={d} fill={`url(#${uid}-hatch)`} />)}
       </g>
+      {rough && <RoughCoast lands={lands} ink={INK} />}
+      <PaperGrain uid={uid} w={g.w} h={g.h} />
 
       {/* symbols */}
       <g fill="none" stroke={INK} strokeOpacity="0.75" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -208,7 +211,7 @@ export function AtlasMap({
       role="img"
       aria-label={title}
     >
-      {showBase && <Base orientation={orientation} uid={uid} />}
+      {showBase && <Base orientation={orientation} uid={uid} rough={!slice && showLabels} />}
       {showOverlay && (
         <g>
           {/* ghost trail: the whole journey, faint and dotted */}

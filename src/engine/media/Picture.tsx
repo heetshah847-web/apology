@@ -30,7 +30,7 @@ export function Picture({ item, sizes = '100vw', priority, fit = 'cover', classN
         {item.srcSet && <source type="image/webp" srcSet={item.srcSet} sizes={sizes} />}
         <img
           src={item.src} alt={item.alt} width={item.width} height={item.height}
-          loading={priority ? 'eager' : 'lazy'} decoding="async" fetchPriority={priority ? 'high' : 'auto'}
+          loading={priority ? 'eager' : 'lazy'} decoding="async" {...({ fetchpriority: priority ? 'high' : 'auto' } as Record<string, string>)}
           onLoad={() => setLoaded(true)}
           style={{
             position: 'absolute', inset: 0, width: '100%', height: '100%',

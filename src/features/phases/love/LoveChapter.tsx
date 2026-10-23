@@ -1,116 +1,92 @@
-import { AnimatePresence, motion, useReducedMotion, useTransform, type MotionValue } from 'motion/react';
+import { useState } from 'react';
+import { motion, useMotionValueEvent, useReducedMotion, useTransform } from 'motion/react';
 import type { MediaItem } from '@/contracts';
-import { FrameOutline, PhotoFrame, StatementText } from '@/design';
 import { useChapter } from '@/engine';
+import { FrameOutline, PhotoFrame, StatementText } from '@/design';
+import { statementAt, statementCues } from '../friendship/statements';
 
-const clamp = (v: number, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
-const TITLE_SEC = 1.2; // the quick "Us" title before the first photo
+type LoveMedia = MediaItem & { overlay?: string; label?: string; width?: number; height?: number };
 
-/** story.generated.json adds `label` and `blur` to each MediaItem (beyond the frozen contract). */
-type GeneratedMedia = MediaItem & { label?: string; blur?: string };
-
-const GLOW = 'radial-gradient(55% 50% at 50% 55%, color-mix(in oklab, var(--glow) 30%, transparent), transparent 70%)';
-
-/** One statement, revealed word by word across its cue. */
-function Statement({ text, start, end, localTime }: { text: string; start: number; end: number; localTime: MotionValue<number> }) {
-  const progress = useTransform(localTime, (t) => clamp((t - start) / Math.max(0.4, (end - start) * 0.8)));
-  return <StatementText text={text} progress={progress} size="small" className="mx-auto max-w-[22ch]" />;
+/** A thin rose thread that draws itself across the foot of the screen as the chapter plays. */
+function RoseThread({ progress }: { progress: ReturnType<typeof useChapter>['localProgress'] }) {
+  const draw = useTransform(progress, [0, 1], [0, 1]);
+  return (
+    <svg aria-hidden className="pointer-events-none absolute inset-x-[6vw] bottom-[5vh] h-10 w-[88vw]" viewBox="0 0 880 40" preserveAspectRatio="none" fill="none">
+      <motion.path
+        d="M0 22 C 110 2, 190 40, 300 20 S 480 4, 580 22 S 760 38, 880 14"
+        stroke="var(--glow)" strokeWidth="1.5" strokeLinecap="round" vectorEffect="non-scaling-stroke"
+        style={{ pathLength: draw, opacity: 0.75 }}
+      />
+    </svg>
+  );
 }
 
-/** Chapter 2 of track t1: "How we became partners". Theme rose. */
+/** Chapter 2 of track t1: "How we became partners". Theme rose. One photo at a time, never cropped. */
 export function LoveChapter() {
-  const reduce = !!useReducedMotion();
-  const { phase, isActive, enter, exit, activeCue, activeMediaIndex, localProgress, localTime } = useChapter('love');
-  const dur = phase.end - phase.start;
+  const { phase, isActive, enter, exit, localProgress, localTime, activeMediaIndex } = useChapter('love');
+  const reduce = useReducedMotion();
+  const cues = statementCues(phase);
+  const [stmt, setStmt] = useState(() => statementAt(cues, phase.start, phase));
+  useMotionValueEvent(localTime, 'change', (t) => {
+    const next = statementAt(cues, phase.start + t, phase);
+    setStmt((p) => (p.text === next.text && Math.abs(p.progress - next.progress) < 0.04 ? p : next));
+  });
 
-  const titleOpacity = useTransform(localTime, [TITLE_SEC - 0.4, TITLE_SEC + 0.2], [1, 0], { clamp: true });
-  const bodyOpacity = useTransform(localTime, [TITLE_SEC - 0.2, TITLE_SEC + 0.5], [0, 1], { clamp: true });
-  const thread = useTransform(localProgress, [0, 1], [0, 1], { clamp: true });
-
-  const hasCopy = phase.captions.some((c) => c.text.trim());
-  const cueText = activeCue?.text.trim();
-  // No script text yet: the overlay lines carry the chapter.
-  const statement = hasCopy && cueText ? { text: cueText, start: activeCue!.start - phase.start, end: activeCue!.end - phase.start } : null;
-
-  const opacity = isActive ? Math.min(enter, 1 - exit) : 0;
-  const item = phase.media[activeMediaIndex] as GeneratedMedia | undefined;
   if (!isActive) return null;
+  const fade = Math.min(enter, 1 - exit);
+  const media = phase.media as LoveMedia[];
+  const current = media[activeMediaIndex];
 
   return (
-    <div data-chapter="love" className="absolute inset-0 overflow-hidden" style={{ opacity, color: 'var(--ink)' }}>
-      {/* the heart-glow arriving from Friendship */}
-      <div aria-hidden className="absolute inset-0" style={{ background: GLOW, opacity: reduce ? 0.8 : enter }} />
-
-      {/* rose thread drawn across the screen with the chapter */}
-      <svg aria-hidden className="absolute inset-x-0 bottom-[1vh] h-[6vh] w-full" viewBox="0 0 1000 100" preserveAspectRatio="none">
-        <motion.path
-          d="M0 62 C 120 10, 220 100, 340 55 S 560 5, 680 55 S 880 95, 1000 40"
-          fill="none" stroke="var(--accent)" strokeWidth={1.6} strokeLinecap="round" vectorEffect="non-scaling-stroke"
-          style={{ pathLength: reduce ? 1 : thread, opacity: 0.85 }}
-        />
-      </svg>
-
-      {/* quick title (skipped with reduced motion) */}
-      {!reduce && (
-        <motion.div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center" style={{ opacity: titleOpacity }}>
-          <h2 className="m-0" style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-hero)', fontStyle: 'italic', fontWeight: 500, lineHeight: 1 }}>{phase.title}</h2>
-          {phase.subtitle && <p className="mt-4 text-[length:var(--text-label)] uppercase tracking-[0.3em]" style={{ color: 'var(--accent)' }}>{phase.subtitle}</p>}
-        </motion.div>
-      )}
-
-      <motion.div className="relative z-10 flex h-full flex-col items-center px-[5vw] pb-[9vh] pt-[11vh]" style={{ opacity: reduce ? 1 : bodyOpacity }}>
-        <div className="flex h-[14vh] w-full items-center justify-center">
-          <AnimatePresence mode="wait">
-            {statement && (
-              <motion.div key={statement.text} exit={reduce ? undefined : { opacity: 0 }} transition={{ duration: 0.4 }}>
-                <Statement text={statement.text} start={statement.start} end={statement.end} localTime={localTime} />
-              </motion.div>
-            )}
-          </AnimatePresence>
+    <div data-chapter="love" className="absolute inset-0 flex flex-col px-[6vw] pb-[10vh] pt-[12vh]" style={{ opacity: fade }}>
+      {/* the heart-glow arrives from Friendship and stays as the room's rose light */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{ opacity: Math.min(1, enter * 1.2), background: 'radial-gradient(70% 60% at 68% 50%, color-mix(in oklab, var(--glow) 22%, transparent), transparent 70%)' }}
+      />
+      <div className="relative grid min-h-0 flex-1 grid-cols-1 items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:gap-[5vw]">
+        <div>
+          <p className="mb-4 text-[var(--text-label)] uppercase tracking-[0.3em]" style={{ color: 'var(--accent)' }}>{phase.mapTerritory} / {phase.title}</p>
+          <StatementText text={stmt.text} progress={reduce ? 1 : stmt.progress} size="small" className="text-left!" />
         </div>
 
-        <div className="relative flex min-h-0 w-full flex-1 items-center justify-center">
-          <AnimatePresence mode="popLayout">
-            {item && (
-              <motion.div
-                key={item.id}
-                initial={reduce ? false : { opacity: 0, scale: 0.985 }} animate={{ opacity: 1, scale: 1 }} exit={reduce ? undefined : { opacity: 0 }}
-                transition={{ duration: reduce ? 0 : 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="flex max-h-full justify-center"
-              >
-                <FrameOutline label={item.label ?? `Us / ${activeMediaIndex + 1}`} readout={`${activeMediaIndex + 1} / ${phase.media.length}`}>
-                  <div
-                    style={{
-                      aspectRatio: `${item.width} / ${item.height}`, width: `min(78vw, calc(min(46vh, 520px) * ${item.width / item.height}))`,
-                      backgroundImage: item.blur ? `url(${item.blur})` : undefined, backgroundSize: 'cover',
-                    }}
+        <div className="flex flex-col items-center justify-center [--stage-h:40vh] md:[--stage-h:54vh]">
+          <div className="relative flex w-full items-center justify-center" style={{ height: 'var(--stage-h)' }}>
+            {media.map((m, i) => {
+              const ratio = (m.width ?? 4) / (m.height ?? 3);
+              return (
+                <div
+                  key={m.id}
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{ opacity: i === activeMediaIndex ? 1 : 0, transition: 'opacity 0.9s ease' }}
+                  aria-hidden={i !== activeMediaIndex}
+                >
+                  <FrameOutline
+                    label={m.label ?? 'Us / Photo'}
+                    readout={`${String(i + 1).padStart(2, '0')} / ${String(media.length).padStart(2, '0')}`}
+                    style={{ width: `min(100%, calc(var(--stage-h) * ${ratio}))` }}
                   >
-                    <PhotoFrame src={item.src} alt={item.alt} focal={item.focal} kenBurns={!reduce} duration={Math.max(3, dur / phase.media.length)} className="h-full w-full" />
-                  </div>
-                </FrameOutline>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                    <div className="relative w-full" style={{ aspectRatio: `${ratio}` }}>
+                      <PhotoFrame src={m.src} alt={m.alt} focal={m.focal} className="absolute! inset-0" />
+                    </div>
+                  </FrameOutline>
+                </div>
+              );
+            })}
+          </div>
+          {/* at most one overlay line, opposite side to the statement, only for photos that have one */}
+          <p
+            key={current?.id}
+            aria-live="polite"
+            className="mt-12 min-h-[3.2em] max-w-[34ch] text-center italic"
+            style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.05rem, 1.5vw, 1.4rem)', color: 'var(--ink-soft)', opacity: current?.overlay ? 1 : 0, transition: 'opacity 0.8s ease' }}
+          >
+            {current?.overlay ?? ''}
+          </p>
         </div>
-
-        {/* overlay line: display serif italic, opposite side (bottom) to the statement (top); one at a time */}
-        <div className="flex h-[14vh] w-full items-end justify-center">
-          <AnimatePresence mode="wait">
-            {item?.overlay && (
-              <motion.p
-                key={item.id}
-                data-overlay-line
-                initial={reduce ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={reduce ? undefined : { opacity: 0 }}
-                transition={{ duration: reduce ? 0 : 0.6, delay: reduce ? 0 : 0.25 }}
-                className="m-0 max-w-[34ch] text-balance text-center"
-                style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 'clamp(1.1rem, 2.1vw, 1.75rem)', lineHeight: 1.3, color: 'var(--ink)' }}
-              >
-                {item.overlay}
-              </motion.p>
-            )}
-          </AnimatePresence>
-        </div>
-      </motion.div>
+      </div>
+      <RoseThread progress={localProgress} />
     </div>
   );
 }

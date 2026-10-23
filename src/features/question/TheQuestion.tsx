@@ -1,178 +1,157 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { animate, useInView, useMotionValue, useReducedMotion } from 'motion/react';
-import planner from '@/data/planner.json';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { motion, useMotionValueEvent, useTransform } from 'motion/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Button, StatementText } from '@/design';
 import { audioDirector } from '@/engine';
-import { Button, Sheet, StatementText } from '@/design';
+import { useScene } from '@/engine/scroll/useScene';
+import { useSmoothScroll } from '@/engine/scroll/SmoothScroll';
 import { useStoryStore } from '@/state/storyStore';
-import { heartConfetti } from './hearts';
-import { pickSpot } from './runaway';
+import planner from '@/data/planner.json';
+import { ConfirmSheet } from './ConfirmSheet';
+import { celebrate } from './celebrate';
+import { HEADER, PAD, useRunaway } from './useRunaway';
 
-const q = planner.question;
-const NO_SHRINK = 0.92;   // No loses 8% per attempt
-const YES_GROW = 1.1;     // Yes gains 10% per attempt
-const PROXIMITY = 120;    // px: pointer this close makes No bolt
-const COOLDOWN = 380;     // ms between bolts so one swipe is one attempt
+const Q = planner.question;
+const NO_SHRINK = 0.92; // -8% per attempt
+const YES_GROW = 1.1;   // +10% per attempt
+const PROXIMITY = 120;  // px from the No button at which it runs (desktop pointer)
+const ACTIVE_FROM = 0.6; // scene progress after which the buttons are alive
 
-/** Wait for the planner to mount (it only renders once answeredYes), then glide to it. */
-function scrollToPlanner() {
-  const t0 = performance.now();
-  const go = () => {
-    const el = document.getElementById('planner');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    else if (performance.now() - t0 < 4000) requestAnimationFrame(go);
-  };
-  go();
-}
+/** Two balanced lines so the hero type stays on screen with the buttons below it. */
+const twoLines = (t: string) => {
+  const w = t.split(' ');
+  const k = Math.ceil(w.length / 2);
+  return `${w.slice(0, k).join(' ')}
+${w.slice(k).join(' ')}`;
+};
 
-/** The closing statement of the story: "Will you be mine again?" with a runaway No and a growing Yes. */
+/** The site's closing statement: the biggest type on the page, a runaway No and a growing Yes. */
 export function TheQuestion() {
-  const reduce = useReducedMotion();
+  const { ref, progress } = useScene<HTMLElement>({ lengthVh: 160 });
+  const smooth = useSmoothScroll();
   const answeredYes = useStoryStore((s) => s.answeredYes);
-  const setAnsweredYes = useStoryStore((s) => s.setAnsweredYes);
   const attempts = useStoryStore((s) => s.noAttempts);
   const incNo = useStoryStore((s) => s.incNoAttempts);
-  const converted = attempts >= q.noMaxAttempts;
+  const setAnsweredYes = useStoryStore((s) => s.setAnsweredYes);
+  const [confirming, setConfirming] = useState(false);
+  const [alive, setAlive] = useState(false);
+  const [slot, setSlot] = useState<{ w: number; h: number } | null>(null);
 
-  const section = useRef<HTMLElement>(null);
-  const arena = useRef<HTMLDivElement>(null);
-  const yesWrap = useRef<HTMLSpanElement>(null);
-  const noWrap = useRef<HTMLSpanElement>(null);
-  const slot = useRef<HTMLSpanElement>(null);
-  const lastBolt = useRef(0);
-  const [pos, setPos] = useState<{ x: number; y: number } | null>(null); // null until measured; rests in its slot
-  const [moved, setMoved] = useState(false);
-  const [sheet, setSheet] = useState(false);
+  const yesRef = useRef<HTMLSpanElement>(null);
+  const noRef = useRef<HTMLSpanElement>(null);
+  const headRef = useRef<HTMLDivElement>(null);
+  const avoid = useMemo(() => [yesRef, headRef], []);
+  const { pos, run, reset, setPos } = useRunaway(ref, noRef, avoid);
 
-  // headline reveal when the section scrolls into view
-  const inView = useInView(section, { amount: 0.4, once: true });
-  const reveal = useMotionValue(0);
-  useEffect(() => {
-    if (!inView) return;
-    const c = animate(reveal, 1, { duration: reduce ? 0 : 1.8, ease: 'easeOut' });
-    return () => c.stop();
-  }, [inView, reduce, reveal]);
-  useEffect(() => { if (answeredYes) reveal.set(1); }, [answeredYes, reveal]);
+  const exhausted = attempts >= Q.noMaxAttempts;
+  const noScale = exhausted ? 1 : NO_SHRINK ** attempts;
+  const yesScale = YES_GROW ** Math.min(attempts, Q.noMaxAttempts);
+  const noLabel = exhausted ? Q.yesLabel : Q.noLabels[Math.min(attempts, Q.noLabels.length - 1)];
 
-  const rel = (r: DOMRect) => {
-    const a = arena.current!.getBoundingClientRect();
-    return { x: r.left - a.left, y: r.top - a.top, w: r.width, h: r.height };
-  };
-
-  // rest in the slot (before the first bolt / once converted); clamp inside the arena after resize
+  // The next label can be wider than the one the spot was picked for: keep the button's visible box inside the safe area.
   useLayoutEffect(() => {
-    const place = () => {
-      if (!arena.current || !noWrap.current) return;
-      if ((converted || !moved) && slot.current) {
-        const b = rel(slot.current.getBoundingClientRect());
-        setPos({ x: b.x, y: b.y });
-        return;
-      }
-      const a = arena.current.getBoundingClientRect();
-      const n = noWrap.current.getBoundingClientRect();
-      setPos((p) => p && { x: Math.min(Math.max(p.x, 8), Math.max(8, a.width - n.width - 8)), y: Math.min(Math.max(p.y, 8), Math.max(8, a.height - n.height - 8)) });
-    };
-    place();
-    window.addEventListener('resize', place);
-    return () => window.removeEventListener('resize', place);
-  }, [converted, moved, answeredYes, attempts]);
+    const el = noRef.current, host = ref.current;
+    if (!pos || !el || !host) return;
+    const a = host.getBoundingClientRect();
+    const vw = el.offsetWidth * noScale, vh = el.offsetHeight * noScale;
+    const dx = (el.offsetWidth - vw) / 2, dy = (el.offsetHeight - vh) / 2;
+    const zl = Math.max(a.left, 0) + PAD, zr = Math.min(a.right, innerWidth) - PAD;
+    const zt = Math.max(a.top, 0) + HEADER, zb = Math.min(a.bottom, innerHeight) - PAD;
+    const x = Math.min(Math.max(pos.x, zl - a.left - dx), zr - a.left - dx - vw);
+    const y = Math.min(Math.max(pos.y, zt - a.top - dy), zb - a.top - dy - vh);
+    if (Math.abs(x - pos.x) > 0.5 || Math.abs(y - pos.y) > 0.5) setPos({ x, y });
+  }, [pos, noScale, attempts, ref, setPos]);
 
-  const bolt = useCallback(() => {
-    if (converted || !arena.current || !noWrap.current || !yesWrap.current) return;
-    const now = performance.now();
-    if (now - lastBolt.current < COOLDOWN) return;
-    lastBolt.current = now;
-    const a = arena.current.getBoundingClientRect();
-    const n = noWrap.current.getBoundingClientRect();
-    const y = rel(yesWrap.current.getBoundingClientRect());
-    const k = YES_GROW * YES_GROW; // keep clear of Yes at its next size, with margin
-    const yesNext = { x: y.x - (y.w * (k - 1)) / 2, y: y.y - (y.h * (k - 1)) / 2, w: y.w * k, h: y.h * k };
-    const cur = rel(n);
-    // n is the unscaled layout box of the wrapper, so size it by the shrink it is about to get
-    setPos(pickSpot({ w: a.width, h: a.height }, { w: Math.min(a.width - 24, n.width * 1.6), h: n.height * 1.25 }, yesNext, cur));
-    setMoved(true);
+  useMotionValueEvent(progress, 'change', (p) => setAlive(p >= ACTIVE_FROM));
+  const buttonsOpacity = useTransform(progress, [ACTIVE_FROM - 0.12, ACTIVE_FROM], [0, 1]);
+  const headlineProgress = useTransform(progress, [0, 0.4], [0, 1], { clamp: true });
+
+  // One attempt: No flees, shrinks and changes its words; Yes grows. The throttle makes one gesture one attempt.
+  const attempt = useCallback((pointer?: { x: number; y: number }) => {
+    const { noAttempts } = useStoryStore.getState();
+    if (noAttempts >= Q.noMaxAttempts) return;
+    const r = noRef.current?.getBoundingClientRect();
+    if (r && !pos) setSlot({ w: r.width, h: r.height });
+    if (!run(pointer, YES_GROW)) return;
     incNo();
-  }, [converted, incNo]);
+    if (noAttempts + 1 >= Q.noMaxAttempts) reset(); // the No becomes a second Yes, back in its slot
+  }, [run, incNo, reset, pos]);
 
-  // desktop: pointer proximity
+  // Desktop: pointer proximity.
   useEffect(() => {
-    if (converted || answeredYes) return;
-    const move = (e: PointerEvent) => {
-      if (e.pointerType === 'touch' || !noWrap.current) return;
-      const r = noWrap.current.getBoundingClientRect();
+    if (!alive || answeredYes || exhausted) return;
+    const onMove = (e: PointerEvent) => {
+      if (e.pointerType !== 'mouse') return;
+      const r = noRef.current?.getBoundingClientRect();
+      if (!r) return;
       const dx = Math.max(r.left - e.clientX, 0, e.clientX - r.right);
       const dy = Math.max(r.top - e.clientY, 0, e.clientY - r.bottom);
-      if (Math.hypot(dx, dy) < PROXIMITY) bolt();
+      if (Math.hypot(dx, dy) < PROXIMITY) attempt({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener('pointermove', move);
-    return () => window.removeEventListener('pointermove', move);
-  }, [converted, answeredYes, bolt]);
+    window.addEventListener('pointermove', onMove);
+    return () => window.removeEventListener('pointermove', onMove);
+  }, [alive, answeredYes, exhausted, attempt]);
 
   const confirm = () => {
-    setSheet(false);
+    setConfirming(false);
     setAnsweredYes(true);
     audioDirector.music.play('yes');
-    heartConfetti();
-    window.setTimeout(scrollToPlanner, reduce ? 0 : 1400);
+    celebrate();
+    // The planner mounts on answeredYes: wait for it, refresh the pins, then glide in.
+    const t0 = performance.now();
+    const go = () => {
+      const el = document.getElementById('planner');
+      if (!el) { if (performance.now() - t0 < 3000) requestAnimationFrame(go); return; }
+      ScrollTrigger.refresh();
+      setTimeout(() => smooth.scrollTo(el.getBoundingClientRect().top + window.scrollY), 1400);
+    };
+    requestAnimationFrame(go);
   };
-
-  const noLabel = converted ? q.yesLabel : q.noLabels[Math.min(attempts, q.noLabels.length - 1)];
-  const yesScale = Math.pow(YES_GROW, Math.min(attempts, q.noMaxAttempts));
-  const noScale = converted ? 1 : Math.pow(NO_SHRINK, attempts);
-  const noDone = converted || answeredYes;
 
   return (
     <section
-      ref={section} id="question" data-theme="rose" aria-labelledby="question-h"
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-[6vw] py-[8vh]"
-      style={{ background: 'radial-gradient(90% 70% at 50% 100%, color-mix(in oklab, var(--glow) 22%, transparent), transparent 70%), var(--stage)', color: 'var(--ink)' }}
+      ref={ref}
+      id="question"
+      data-theme="dawn"
+      aria-label="The question"
+      className="relative flex h-[100svh] flex-col items-center justify-center gap-12 overflow-hidden px-[var(--gutter)]"
+      style={{ color: 'var(--ink)', background: 'radial-gradient(120% 90% at 50% 80%, color-mix(in oklab, var(--glow) 22%, var(--stage)), var(--stage-deep))' }}
     >
-      <p className="mb-5 text-[length:var(--text-label)] uppercase tracking-[0.3em]" style={{ color: 'var(--accent)' }}>Bridge of Forgiveness / The Question</p>
-      <h2 id="question-h" className="m-0 w-full">
-        <StatementText
-          as="span" size="hero" progress={reduce ? 1 : reveal}
-          text={answeredYes ? q.afterYes : q.headline}
-          className="block text-[length:clamp(3rem,1.2rem+6.2vw,8.5rem)] leading-[0.98]"
-        />
-      </h2>
-
-      <div ref={arena} className="relative mt-[4vh] h-[min(36vh,16rem)] md:h-[min(28vh,14rem)] w-full max-w-[56rem]">
-        <div className="absolute inset-0 flex items-center justify-center gap-[4.5rem]">
-          <span ref={yesWrap} className="inline-block" style={{ transform: `scale(${yesScale})`, transition: reduce ? 'none' : 'transform .5s var(--ease-enter)' }}>
-            <Button variant="royal" size="lg" disabled={answeredYes} onClick={() => setSheet(true)} data-testid="yes">
-              {answeredYes ? '✓ ' : ''}{q.yesLabel}
-            </Button>
-          </span>
-          {/* the No's resting place; keeps layout so the pair stays centred */}
-          {!answeredYes && <span ref={slot} aria-hidden className="inline-block h-[3.5rem] w-[11rem]" />}
-        </div>
-        {!answeredYes && (
-          <span
-            ref={noWrap} className="absolute left-0 top-0 inline-block"
-            style={{
-              transform: `translate(${pos?.x ?? 0}px, ${pos?.y ?? 0}px) scale(${noScale})`, transformOrigin: 'top left',
-              transition: reduce ? 'none' : 'transform .45s var(--ease-enter)',
-              visibility: pos ? 'visible' : 'hidden',
-            }}
-          >
-            <Button
-              variant={converted ? 'royal' : 'ghost'} size="lg" data-testid="no" data-converted={converted || undefined}
-              className="max-w-[calc(100vw-12vw-1rem)] text-center leading-tight" style={{ touchAction: 'manipulation' }}
-              onPointerDown={(e) => { if (!noDone && e.pointerType === 'touch') { e.preventDefault(); bolt(); } }}
-              onFocus={() => { if (!noDone) bolt(); }}
-              onClick={() => (converted ? setSheet(true) : bolt())}
-            >
-              {noLabel}
-            </Button>
-          </span>
-        )}
+      <div ref={headRef} className="max-w-[94vw]" aria-live="polite">
+        <StatementText key={answeredYes ? 'yes' : 'ask'} as="h2" size="hero" text={twoLines(answeredYes ? Q.afterYes : Q.headline)} progress={answeredYes ? 1 : headlineProgress} />
       </div>
-      <p className="sr-only" role="status">{answeredYes ? q.afterYes : ''}</p>
 
-      <Sheet open={sheet} onClose={() => setSheet(false)} title={q.confirmPrompt}>
-        <div className="flex justify-center pt-2">
-          <Button variant="royal" size="lg" autoFocus onClick={confirm} data-testid="confirm">{q.confirmYes}</Button>
-        </div>
-      </Sheet>
+      {!answeredYes && (
+        <motion.div className="flex items-center justify-center gap-20" style={{ opacity: buttonsOpacity, pointerEvents: alive ? 'auto' : 'none' }} {...(alive ? {} : { inert: '' })}>
+          <span ref={yesRef} className="inline-flex" style={{ transform: `scale(${yesScale})`, transition: 'transform .45s var(--ease-enter)' }}>
+            <Button variant="royal" size="lg" className="min-w-[10rem] md:min-w-[13rem] md:py-5 md:text-2xl" data-testid="yes-button" onClick={() => setConfirming(true)}>{Q.yesLabel}</Button>
+          </span>
+          {/* the slot keeps the row stable while No roams */}
+          <span className="inline-flex" style={slot && pos ? { width: slot.w, height: slot.h } : undefined}>
+            <span
+              ref={noRef}
+              className="inline-flex"
+              style={{
+                ...(pos ? { position: 'absolute', left: pos.x, top: pos.y, transition: 'left .5s var(--ease-enter), top .5s var(--ease-enter)' } : null),
+                transform: `scale(${noScale})`, transformOrigin: 'center', zIndex: 5,
+              }}
+            >
+              <Button
+                variant={exhausted ? 'royal' : 'ghost'} size="lg" className="min-w-[8rem] md:min-w-[10rem] md:py-5 md:text-2xl"
+                data-testid="no-button"
+                style={{ whiteSpace: 'nowrap' }}
+                onClick={() => (exhausted ? setConfirming(true) : attempt())}
+                onFocus={(e) => e.currentTarget.matches(':focus-visible') && attempt()}
+                onPointerDown={(e) => { if (e.pointerType !== 'mouse' && !exhausted) { e.preventDefault(); attempt({ x: e.clientX, y: e.clientY }); } }}
+              >
+                {noLabel}
+              </Button>
+            </span>
+          </span>
+        </motion.div>
+      )}
+
+      <ConfirmSheet open={confirming} prompt={Q.confirmPrompt} confirmLabel={Q.confirmYes} onConfirm={confirm} onClose={() => setConfirming(false)} />
     </section>
   );
 }

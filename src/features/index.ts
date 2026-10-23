@@ -1,4 +1,5 @@
-// Barrel wired by LANE-15: every line re-exports the real module.
+// Barrel: each line re-exports the real module. DatePlanner and OrderConfirmed are NOT here: App lazy-loads them
+// (src/features/planner/DatePlanner, src/features/order/OrderConfirmed) to keep them out of the first-load bundle.
 export { PasscodeGate } from './gate/PasscodeGate';
 export { MapOpening } from './map/MapOpening';
 export { AtlasInterlude } from './map/AtlasInterlude';
@@ -8,6 +9,4 @@ export { LoveChapter } from './phases/love/LoveChapter';
 export { DistanceChapter } from './phases/distance/DistanceChapter';
 export { ApologyChapter } from './phases/apology/ApologyChapter';
 export { TheQuestion } from './question/TheQuestion';
-export { DatePlanner } from './planner/DatePlanner';
-export { OrderConfirmed } from './order/OrderConfirmed';
-export { SoundToggle } from './chrome/SoundToggle.stub'; // no lane owns a real one: the stub is wired to audioDirector and is the final header toggle
+export { SoundToggle } from './chrome/SoundToggle.stub';

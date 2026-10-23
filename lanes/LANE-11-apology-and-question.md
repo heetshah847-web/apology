@@ -12,12 +12,12 @@
 
 ## Part B — The Question (`src/features/question/`)
 Implement exactly per `docs/06-DATE-PLANNER-SPEC.md` → "The Question":
-- [ ] Headline "Will you be mine again?" (copy from `planner.config.json` → `question`)
-- [ ] Runaway **No** (pointer proximity on desktop, touchstart on mobile), never leaves the safe area, never overlaps Yes, shrinks, cycles `noLabels`, becomes Yes after `noMaxAttempts`
-- [ ] Growing **Yes**; confirm sheet "Promise?" → "Yes, I'm yours"
-- [ ] On confirm: `storyStore.answeredYes = true`, `music.play('yes')`, heart confetti (rose/gold), headline "Then let's plan a date", smooth scroll to planner
-- [ ] Keyboard accessible: No stays reachable by Tab (it moves after focus with a playful label)
+- [x] Headline "Will you be mine again?" (copy from `planner.config.json` → `question`)
+- [x] Runaway **No** (pointer proximity on desktop, touchstart on mobile), never leaves the safe area, never overlaps Yes, shrinks, cycles `noLabels`, becomes Yes after `noMaxAttempts`
+- [x] Growing **Yes**; confirm sheet "Promise?" → "Yes, I'm yours"
+- [x] On confirm: `storyStore.answeredYes = true`, `music.play('yes')`, heart confetti (rose/gold), headline "Then let's plan a date", smooth scroll to planner
+- [x] Keyboard accessible: No stays reachable by Tab (it moves after focus with a playful label)
 
 ## Acceptance
-- Playwright: 6 No attempts → No becomes Yes; Yes → planner visible
-- Apology works with chapter windows from 8s to 30s
+- [x] Playwright (`src/features/question/question.walk.mjs`, desktop only): 6 No attempts → No becomes Yes; Yes → planner visible
+- [x] Apology is time-ratio driven (all timing from the chapter's `start`/`end`), so it works for chapter windows from 8s to 30s

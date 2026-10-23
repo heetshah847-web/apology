@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { SCROLL_TO_DURATION, SCROLL_VH_PER_SEC, type CaptionCue, type NarratedTrackProps, type NarrationMode, type PhaseData } from '@/contracts';
 import { audioDirector } from '@/engine';
 import { useStoryStore } from '@/state/storyStore';
-import { getPhasesOfTrack, getTrack } from '../storyData.stub';
+import { getPhasesOfTrack, getTrack, story } from '../storyData.stub';
 import { TrackContext, type TrackContextValue } from './context';
 import { useSmoothScroll } from './SmoothScroll';
 import { activeMediaAt, mediaSchedule, progressFromScroll, scrollFromProgress, sectionLength } from './timing';
@@ -16,6 +16,8 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const THEME_VARS = ['--stage', '--stage-deep', '--glow', '--accent'] as const;
 const HANDOFF_SEC = 1.2;
+/** After the last voice ends, the screen holds in silence this long before gliding on to The Question. */
+const END_HOLD_SEC = 1.5;
 /** A scroll position this far from where guided mode put it means she dragged the scrollbar. */
 const USER_SCROLL_PX = 40;
 const SCROLL_KEYS = new Set(['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' ', 'Spacebar']);
@@ -165,13 +167,20 @@ export function NarratedTrack({ trackId, children }: NarratedTrackProps) {
       setMode('free');
     }
 
-    const finish = () => {
+    // The silence hold only follows a natural end of the final track; Skip and any user input glide at once or cancel it.
+    let holdTimer = 0;
+    const cancelHold = () => { window.clearTimeout(holdTimer); holdTimer = 0; };
+    const finish = (holdSec = 0) => {
       audioDirector.pause();
       setClock(duration);
       setMode('done');
-      smoothRef.current.scrollTo(st.end + 1, { duration: SCROLL_TO_DURATION });
+      // After a hold the screen rises onto the next section (The Question); otherwise the old 1px nudge past the pin.
+      const glide = () => { holdTimer = 0; smoothRef.current.scrollTo(st.end + (holdSec > 0 ? window.innerHeight : 1), { duration: SCROLL_TO_DURATION }); };
+      if (holdSec > 0) holdTimer = window.setTimeout(glide, holdSec * 1000);
+      else glide();
     };
     finishRef.current = () => {
+      cancelHold();
       audioDirector.seek(duration);
       finish();
     };
@@ -190,11 +199,11 @@ export function NarratedTrack({ trackId, children }: NarratedTrackProps) {
       smoothRef.current.scrollTo(y, { immediate: true });
     });
     const offEnded = audioDirector.on('ended', (id) => {
-      if (id === trackId && modeRef.current === 'guided') finish();
+      if (id === trackId && modeRef.current === 'guided') finish(trackId === story.tracks.at(-1)?.id ? END_HOLD_SEC : 0);
     });
 
-    const onInput = () => toFree();
-    const onKey = (e: KeyboardEvent) => { if (SCROLL_KEYS.has(e.key)) toFree(); };
+    const onInput = () => { cancelHold(); toFree(); };
+    const onKey = (e: KeyboardEvent) => { if (SCROLL_KEYS.has(e.key)) { cancelHold(); toFree(); } };
     const onVisibility = () => { if (document.hidden) toFree(); };
     window.addEventListener('wheel', onInput, { passive: true });
     window.addEventListener('touchstart', onInput, { passive: true });
@@ -202,6 +211,7 @@ export function NarratedTrack({ trackId, children }: NarratedTrackProps) {
     document.addEventListener('visibilitychange', onVisibility);
 
     return () => {
+      cancelHold();
       offTime();
       offEnded();
       window.removeEventListener('wheel', onInput);
@@ -249,7 +259,7 @@ export function NarratedTrack({ trackId, children }: NarratedTrackProps) {
         {debug && <DebugOverlay mode={mode} />}
       </TrackContext.Provider>
 
-      <div style={{ ...chromeStyle, top: 'max(16px, env(safe-area-inset-top))', right: 16 }}>
+      <div style={{ ...chromeStyle, top: 'max(16px, env(safe-area-inset-top))', left: 16, right: 176, height: 32, alignItems: 'center', justifyContent: 'flex-end' }}>
         <MiniMap phases={phases} activeId={activePhase?.id ?? null} />
       </div>
       <div style={{ ...chromeStyle, bottom: 'max(16px, env(safe-area-inset-bottom))', right: 16 }}>

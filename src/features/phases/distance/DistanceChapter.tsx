@@ -27,8 +27,8 @@ type GeneratedMedia = MediaItem & { label?: string; blur?: string };
 function DriftPhoto({ item, i, n, reduce }: { item: GeneratedMedia; i: number; n: number; reduce: boolean }) {
   const t = n > 1 ? i / (n - 1) : 0;
   const side = i % 2 === 0 ? -1 : 1; // her side (left) / his side (right)
-  const heightVh = lerp(36, 21, t);
-  const offsetVw = lerp(15, 33, t);
+  const heightVh = lerp(37, 22, t);
+  const offsetVw = lerp(17, 33, t);
   return (
     <motion.div
       key={item.id}
@@ -42,7 +42,7 @@ function DriftPhoto({ item, i, n, reduce }: { item: GeneratedMedia; i: number; n
       <FrameOutline label={item.label ?? (side < 0 ? 'Her side' : 'His side')} readout={`${item.width} × ${item.height}`}>
         <div
           style={{
-            height: `${heightVh}vh`, aspectRatio: `${item.width} / ${item.height}`, maxWidth: '30vw',
+            height: `${heightVh}vh`, aspectRatio: `${item.width} / ${item.height}`, maxWidth: '34vw',
             backgroundImage: item.blur ? `url(${item.blur})` : undefined, backgroundSize: 'cover',
           }}
         >
@@ -75,7 +75,7 @@ export function DistanceChapter() {
     ? (cueText ? { text: cueText, start: activeCue!.start - phase.start, end: activeCue!.end - phase.start } : null)
     : phase.subtitle ? { text: phase.subtitle, start: 0, end: dur * 0.3 } : null; // no script text yet → the chapter's tagline
 
-  const opacity = isActive ? Math.min(enter, 1 - exit) : 0;
+  const opacity = isActive ? 1 - exit : 0; // first chapter of its track: visible from t=0
   const item = phase.media[activeMediaIndex] as GeneratedMedia | undefined;
 
   return (
@@ -91,7 +91,7 @@ export function DistanceChapter() {
       <motion.div aria-hidden className="absolute inset-0" style={{ background: DAWN_VIOLET, opacity: reduce ? 0 : dawn, mixBlendMode: 'soft-light' }} />
 
       <div className="relative z-10 flex h-full flex-col px-[5vw] pb-[6vh] pt-[11vh]">
-        <div className="flex h-[22vh] items-center justify-center">
+        <div className="flex h-[20vh] items-center justify-center">
           <AnimatePresence mode="wait">
             {statement && (
               <motion.div
@@ -104,11 +104,11 @@ export function DistanceChapter() {
           </AnimatePresence>
         </div>
 
-        <div className="relative flex-1">
+        <div className="relative mt-14 flex-1">
           <AnimatePresence>{item && <DriftPhoto key={item.id} item={item} i={activeMediaIndex} n={phase.media.length} reduce={reduce} />}</AnimatePresence>
         </div>
 
-        <div className="mx-auto w-full max-w-[1100px]">
+        <div className="mx-auto w-full max-w-[820px]">
           <motion.div style={{ scale: reduce ? 1 : pulse, filter: reduce ? undefined : glow, transformOrigin: '50% 60%' }}>
             <MapPins stretch={reduce ? 1 : stretch} labelA="Heetu" labelB="Tanisha" className="block h-auto w-full" />
           </motion.div>

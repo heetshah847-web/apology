@@ -1,8 +1,7 @@
-// Barrel wired by LANE-15: every line re-exports the real module.
+// Barrel: each line re-exports the real module (when its lane lands) or the stub.
+// Lanes must NOT edit this file; LANE-15 swaps the export lines.
 export { audioDirector } from './audio/AudioDirector';
-export { SmoothScroll, useSmoothScroll } from './scroll/SmoothScroll';
+export { SmoothScroll } from './scroll/SmoothScroll';
 export { NarratedTrack } from './scroll/NarratedTrack';
 export { useChapter } from './scroll/useChapter';
-export { useScene } from './scroll/useScene';
-export { StepInside } from './scroll/StepInside';
 export { story, getTrack, getPhase, getPhasesOfTrack } from './storyData.stub';
