@@ -25,6 +25,7 @@ export const GROUPS: { id: PlannerStepId; title: string; emoji: string }[] = [
   { id: 'dessert', title: 'Something sweet', emoji: '🍰' },
   { id: 'heetu', title: 'Your Heetu', emoji: '🤍' },
   { id: 'flowers', title: 'Flowers', emoji: '💐' },
+  { id: 'punish', title: 'His punishment', emoji: '😈' },
 ];
 
 type VenueLite = { id: string; name: string; area?: string };
