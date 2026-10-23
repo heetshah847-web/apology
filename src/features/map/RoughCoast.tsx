@@ -15,7 +15,7 @@ export const RoughCoast = memo(function RoughCoast({ lands, ink }: { lands: stri
       const gen = new RoughGenerator();
       const out: RoughPath[] = [];
       lands.forEach((d, i) => {
-        const drawable = gen.path(d, { roughness: 1.4, bowing: 1.2, seed: 11 + i * 7, strokeWidth: 1.6, fill: undefined, disableMultiStroke: false });
+        const drawable = gen.path(d, { roughness: 1.4, bowing: 1.2, seed: 11 + i * 7, strokeWidth: 1.6, fill: undefined, disableMultiStroke: true });
         for (const p of gen.toPaths(drawable)) if (p.d) out.push({ d: p.d, width: p.strokeWidth });
       });
       setPaths(out);
@@ -24,7 +24,7 @@ export const RoughCoast = memo(function RoughCoast({ lands, ink }: { lands: stri
   }, [lands]);
   if (!paths) return null;
   return (
-    <g fill="none" stroke={ink} strokeOpacity="0.55" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'rough-in 1.2s ease both' }}>
+    <g fill="none" stroke={ink} strokeOpacity="0.55" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'rough-in 1.2s ease' }}>
       {paths.map((p, i) => <path key={i} d={p.d} strokeWidth={p.width} />)}
     </g>
   );

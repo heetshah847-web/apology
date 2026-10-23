@@ -27,7 +27,7 @@ type GeneratedMedia = MediaItem & { label?: string; blur?: string };
 function DriftPhoto({ item, i, n, reduce }: { item: GeneratedMedia; i: number; n: number; reduce: boolean }) {
   const t = n > 1 ? i / (n - 1) : 0;
   const side = i % 2 === 0 ? -1 : 1; // her side (left) / his side (right)
-  const heightVh = lerp(44, 24, t);
+  const heightVh = lerp(37, 22, t);
   const offsetVw = lerp(17, 33, t);
   return (
     <motion.div
