@@ -12,7 +12,7 @@ export function starfield(durationMs = 7000) {
   ctx.scale(dpr, dpr);
   document.body.appendChild(canvas);
 
-  const colours = ['#f6e7b8', '#e8cf94', '#f0b6c6', '#ffffff'];
+  const colours = ['#f1c9cf', '#e9a9b6', '#f8e2e4', '#d9a3ad'];
   const stars = Array.from({ length: 160 }, () => ({
     x: Math.random() * w, y: Math.random() * h, r: 0.6 + Math.random() * 1.8,
     tw: Math.random() * Math.PI * 2, sp: 0.8 + Math.random() * 1.6, rise: 6 + Math.random() * 18,

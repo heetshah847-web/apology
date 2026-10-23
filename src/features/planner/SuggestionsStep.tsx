@@ -1,4 +1,3 @@
-import { Chip } from '@/design';
 import { usePlannerStore } from '@/state/plannerStore';
 import { StepTitle } from './StepTitle';
 import { planner } from './types';
@@ -16,14 +15,11 @@ export function SuggestionsStep() {
   return (
     <div>
       <StepTitle>{cfg.title}</StepTitle>
+      <p className="pl-label mb-3">Add a note</p>
       <label className="sr-only" htmlFor="planner-wishes">Your wishes</label>
-      <textarea
-        id="planner-wishes" value={text} onChange={(e) => set(e.target.value)} placeholder={cfg.placeholder} rows={6} maxLength={800}
-        className="mt-4 w-full resize-y rounded-[14px] p-4 text-base"
-        style={{ background: 'var(--stage-deep)', color: 'var(--ink)', border: '1px solid var(--line)', fontFamily: 'var(--font-body)' }}
-      />
-      <div className="mt-4 flex flex-wrap gap-2">
-        {cfg.chips.map((c) => <Chip key={c} selected={has(c)} onClick={() => toggle(c)}>{c}</Chip>)}
+      <textarea id="planner-wishes" value={text} onChange={(e) => set(e.target.value)} placeholder={cfg.placeholder} rows={6} maxLength={800} className="pl-field" />
+      <div className="pl-chips">
+        {cfg.chips.map((c) => <button key={c} type="button" aria-pressed={has(c)} className="pl-chip" onClick={() => toggle(c)}>{c}</button>)}
       </div>
     </div>
   );

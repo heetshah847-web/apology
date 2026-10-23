@@ -1,7 +1,7 @@
 import confetti from 'canvas-confetti';
 import { starfield } from './starfield';
 
-const COLORS = ['#e7a6b8', '#f0b6c6', '#c8a45d', '#e8cf94'];
+const COLORS = ['#e9a9b6', '#f1c9cf', '#c9a690', '#f8e2e4'];
 
 /** Heart confetti in rose and gold; skipped under prefers-reduced-motion. */
 export function celebrate() {

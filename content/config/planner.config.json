@@ -26,23 +26,23 @@
     "cuisine": {
       "title": "What's the Queen craving?",
       "options": [
-        { "id": "pasta",       "label": "Pasta",              "emoji": "🍝" },
-        { "id": "pizza",       "label": "Pizza",              "emoji": "🍕" },
-        { "id": "fondue",      "label": "Cheese fondue",      "emoji": "🧀" },
-        { "id": "noodles",     "label": "Noodles / Pan‑Asian","emoji": "🍜" },
-        { "id": "north-indian","label": "North Indian",       "emoji": "🍛" },
+        { "id": "pasta",       "label": "Pasta",              "emoji": "🍝", "image": "/media/options/pasta.webp" },
+        { "id": "pizza",       "label": "Pizza",              "emoji": "🍕", "image": "/media/options/pizza.webp" },
+        { "id": "fondue",      "label": "Cheese fondue",      "emoji": "🧀", "image": "/media/options/fondue.webp" },
+        { "id": "noodles",     "label": "Noodles / Pan‑Asian","emoji": "🍜", "image": "/media/options/noodles.webp" },
+        { "id": "north-indian","label": "North Indian",       "emoji": "🍛", "image": "/media/options/north-indian.webp" },
         { "id": "surprise",    "label": "Surprise me",        "emoji": "🎲" }
       ]
     },
     "dessert": {
       "title": "Something sweet",
       "options": [
-        { "id": "tiramisu",        "label": "Tiramisu",         "emoji": "☕" },
+        { "id": "tiramisu",        "label": "Tiramisu",         "emoji": "☕", "image": "/media/options/tiramisu.webp" },
         { "id": "cheesecake",      "label": "Cheesecake",       "emoji": "🍰" },
         { "id": "gelato",          "label": "Gelato / ice cream","emoji": "🍨" },
-        { "id": "waffles",         "label": "Waffles",          "emoji": "🧇" },
+        { "id": "waffles",         "label": "Waffles",          "emoji": "🧇", "image": "/media/options/waffles.webp" },
         { "id": "brownie-sundae",  "label": "Brownie sundae",   "emoji": "🍫" },
-        { "id": "choco-fondue",    "label": "Chocolate fondue", "emoji": "🍓" },
+        { "id": "choco-fondue",    "label": "Chocolate fondue", "emoji": "🍓", "image": "/media/options/choco-fondue.webp" },
         { "id": "kulfi",           "label": "Kulfi",            "emoji": "🥛" }
       ]
     },

@@ -18,7 +18,7 @@ const HEART = confetti.shapeFromPath({
 
 function heartBurst() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const base = { shapes: [HEART], colors: ['#e7a6b8', '#c8a45d', '#eee8f4', '#d4607f'], scalar: 1.6, ticks: 220, disableForReducedMotion: true };
+  const base = { shapes: [HEART], colors: ['#f1c9cf', '#e7a6b8', '#f8e2e4', '#b5677a'], scalar: 1.6, ticks: 220, disableForReducedMotion: true };
   confetti({ ...base, particleCount: 60, spread: 80, startVelocity: 48, origin: { x: 0.5, y: 0.55 } });
   setTimeout(() => confetti({ ...base, particleCount: 30, angle: 60, spread: 60, origin: { x: 0, y: 0.7 } }), 250);
   setTimeout(() => confetti({ ...base, particleCount: 30, angle: 120, spread: 60, origin: { x: 1, y: 0.7 } }), 250);
@@ -76,7 +76,7 @@ export function OrderConfirmed() {
       <section id="order" data-theme="rose" className="order-stage" aria-label="Order confirmed">
         <Receipt ref={receipt} order={order} />
         <div className="order-actions" data-no-capture>
-          <Button variant="royal" size="lg" onClick={send} disabled={status === 'sending'}>{copy.sendLabel}</Button>
+          <Button variant="primary" size="lg" onClick={send} disabled={status === 'sending'}>{copy.sendLabel}</Button>
           <Button variant="ghost" onClick={save} disabled={status === 'saving'}>{copy.saveLabel}</Button>
           <Button variant="ghost" onClick={edit}>{copy.editLabel}</Button>
         </div>

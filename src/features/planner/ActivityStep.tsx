@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { Button, FrameOutline, Toast } from '@/design';
+import { Button, Toast } from '@/design';
 import { audioDirector } from '@/engine';
 import type { CartItem } from '@/contracts';
 import { usePlannerStore } from '@/state/plannerStore';
@@ -36,10 +36,10 @@ export function ActivityStep() {
     <div>
       <StepTitle>{cfg.title}</StepTitle>
       {!chosen && (
-        <div className="mt-8 flex justify-center">
-          <Button variant="royal" size="lg" onClick={choose} className="min-w-[14rem]" aria-label={`Choose ${current.label}`}>
-            <AnimatePresence mode="popLayout" initial={false}>
-              <motion.span key={current.id} initial={{ y: 14, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -14, opacity: 0 }} transition={{ duration: 0.2 }}>
+        <div className="mt-10 flex justify-center">
+          <Button variant="primary" size="lg" onClick={choose} className="min-w-[14rem]" aria-label={`Choose ${current.label}`}>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span key={current.id} initial={{ y: 14, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -10, opacity: 0 }} transition={{ duration: 0.13 }}>
                 {current.emoji} {current.label}
               </motion.span>
             </AnimatePresence>
@@ -52,7 +52,7 @@ export function ActivityStep() {
             {mine.filter((m) => !m.bonus).map((m) => {
               const o = cfg.options.find((x) => x.id === m.optionId);
               return (
-                <motion.span key={m.optionId} layoutId={`fly-activity-${m.optionId}`} className="rounded-full px-4 py-2" style={{ background: 'var(--stage-deep)', border: '1px solid var(--line)' }}>
+                <motion.span key={m.optionId} layoutId={`fly-activity-${m.optionId}`} className="rounded-full px-5 py-2 text-[length:var(--text-ui)] font-semibold" style={{ background: 'var(--blush)', color: 'var(--ink)' }}>
                   {o?.emoji} {m.label}
                 </motion.span>
               );
@@ -60,12 +60,11 @@ export function ActivityStep() {
           </div>
           {mine.some((m) => m.bonus) && (
             <motion.div initial={{ opacity: 0, y: 24, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ delay: 0.35, type: 'spring', stiffness: 220, damping: 20 }}>
-              <FrameOutline label="Bonus / Smash Karts" className="mt-10">
-                <div className="p-5" style={{ background: 'var(--stage-deep)' }}>
-                  <p className="m-0 text-xl" style={{ fontFamily: 'var(--font-display)' }}>{cfg.bonus.emoji} {cfg.bonus.label}: added to cart</p>
-                  {cfg.bonus.note && <p className="m-0 mt-1 text-[length:var(--text-ui)]" style={{ color: 'var(--ink-soft)' }}>{cfg.bonus.note}</p>}
-                </div>
-              </FrameOutline>
+              <div className="mt-6" style={{ background: 'var(--blush)', padding: '1.25rem 1.5rem', borderTop: '4px solid var(--ink)' }}>
+                <p className="pl-label mb-2">Bonus</p>
+                <p className="m-0 text-xl" style={{ fontFamily: 'var(--font-display)' }}>{cfg.bonus.emoji} {cfg.bonus.label}: added to cart</p>
+                {cfg.bonus.note && <p className="pl-note m-0 mt-1" style={{ color: '#5a5054' }}>{cfg.bonus.note}</p>}
+              </div>
             </motion.div>
           )}
           <div><Button variant="ghost" onClick={() => usePlannerStore.getState().clearStep('activity')}>Choose again</Button></div>

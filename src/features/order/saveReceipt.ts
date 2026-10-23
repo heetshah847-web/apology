@@ -7,7 +7,7 @@ export async function receiptPng(node: HTMLElement): Promise<string> {
   const opts = {
     pixelRatio: 2,
     cacheBust: true,
-    backgroundColor: '#f3ead6',
+    backgroundColor: '#ffffff',
     fontEmbedCSS,
     filter: (n: Node) => !(n instanceof HTMLElement && n.dataset.noCapture !== undefined),
   };

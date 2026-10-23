@@ -16,8 +16,8 @@ export function Moon({ time, win }: { time: MotionValue<number>; win: Win | null
       className="pointer-events-none absolute -right-[34%] -top-[14%] z-0 aspect-square w-[78%] rounded-full"
       style={{
         opacity, y,
-        border: '2px solid color-mix(in oklab, var(--glow) 80%, white)',
-        boxShadow: '0 0 60px 6px color-mix(in oklab, var(--glow) 55%, transparent), inset 0 0 40px color-mix(in oklab, var(--glow) 40%, transparent)',
+        border: '1px solid color-mix(in oklab, var(--glow) 90%, white)',
+        boxShadow: '0 0 50px 4px color-mix(in oklab, var(--glow) 45%, transparent)',
         WebkitMaskImage: 'linear-gradient(210deg, #000 28%, transparent 62%)',
         maskImage: 'linear-gradient(210deg, #000 28%, transparent 62%)',
       }}
@@ -44,7 +44,7 @@ function Petal({ p, i }: { p: MotionValue<number>; i: number }) {
         top, left, rotate, opacity, width: d.size, height: d.size * 1.25,
         borderRadius: '100% 0 100% 0',
         background: `linear-gradient(140deg, color-mix(in oklab, #e2748f ${60 + d.hue * 30}%, white), #b3314f)`,
-        filter: 'drop-shadow(0 2px 6px rgb(0 0 0 / .35))',
+        filter: 'drop-shadow(0 3px 6px rgb(120 70 80 / .22))',
       }}
     />
   );

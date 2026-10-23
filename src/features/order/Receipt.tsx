@@ -4,7 +4,7 @@ import type { Order } from '@/contracts';
 import { PlateCard } from '@/design';
 import { PLATE, copy, formatDelivery, groupItems, herTitle, orderNumber } from './orderConfig';
 
-/** Gold wax-style seal; stamps down on mount. */
+/** Dusty-rose wax-style seal; stamps down on mount. */
 function Seal({ delay }: { delay: number }) {
   const reduce = useReducedMotion();
   const points = Array.from({ length: 24 }, (_, i) => {
@@ -22,12 +22,12 @@ function Seal({ delay }: { delay: number }) {
     >
       <defs>
         <radialGradient id="seal-g" cx="35%" cy="30%" r="80%">
-          <stop offset="0" stopColor="#f0dca8" /><stop offset="0.55" stopColor="#c8a45d" /><stop offset="1" stopColor="#8f6c2c" />
+          <stop offset="0" stopColor="#e9b6c2" /><stop offset="0.55" stopColor="#c27688" /><stop offset="1" stopColor="#8f4558" />
         </radialGradient>
       </defs>
       <polygon points={points} fill="url(#seal-g)" />
-      <circle cx="50" cy="50" r="32" fill="none" stroke="#6f5220" strokeOpacity=".55" strokeWidth="1.5" />
-      <path d="M50 66 C 30 52 32 36 44 36 C 48 36 50 39 50 42 C 50 39 52 36 56 36 C 68 36 70 52 50 66 Z" fill="#6f5220" fillOpacity=".8" />
+      <circle cx="50" cy="50" r="32" fill="none" stroke="#5f2536" strokeOpacity=".55" strokeWidth="1.5" />
+      <path d="M50 66 C 30 52 32 36 44 36 C 48 36 50 39 50 42 C 50 39 52 36 56 36 C 68 36 70 52 50 66 Z" fill="#5f2536" fillOpacity=".8" />
     </motion.svg>
   );
 }

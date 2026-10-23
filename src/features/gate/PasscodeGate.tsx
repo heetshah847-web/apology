@@ -58,10 +58,10 @@ export function PasscodeGate({ children }: { children: ReactNode }) {
   return (
     <main
       className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-[var(--gutter,1rem)]"
-      style={{ background: 'radial-gradient(120% 90% at 50% 20%, #2f2a5c 0%, var(--night-ink,#1e1a3a) 55%, #120f26 100%)', color: 'var(--ink,#eee8f4)' }}
+      style={{ background: 'radial-gradient(120% 90% at 50% 20%, #fffdfb 0%, #f7efe5 55%, #efe3d3 100%)', color: 'var(--ink,#2b2528)' }}
     >
       <form onSubmit={submit} className="relative z-10 w-full max-w-md text-center" aria-describedby="gate-hint">
-        <svg viewBox="-40 -30 80 60" className="mx-auto mb-6 w-14" fill="var(--royal-gold,#c8a45d)" aria-hidden>
+        <svg viewBox="-40 -30 80 60" className="mx-auto mb-6 w-14" fill="#b5677a" aria-hidden>
           <path d="M-30 14L-34 -16L-16 -2L0 -24L16 -2L34 -16L30 14ZM-30 20H30" />
         </svg>
         <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'var(--ink-soft)', fontSize: '1.05rem' }}>
@@ -81,7 +81,7 @@ export function PasscodeGate({ children }: { children: ReactNode }) {
             autoComplete="off" autoCapitalize="none" autoCorrect="off" spellCheck={false} enterKeyHint="go"
             aria-invalid={wrong > 0}
             className="w-full rounded-full px-5 py-3 text-center outline-none"
-            style={{ background: 'color-mix(in oklab, var(--moon-pearl,#eee8f4) 8%, transparent)', border: `1px solid ${wrong > 0 ? 'var(--rose-quartz,#e7a6b8)' : 'var(--line)'}`, color: 'var(--ink)', fontSize: '1.125rem', fontFamily: 'var(--font-body)' }}
+            style={{ background: '#ffffff', border: `1px solid ${wrong > 0 ? 'var(--accent,#b5677a)' : 'var(--line)'}`, color: 'var(--ink)', fontSize: '1.125rem', fontFamily: 'var(--font-body)' }}
           />
         </motion.div>
 
@@ -89,7 +89,7 @@ export function PasscodeGate({ children }: { children: ReactNode }) {
           type="submit"
           disabled={busy}
           className="mt-4 rounded-full px-7 py-3"
-          style={{ background: 'var(--royal-gold,#c8a45d)', color: '#1e1a3a', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 'var(--text-ui,.875rem)', opacity: busy ? 0.6 : 1 }}
+          style={{ background: 'var(--night-ink,#2b2528)', color: '#fffdfb', letterSpacing: '.14em', textTransform: 'uppercase', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 'var(--text-ui,.875rem)', opacity: busy ? 0.6 : 1 }}
         >
           Open the atlas
         </button>
@@ -98,7 +98,7 @@ export function PasscodeGate({ children }: { children: ReactNode }) {
           <AnimatePresence mode="wait">
             {wrong > 0 && (
               <motion.div key={wrong} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : 0.35 }}>
-                <p style={{ color: 'var(--rose-quartz,#e7a6b8)', fontFamily: 'var(--font-body)' }}>Not quite, my queen. Try once more.</p>
+                <p style={{ color: 'var(--accent,#b5677a)', fontFamily: 'var(--font-body)' }}>Not quite, my queen. Try once more.</p>
                 {hint && <p style={{ color: 'var(--ink-soft)', fontFamily: 'var(--font-display)', fontStyle: 'italic', marginTop: '.35rem' }}>{hint}</p>}
               </motion.div>
             )}

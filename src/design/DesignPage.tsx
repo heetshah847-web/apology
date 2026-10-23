@@ -67,7 +67,7 @@ export default function DesignPage() {
 
         <Block title="FrameOutline + PhotoFrame + Polaroid">
           <div className="grid gap-14 pt-8 sm:grid-cols-2">
-            <FrameOutline label="Queen / Portrait 03" readout="23.03° N, 72.57° E">
+            <FrameOutline label="Queen / Portrait 03">
               <PhotoFrame src={PHOTO} alt="Placeholder portrait" kenBurns duration={6} className="aspect-[4/5] w-full" />
             </FrameOutline>
             <div className="flex items-center justify-center"><Polaroid src={PHOTO} alt="Placeholder polaroid" caption="our first selfie" tilt={-3} /></div>
