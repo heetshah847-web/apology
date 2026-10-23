@@ -14,9 +14,9 @@
 .pl-main { min-width: 0; padding: clamp(1.25rem, 3vw, 2.75rem) clamp(1.25rem, 4vw, 3.5rem) 2rem; }
 .pl-eyebrow, .pl-cols, .pl-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--pl-mute); margin: 0; }
 
-.pl-tabs { display: flex; gap: 1.4rem; overflow-x: auto; margin: 0.9rem 0 2rem; padding: 0 0 0.6rem; border-bottom: 1px solid var(--pl-hair); scrollbar-width: none; }
+.pl-tabs { display: flex; gap: 0.95rem; overflow-x: auto; margin: 0.9rem 0 2rem; padding: 0 0 0.6rem; border-bottom: 1px solid var(--pl-hair); scrollbar-width: none; }
 .pl-tabs::-webkit-scrollbar { display: none; }
-.pl-tab { flex: none; white-space: nowrap; background: none; border: 0; padding: 0.35rem 0; font: inherit; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pl-mute); border-bottom: 2px solid transparent; margin-bottom: -0.7rem; cursor: pointer; }
+.pl-tab { flex: none; white-space: nowrap; background: none; border: 0; padding: 0.35rem 0; font: inherit; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pl-mute); border-bottom: 2px solid transparent; margin-bottom: -0.7rem; cursor: pointer; }
 .pl-tab:hover { color: var(--ink); }
 .pl-tab[aria-current='step'] { color: var(--ink); border-bottom-color: var(--ink); }
 

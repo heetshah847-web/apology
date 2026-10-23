@@ -106,13 +106,12 @@ export function PunishStep() {
   return (
     <div>
       <StepTitle>{cfg.title}</StepTitle>
-      <p className="mb-4 mt-0 text-[length:var(--text-ui)]" style={{ color: 'var(--ink-faint)' }}>
-        {mine.length ? `${mine.length} chosen. Stack as many as he deserves.` : 'Pick as many as he deserves, Your Majesty.'}
-      </p>
-      <div className="grid gap-4 md:grid-cols-2">
+      <p className="pl-note">{mine.length ? `${mine.length} chosen. Stack as many as he deserves.` : 'Pick as many as he deserves, Your Majesty.'}</p>
+      <div aria-hidden className="pl-cols"><span>Item</span><span>Selection</span></div>
+      <ul className="pl-list">
         {cfg.options!.map((o) => (
           <OptionCard
-            key={o.id} stepId="punish" option={o} layer={`${STEP_LABEL.punish} / ${o.label}`}
+            key={o.id} stepId="punish" option={o}
             selected={mine.some((c) => c.optionId === o.id)}
             onSelect={() => {
               const { add, remove } = usePlannerStore.getState();
@@ -123,7 +122,7 @@ export function PunishStep() {
             onVenue={() => {}}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
