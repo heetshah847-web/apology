@@ -25,6 +25,7 @@
     },
     "cuisine": {
       "title": "What's the Queen craving?",
+      "multi": true,
       "options": [
         { "id": "pasta",       "label": "Pasta",              "emoji": "🍝", "image": "/media/options/pasta.webp" },
         { "id": "pizza",       "label": "Pizza",              "emoji": "🍕", "image": "/media/options/pizza.webp" },
@@ -38,12 +39,12 @@
       "title": "Something sweet",
       "options": [
         { "id": "tiramisu",        "label": "Tiramisu",         "emoji": "☕", "image": "/media/options/tiramisu.webp" },
-        { "id": "cheesecake",      "label": "Cheesecake",       "emoji": "🍰" },
-        { "id": "gelato",          "label": "Gelato / ice cream","emoji": "🍨" },
+        { "id": "cheesecake",      "label": "Cheesecake",       "emoji": "🍰", "image": "/media/options/cheesecake.webp" },
+        { "id": "gelato",          "label": "Gelato / ice cream","emoji": "🍨", "image": "/media/options/gelato.webp" },
         { "id": "waffles",         "label": "Waffles",          "emoji": "🧇", "image": "/media/options/waffles.webp" },
-        { "id": "brownie-sundae",  "label": "Brownie sundae",   "emoji": "🍫" },
+        { "id": "brownie-sundae",  "label": "Brownie sundae",   "emoji": "🍫", "image": "/media/options/brownie-sundae.webp" },
         { "id": "choco-fondue",    "label": "Chocolate fondue", "emoji": "🍓", "image": "/media/options/choco-fondue.webp" },
-        { "id": "kulfi",           "label": "Kulfi",            "emoji": "🥛" }
+        { "id": "cookie-bowl",     "label": "Cookie bowl",      "emoji": "🍪", "image": "/media/options/cookie-bowl.webp" }
       ]
     },
     "heetu": {
@@ -51,7 +52,7 @@
       "options": [
         { "id": "11th",       "label": "11th Heetu",       "description": "Comes with unlimited romance", "image": "heetu-versions/11th",       "specs": ["Romance: unlimited", "Hair: questionable", "Texts: 200 a day"] },
         { "id": "1st-sem",    "label": "1st Sem Heetu",    "description": "The one who couldn't stop staring", "image": "heetu-versions/1st-sem", "specs": ["Confidence: 40%", "Crush level: 100%", "Plans: none"] },
-        { "id": "march",      "label": "March Heetu",      "description": "EDIT: what made March Heetu special", "image": "heetu-versions/march", "specs": ["EDIT", "EDIT", "EDIT"] },
+        { "id": "march",      "label": "March Heetu",      "description": "The most romantic one, every date a love story", "image": "heetu-versions/march", "specs": ["Romance: off the charts", "Surprises: always planned", "Love notes: every single day"] },
         { "id": "bestfriend", "label": "Bestfriend Heetu", "description": "But romantic, and yours only", "image": "heetu-versions/bestfriend", "specs": ["Listening: always", "Memes: premium", "Exclusive: 100% yours"] },
         { "id": "current",    "label": "Current Heetu",    "description": "Learned his lessons, still crazy about you", "image": "heetu-versions/current", "specs": ["Sorry level: maximum", "Patience: upgraded", "Love: same as day one"] }
       ]

@@ -16,17 +16,18 @@ interface PickStepProps {
   onSelectOption?: (o: PlannerOptionX) => boolean;
 }
 
-/** Shared single-pick option grid (cuisine / dessert / heetu / flowers). Tapping a selected card removes it. */
+/** Shared option grid. Single-pick by default (tapping a selected card removes it); `multi: true` in the step config lets her add several. */
 function PickStep({ stepId, onTitleTap, extra, onSelectOption }: PickStepProps) {
   const cfg = planner.steps[stepId];
   const cart = usePlannerStore((s) => s.cart);
-  const { replace, clearStep, setVenue } = usePlannerStore.getState();
+  const { replace, clearStep, setVenue, add, remove } = usePlannerStore.getState();
+  const multi = !!(cfg as { multi?: boolean }).multi;
   const mine = cart.filter((c) => c.stepId === stepId);
   return (
     <div>
       <StepTitle onClick={onTitleTap}>{cfg.title}</StepTitle>
       {extra}
-      {mine.length === 0 && <p className="pl-note">Nothing chosen yet. Pick one, Your Majesty.</p>}
+      {mine.length === 0 && <p className="pl-note">{multi ? 'Nothing chosen yet. Pick as many as you like, Your Majesty.' : 'Nothing chosen yet. Pick one, Your Majesty.'}</p>}
       <div aria-hidden className="pl-cols"><span>Item</span><span>Selection</span></div>
       <ul className="pl-list">
         {cfg.options!.map((o) => {
@@ -36,13 +37,13 @@ function PickStep({ stepId, onTitleTap, extra, onSelectOption }: PickStepProps) 
               key={o.id} stepId={stepId} option={o}
               selected={!!item} venueId={item?.venueId}
               onSelect={() => {
-                if (item) return clearStep(stepId);
+                if (item) return multi ? remove(stepId, o.id) : clearStep(stepId);
                 if (onSelectOption?.(o)) return;
-                replace(stepId, toItem(stepId, o));
+                if (multi) add(toItem(stepId, o)); else replace(stepId, toItem(stepId, o));
                 audioDirector.sfx('pop');
               }}
               onVenue={(venueId) => {
-                if (!item) replace(stepId, { ...toItem(stepId, o), venueId });
+                if (!item) { const it = { ...toItem(stepId, o), venueId }; if (multi) add(it); else replace(stepId, it); }
                 else setVenue(stepId, o.id, item.venueId === venueId ? undefined : venueId);
               }}
             />
@@ -67,8 +68,11 @@ export function CuisineStep() {
     const iv = window.setInterval(() => setFace(DICE[Math.floor(Math.random() * DICE.length)]), 90);
     const to = window.setTimeout(() => {
       clearInterval(iv);
-      const o = pool[Math.floor(Math.random() * pool.length)];
-      usePlannerStore.getState().replace('cuisine', { ...toItem('cuisine', o), note: 'Chosen by the dice' });
+      const taken = new Set(usePlannerStore.getState().cart.filter((c) => c.stepId === 'cuisine').map((c) => c.optionId));
+      const fresh = pool.filter((p) => !taken.has(p.id));
+      const from = fresh.length ? fresh : pool;
+      const o = from[Math.floor(Math.random() * from.length)];
+      usePlannerStore.getState().add({ ...toItem('cuisine', o), note: 'Chosen by the dice' });
       audioDirector.sfx('pop');
       setRolling(false);
     }, 1000);
